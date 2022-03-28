@@ -1,0 +1,15 @@
+:root {
+  --font-family-primary: "Marcellus SC", serif;
+  --font-family-secondary: "Thasadith", sans-serif;
+  --font-weight-regular: 300;
+  --font-weight-bold: 900;
+  --color-1: #16778c;
+  --color-2: #2999a6;
+  --color-3: #33a6a6;
+  --color-4: #a0d9be;
+  --color-5: #f2ebc4;
+  --font-style-h1: 3rem;
+  --font-style-h2: 2.25rem;
+  --font-style-h3: 1.25rem;
+  --font-style-body: 1rem;
+}
