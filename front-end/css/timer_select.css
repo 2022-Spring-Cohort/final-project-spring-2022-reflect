@@ -1,0 +1,117 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-family-primary: 'Marcellus SC', serif;
+    --font-family-secondary: 'Thasadith', sans-serif;
+    --font-weight-regular: 300;
+    --font-weight-bold: 900;
+    --color-1: #16778C;
+    --color-2: #2999A6;
+    --color-3: #33A6A6;
+    --color-4: #A0D9BE;
+    --color-5: #F2EBC4;
+    --font-style-h1: 3rem;
+    --font-style-h2: 2.25rem;
+    --font-style-h3: 1.25rem;
+    --font-style-body: 1rem;
+}
+
+body {
+    background: url("../images/nature_background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* dropdown styling */
+body{
+    font-family: var(--font-family-secondary);
+    /* background:#3E4651; */
+  }
+  .list-choice{
+    width:300px;
+    margin:1em auto;
+    position: relative;
+    cursor: pointer;  
+  }
+  .list-choice input[type="radio"]{
+    position:absolute;
+    left:-9999px;
+  }
+  
+  .list-choice-title {
+  width: 100%;
+  display: block;
+  background: #D8D8D8;
+  text-align: center;
+  padding: 0.55em 1em;
+  box-sizing: border-box;
+  color: #FFF;
+  text-shadow: 0 1px 0 #CACACA;
+  border-radius: 0.2em;
+  }
+  .list-choice:hover .list-choice-title {
+  border-radius:0.2em 0.2em 0 0;
+  }
+  .list-choice-objects label:nth-last-of-type(1) span{
+    border-radius:0 0 0.2em 0.2em;
+  }
+  .list-choice input[type="radio"] + span {
+  color: #FFF;
+  background: #D8D8D8;
+  padding: 0.55em 1em;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100%;
+  }
+  .list-choice-objects {
+  position: absolute;
+  top: 0;
+  padding-top: 2.1em;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 250ms ease;
+  }
+  .list-choice:hover .list-choice-objects  input[type="radio"] + span {
+  position: relative;
+  top: 0;
+  transition: all 250ms ease-in-out;
+  }
+  .list-choice:hover input[type="radio"] + span:hover {
+  background:#BBB;
+  }
+  .list-choice:hover input[type="radio"]:checked + span:hover {
+  background: var(--color-4);
+  }
+  .list-choice input[type="radio"]:checked + span {
+  background: var(--color-4);
+  position: absolute;
+  top: 0em;
+  border-radius: 0.2em;
+  }
+  .list-choice:hover input[type="radio"]:checked + span {
+  border-radius: 0;
+  }
+  .list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked + span{
+    border-radius:0 0 0.2em 0.2em;
+  }
+  
+  .list-choice:hover .list-choice-objects {
+  max-height: 540px;
+  }
