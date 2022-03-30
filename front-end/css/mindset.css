@@ -1,0 +1,10 @@
+video {
+  width: 1000px;
+  height: 85vh;
+  object-fit: cover;
+}
+@media screen and (min-width: 900px) {
+  video {
+    height: 100vh;
+  }
+}

@@ -31,6 +31,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20vh;
+  margin-bottom: 20vh;
 
   gap: 10vw;
 }
@@ -38,11 +39,10 @@ body {
 .article {
   display: flex;
   box-shadow: red 0px 8px 24px;
-  width: 20vw;
 }
 
 .article img {
   display: flex;
-  box-shadow: red 0px 8px 24px;
-  width: 20vw;
+
+  width: 25vw;
 }
