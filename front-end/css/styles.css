@@ -20,12 +20,34 @@
     --font-style-body: 1rem;
 }
 
-body {
+/* body {
     background: url("../images/nature_background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+} */
+#homePageBG {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+}
+video {
+    width: 1000px;
+    height: 85vh;
+    object-fit: cover; 
+}
+@media screen and (min-width: 900px){
+    video {
+        height: 100vh;
+    }
+}
+    
+.container {
+    position:fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .container {
