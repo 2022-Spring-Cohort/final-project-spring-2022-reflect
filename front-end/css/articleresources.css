@@ -1,0 +1,48 @@
+:root {
+  --font-family-primary: "Marcellus SC", serif;
+  --font-family-secondary: "Thasadith", sans-serif;
+  --font-weight-regular: 300;
+  --font-weight-bold: 900;
+  --color-1: #16778c;
+  --color-2: #2999a6;
+  --color-3: #33a6a6;
+  --color-4: #a0d9be;
+  --color-5: #f2ebc4;
+  --font-style-h1: 3rem;
+  --font-style-h2: 2.25rem;
+  --font-style-h3: 1.25rem;
+  --font-style-body: 1rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("../images/nature_background.jpg") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20vh;
+
+  gap: 10vw;
+}
+
+.article {
+  display: flex;
+  box-shadow: red 0px 8px 24px;
+  width: 20vw;
+}
+
+.article img {
+  display: flex;
+  box-shadow: red 0px 8px 24px;
+  width: 20vw;
+}
