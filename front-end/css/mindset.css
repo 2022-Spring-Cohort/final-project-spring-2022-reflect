@@ -1,4 +1,4 @@
-video {
+/* video {
   width: 1000px;
   height: 85vh;
   object-fit: cover;
@@ -8,3 +8,48 @@ video {
     height: 100vh;
   }
 }
+  #homePageBG {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+} */
+
+
+body {
+  background: url("../images/nature_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+ 
+}
+
+.mindset__card{
+margin-block: 5vw;
+background-color: rgb(202, 192, 203);
+border-radius: 20% 20% 20% 20%;
+}
+
+.mindset__card p{
+  margin-block: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+
+.mindset__intro{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+} 
+
+
+.mindset__why{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+} 
