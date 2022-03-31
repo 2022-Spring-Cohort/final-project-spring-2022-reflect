@@ -45,16 +45,21 @@ body {
   padding: 1em;
   font-size: large;
   opacity: .5;
+  /* background-image: url("/images/meditation.jpg"); */
+  border-radius: 10px; 
+
 }
 .btn2{
   padding: 1em;
   font-size: large;
   opacity: .5;
+  border-radius: 10px;
 }
 .btn3{
   padding: 1em;
   font-size: large;
   opacity: .5;
+  border-radius: 10px;
 }
 
 
@@ -83,7 +88,7 @@ body {
 
   /* Modal Content/Boxes */
   .modal-content {
-    background-image: url("/image/wangs.jpg");
+    /* background-image: url("/img/meditation.jpg"); */
      border-radius: 5px; 
     /* background-color: #4f8665; */
      margin: 15% auto; /*15% from the top and centered */
@@ -102,7 +107,7 @@ body {
     
   }
   .modal-content2{
-    background-image: url("/img/Ilovegold.jpg");
+    background-image: url("/img/Sleep.jpg");
      border-radius: 5px; 
     /* background-color: #4f8665; */
      margin: 15% auto; /*15% from the top and centered */
