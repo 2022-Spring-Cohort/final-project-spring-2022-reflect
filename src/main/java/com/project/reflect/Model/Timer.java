@@ -9,21 +9,27 @@ public class Timer {
     @Id
     @GeneratedValue
     private Long id;
-    private Double duration;
+    private int minutes;
+    private int seconds;
 
     public Timer() {
     }
 
-    public Timer(Long id, Double duration) {
+    public Timer(Long id, int minutes, int seconds) {
         this.id = id;
-        this.duration = duration;
+        this.minutes = minutes;
+        this.seconds = seconds;
     }
 
     public Long getId() {
         return id;
     }
 
-    public Double getDuration() {
-        return duration;
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public int getSeconds() {
+        return seconds;
     }
 }
