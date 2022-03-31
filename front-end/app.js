@@ -21,5 +21,22 @@ menuItems.forEach(
     }
 )
 
+ 
+const quote = document.querySelector('inspo-quote');
+
+const api_url = "https://zenquotes.io/api/random/";
+
+async function getapi(url) {
+    const response = await fetch(url);
+    var data = await response.json();
+    console.log(data);
+    quoteNew = JSON.parse(data);
+    
+}
+getapi(api_url);
+quote.innerHTML = (quoteNew);
+
+
+
 
 hamburger.addEventListener("click", toggleMenu);
