@@ -1,0 +1,14 @@
+### Get Users
+
+GET http://localhost:8080/users
+
+### Get User by ID
+GET http://localhost:8080/users/2
+
+### Add User
+POST http://localhost:8080/users/addUser
+Content-Type: application/json
+
+{
+    "name": "Mike"
+}

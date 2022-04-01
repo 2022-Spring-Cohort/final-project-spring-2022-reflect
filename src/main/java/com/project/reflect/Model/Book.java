@@ -1,6 +1,13 @@
 package com.project.reflect.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
+    @Id
+    @GeneratedValue
     private String bookName;
     private String author;
     //aboutBook content will just be copy/paste from Amazon
@@ -9,22 +16,21 @@ public class Book {
     private String bookLink;
     private int year;
 
-    public Book() {
-    }
-
-    public Book(String bookName, String author, String aboutBook, String bookLink, int year) {
-        this.bookName = bookName;
-        this.author = author;
-        this.aboutBook = aboutBook;
-        this.bookLink = bookLink;
-        this.year = year;
-    }
+//    public Book(String bookName, String author, String aboutBook, String bookLink, int year) {
+//        this.bookName = bookName;
+//        this.author = author;
+//        this.aboutBook = aboutBook;
+//        this.bookLink = bookLink;
+//        this.year = year;
+//    }
 
     public Book(String bookName, String author) {
         this.bookName = bookName;
         this.author = author;
     }
 
+    public Book() {
+    }
 
     public String getBookName() {
         return bookName;

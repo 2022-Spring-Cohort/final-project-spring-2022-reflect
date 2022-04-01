@@ -1,9 +1,11 @@
 package com.project.reflect.Model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 
-@Embeddable
+@Entity
 public class Article {
+    @Id
+    @GeneratedValue
     private String author;
     private String content;
     private String title;
