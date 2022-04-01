@@ -8,7 +8,7 @@ import com.project.reflect.Repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class cdSessionController {
+public class SessionController {
     private SessionRepository sessionRepo;
     private UserRepository userRepo;
 

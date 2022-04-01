@@ -5,31 +5,31 @@ import com.project.reflect.Model.Book;
 import com.project.reflect.Model.User;
 import com.project.reflect.Repository.BookRepository;
 import com.project.reflect.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Populator implements CommandLineRunner {
-
+    @Autowired
     private BookRepository bookRepo;
+    @Autowired
     private UserRepository userRepo;
 
-    public Populator(UserRepository userRepo, BookRepository bookRepo){
-        this.bookRepo = bookRepo;
-        this.userRepo = userRepo;
-
-    }
 
     @Override
     public void run(String... args) throws Exception {
+
+        User user1 = new User("Joe");
+        userRepo.save(user1);
+        User user2 = new User("Ben");
+        userRepo.save(user2);
+
         Book book1 = new Book("How to Win Friends and Influence People", "Dale Carnegie");
         Book book2 = new Book("Tiny Buddha: Simple Wisdom for Life's Hard Questions", "Lori Deschene");
         Book book3 = new Book("Simple Abundance: A Daybook of Comfort and Joy", "Sarah Ban Breathnach");
         Book book4 = new Book("The Book of Life: Daily Meditations", "Jiddu, Krishnamuri");
         Book book5 = new Book("Moments of Mindfulness: Daily Inspiration", "Thich Nhat Hanh");
-
-        //Aang meditates a lot
-        User user1 = new User("Aang");
-        //Earl hasn't, but wants to
-        User user2 = new User("Earl Hickey");
 
         Article article1 = new Article("Nayaswami Diksha",
                 "Musk is a kind of valuable, extremely fragrant salve found in the navel of the musk deer, a habitant of the highest Himalayan Hills of India. At a certain age, the ravishing odor of musk secretly oozes out of the navel of the musk deer. The deer becomes excited at the attractive odor of musk and frisks about, sniffing under trees, and searching everywhere for many weeks to find the source of the fragrance. Finally he grows angry and very restless when he is unable to find the source of the musk perfume, and jumps from the high cliffs into the valley, trying to reach the source of the rare fragrance, and thus plunges to death. It is then that the hunters get hold of him and tear out the pouch of musk.\n" +
