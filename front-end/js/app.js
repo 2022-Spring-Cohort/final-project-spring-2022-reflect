@@ -2,6 +2,9 @@ import userView from "./users.js";
 import home from "./home.js";
 import header from "./header.js";
 
+
+
+
 const containerEl = document.querySelector(".container");
 
 function makeUserListView() {
@@ -37,14 +40,17 @@ makeUserListView();
 
 function makeUserView(user) {
     console.log(user);
-    containerEl.innerHTML = home(user);
-}
+    containerEl.innerHTML = header();
+    containerEl.innerHTML += home(user);
 
-const menu = document.querySelector(".menu");
-const menuItems = document.querySelectorAll(".nav-links");
-const hamburger = document.querySelector(".hamburger");
-const closeIcon = document.querySelector(".closeIcon");
-const menuIcon = document.querySelector(".menuIcon");
+
+
+    const menu = document.querySelector(".menu");
+    const menuItems = document.querySelectorAll(".nav-links");
+    const hamburger = document.querySelector(".hamburger");
+    const closeIcon = document.querySelector(".close-icon");
+    const menuIcon = document.querySelector(".menu-icon");
+    hamburger.addEventListener("click", toggleMenu);
 
 function toggleMenu() {
     if (menu.classList.contains("showMenu")) {
@@ -62,24 +68,9 @@ menuItems.forEach(
         menuItem.addEventListener("click", toggleMenu);
     }
 )
-if(hamburger != null)
-hamburger.addEventListener("click", toggleMenu);
- 
-const quote = document.querySelector('.inspo-quote');
 
-const quoteAPI = async () => {
-    let arrayOfQuotes = {};
-    try{
-        const data = axios.get("https://api.quotable.io/random");
-        console.log(data);
-    } catch(error){
-        console.log(error);
-    }
-    };
+    
+}
 
-fetch('https://api.quotable.io/api/random/')
-    .then(res => res.json())
-    .then(quoteNew => {
-        quote.innerHTML=quoteNew.q;
-    })
+
 
