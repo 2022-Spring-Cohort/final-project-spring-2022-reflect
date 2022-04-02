@@ -14,9 +14,11 @@ export default function header() {
                     <li><a href="#" class="nav-links">Profile</a></li>
                     <li><a href="#" class="nav-links">About</a></li>
                     <li><a href="#" class="nav-links">Contact</a></li>
-                    <li><a href="#" class="nav-links-btn">Sign Up</a></li>
+                    <li><a href="#" class="nav-links">Sign Up</a></li>
                 </ul>
-                <img src="./images/ham-menu-icon.png" class ="hamburger">
+                <img src="./images/ham-menu-icon.png" class="hamburger">
+                <i src="menu-icon material-icon" class="menu-icon">
+                <i src="close-icon material-icon" class="close-icon">
             </nav>
         </div>
     </header>
