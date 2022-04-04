@@ -10,7 +10,7 @@ export default function header() {
                     <span class="bar"></span>
                 </div>
                 <ul class="menu" id="ham-menu">
-                    <li><a href="#" class="nav-links">Home</a></li>
+                    <li class="homeLink"><a href="#" class="nav-links">Home</a></li>
                     <li><a href="#" class="nav-links">Profile</a></li>
                     <li class="meditate"><a href="#" class="nav-links">Meditate</a></li>
                     <li><a href="#" class="nav-links">Contact</a></li>
