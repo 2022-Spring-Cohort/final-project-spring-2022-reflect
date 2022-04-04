@@ -14,6 +14,9 @@ export default function meditate() {
                     <img class="pause-image" src="./images/pauseButton.png">
                 </div>
             </section>
+            <audio controls autoplay loop>
+                <source src="./sounds/mindful.mp3" type="audio/mpeg"></source>
+            </audio>
         </div>
     `
 }

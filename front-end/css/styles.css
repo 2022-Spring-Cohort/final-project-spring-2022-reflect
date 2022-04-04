@@ -247,3 +247,7 @@ cursor: pointer;
 #ham-menu.is-active .bar:nth-child(3){
     transform: translate(-8px) rotate(-45deg);
 }
+
+.x-icon {
+    width: 5vh;
+}
