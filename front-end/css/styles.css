@@ -150,7 +150,7 @@ video {
     margin: 1vh;
 }
 
-.inspo-quote {
+.inspo-quote-container {
     /* border-style: dashed; */
     padding: 2vh;
     background-color: rgba(255, 255, 255, 0.7);
@@ -246,4 +246,8 @@ cursor: pointer;
 }
 #ham-menu.is-active .bar:nth-child(3){
     transform: translate(-8px) rotate(-45deg);
+}
+
+.x-icon {
+    width: 5vh;
 }

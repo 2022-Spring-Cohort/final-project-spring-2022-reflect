@@ -7,7 +7,7 @@ export default function home(user) {
         </section>
         <section class="inspo-quote-container">
             <h3 class="inspo-quote"></h3>
-            <p>-Albert Einstein</p>
+            <p class="inspo-author"></p>
         </section>
         <section class="daily-article" href="#">
             <h3>Daily Article</h3>
