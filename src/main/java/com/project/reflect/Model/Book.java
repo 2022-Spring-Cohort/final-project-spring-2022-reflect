@@ -8,6 +8,7 @@ import javax.persistence.Id;
 public class Book {
     @Id
     @GeneratedValue
+    private Long id;
     private String bookName;
     private String author;
     //aboutBook content will just be copy/paste from Amazon
