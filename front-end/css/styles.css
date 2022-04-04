@@ -251,3 +251,28 @@ cursor: pointer;
 .x-icon {
     width: 5vh;
 }
+
+.timer {
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 10vh 1vh 1vh 1vh;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pause-image, .play-image {
+    max-width: 100%;
+    max-height: 10vh;
+    display: block;
+    margin: 0 auto;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+}
