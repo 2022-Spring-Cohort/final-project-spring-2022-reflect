@@ -150,7 +150,7 @@ video {
     margin: 1vh;
 }
 
-.inspo-quote {
+.inspo-quote-container {
     /* border-style: dashed; */
     padding: 2vh;
     background-color: rgba(255, 255, 255, 0.7);

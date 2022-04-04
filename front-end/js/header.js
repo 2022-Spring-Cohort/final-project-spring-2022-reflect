@@ -12,7 +12,7 @@ export default function header() {
                 <ul class="menu" id="ham-menu">
                     <li><a href="#" class="nav-links">Home</a></li>
                     <li><a href="#" class="nav-links">Profile</a></li>
-                    <li><a href="#" class="nav-links">About</a></li>
+                    <li class="meditate"><a href="#" class="nav-links">Meditate</a></li>
                     <li><a href="#" class="nav-links">Contact</a></li>
                     <li><a href="#" class="nav-links">Sign Up</a></li>
                 </ul>

@@ -10,24 +10,30 @@ public class Session {
     private Long id;
     private String date;
     private String time;
+    private String comment;
 
     @ManyToOne
     private User user;
 
-    @ElementCollection
-    private Collection<Comments> comments;
+//    @ElementCollection
+//    private Collection<Comments> comments;
 
     public Session() {
     }
 
-    public Session(Long id, String date, String time) {
-        this.id = id;
+    public Session(String date, String time, String comment, User user) {
         this.date = date;
         this.time = time;
+        this.comment = comment;
+        this.user = user;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public String getDate() {
@@ -38,18 +44,22 @@ public class Session {
         return time;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getComment() {
+        return comment;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-    public  Collection<Comments> getComments(){
-        return comments;
-    }
+    //    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public void setDate(String date) {
+//        this.date = date;
+//    }
+//
+//    public void setTime(String time) {
+//        this.time = time;
+//    }
+//    public  Collection<Comments> getComments(){
+//        return comments;
+//    }
 }
