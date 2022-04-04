@@ -1,6 +1,6 @@
 export default function home(user) {
-    console.log(user)
-    return `
+  console.log(user);
+  return `
     <div class ="main-content">
         <section class="welcome">
             <h1>Hello, ${user.name}!</h1>
@@ -15,5 +15,5 @@ export default function home(user) {
             <p>A short summary of article content goes here. A short summary of article content goes here. A short summary of article content goes here.</p>
         </section>
     </div>
-    `
+    `;
 }
