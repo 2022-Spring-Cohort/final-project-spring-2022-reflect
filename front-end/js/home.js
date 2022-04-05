@@ -1,13 +1,12 @@
 export default function home(user) {
-    console.log(user)
-    return `
+  return `
     <div class ="main-content">
         <section class="welcome">
             <h1>Hello, ${user.name}!</h1>
         </section>
         <section class="inspo-quote-container">
             <h3 class="inspo-quote"></h3>
-            <p>-Albert Einstein</p>
+            <p class="inspo-author"></p>
         </section>
         <section class="daily-article" href="#">
             <h3>Daily Article</h3>
@@ -15,5 +14,5 @@ export default function home(user) {
             <p>A short summary of article content goes here. A short summary of article content goes here. A short summary of article content goes here.</p>
         </section>
     </div>
-    `
+    `;
 }

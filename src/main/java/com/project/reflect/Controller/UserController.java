@@ -1,6 +1,7 @@
 package com.project.reflect.Controller;
 
 
+import com.project.reflect.Model.Session;
 import com.project.reflect.Model.User;
 import com.project.reflect.Repository.SessionRepository;
 import com.project.reflect.Repository.UserRepository;
@@ -34,13 +35,6 @@ public class UserController {
     }
 
 
- /*   TODO 
-
- @PostMapping("/addUser")
-    public User addUser(@RequestBody User user){
-
-
-    }*/
 
 
 
