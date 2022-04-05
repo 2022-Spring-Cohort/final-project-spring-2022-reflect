@@ -1,6 +1,7 @@
 package com.project.reflect.Model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Article {
@@ -13,17 +14,22 @@ public class Article {
     private String picture;
     private String link;
 
+    @ManyToOne
+   private Topic topic;
+
 
     public Article(){
 
     }
 
-    public Article(String title, String author, String picture, String content, String link){
+    public Article(String title, String author, String picture, String content, String link, Topic topic){
         this.author = author;
         this.title = title;
         this.content = content;
         this.picture = picture;
         this.link = link;
+        this.topic = topic;
+
 
     }
     public String getPicture() {
