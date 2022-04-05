@@ -3,6 +3,8 @@ import home from "./home.js";
 import header from "./header.js";
 import meditate from "./meditate.js";
 import playAmbient from "./audio.js";
+import categoryView from "./category.js";
+
 
 
 
@@ -66,8 +68,11 @@ function makeHamburgerMenu(user) {
     const menuIcon = document.querySelector(".menu-icon");
     const homeLink = document.querySelector(".homeLink")
     const meditate = document.querySelector(".meditate")
+    const categories = document.querySelector(".categories")
 
-
+    categories.addEventListener("click", () => {
+        makeCategoriesView(user);
+    })
     homeLink.addEventListener("click", () => {
         console.log(user);
         makeUserView(user);
@@ -180,7 +185,19 @@ function makeMeditationView(user) {
         pause_clock();
     })
 
+
     
+}
+
+function makeCategoriesView(user){
+    
+    containerEl.innerHTML = header();
+    containerEl.innerHTML += categoryView();
+
+    makeHamburgerMenu(user);
+
+
+
 }
 
 
