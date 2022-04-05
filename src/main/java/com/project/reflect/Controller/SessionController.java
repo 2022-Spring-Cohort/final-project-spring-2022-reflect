@@ -26,29 +26,15 @@ public class SessionController {
     public Session getSession(@PathVariable long id){
         return sessionRepo.findById(id).get();
     }
-  /*  TODO
 
-    @GetMapping("/sessions/{id}/comments")
-    public Iterable <Comments>(@PathVariable long id){
-        Session session = sessionRepo.findById(id).get();
-        return sessionRepo.getComments();
-
-    }*/
-
-
-
-/* TODO
-@PostMapping("sessions/{id}/addComment")
-    public
-    */
-
-    @PostMapping("/{id}/addSession/")
-    public Iterable <Session> addSessionToUser(@PathVariable long id,@RequestBody Session session) {
+    @PostMapping("/users/{id}/addSession")
+    public User addSessionToUser(@PathVariable long id, @RequestBody Session session) {
         User user = userRepo.findById(id).get();
-
-        //Need to add user to session
-
-        return sessionRepo.findAll();
+        session.setUser(user);
+        sessionRepo.save(session);
+        return userRepo.findById(id).get();
     }
+
+
 
 }
