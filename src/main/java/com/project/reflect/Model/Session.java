@@ -1,30 +1,34 @@
 package com.project.reflect.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 public class Session {
     @Id
     @GeneratedValue
     private Long id;
-    private String date;
-    private String time;
-    private String comment;
+    private LocalDate date;
+    private int startTime;
+    private int endTime;
+    private String note;
 
     @ManyToOne
+    @JsonIgnore
     private User user;
-
-//    @ElementCollection
-//    private Collection<Comments> comments;
 
     public Session() {
     }
 
-    public Session(String date, String time, String comment, User user) {
+    public Session(LocalDate date, int startTime, int endTime, String note, User user) {
         this.date = date;
-        this.time = time;
-        this.comment = comment;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.note = note;
         this.user = user;
     }
 
@@ -32,23 +36,29 @@ public class Session {
         return id;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getStartTime() {
+        return startTime;
+    }
+
+    public int getEndTime() {
+        return endTime;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
     public User getUser() {
         return user;
     }
 
-    public String getDate() {
-        return date;
-    }
+    public void setUser(User user) {this.user = user;}
 
-    public String getTime() {
-        return time;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    //    public void setId(Long id) {
+//    public void setId(Long id) {
 //        this.id = id;
 //    }
 //

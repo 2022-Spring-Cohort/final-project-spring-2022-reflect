@@ -2,13 +2,17 @@ package com.project.reflect;
 
 import com.project.reflect.Model.Article;
 import com.project.reflect.Model.Book;
+import com.project.reflect.Model.Session;
 import com.project.reflect.Model.User;
 import com.project.reflect.Repository.ArticleRepository;
 import com.project.reflect.Repository.BookRepository;
+import com.project.reflect.Repository.SessionRepository;
 import com.project.reflect.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -16,6 +20,8 @@ public class Populator implements CommandLineRunner {
     private BookRepository bookRepo;
     @Autowired
     private UserRepository userRepo;
+    @Autowired
+    private SessionRepository sessionRepo;
     @Autowired
     private ArticleRepository articleRepo;
 
@@ -27,6 +33,9 @@ public class Populator implements CommandLineRunner {
         userRepo.save(user1);
         User user2 = new User("Ben");
         userRepo.save(user2);
+
+        Session session1 = new Session(LocalDate.now(), 10, 11, "Feeling very zen today.", user1);
+        sessionRepo.save(session1);
 
         Book book1 = new Book("How to Win Friends and Influence People", "Dale Carnegie");
         bookRepo.save(book1);
