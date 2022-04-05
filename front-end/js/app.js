@@ -4,6 +4,8 @@ import header from "./header.js";
 import meditate from "./meditate.js";
 import playAmbient from "./audio.js";
 import categoryView from "./category.js";
+import progressView from "./progress.js";
+import aboutView from "./about.js";
 
 
 
@@ -21,7 +23,6 @@ function makeUserListView() {
 }
 
 function makeUserListViewFromJSON(users) {
-    console.log(users);
     containerEl.innerHTML = userView(users);
 
     const usersEl = document.querySelectorAll(".userInfo");
@@ -38,6 +39,27 @@ function makeUserListViewFromJSON(users) {
         })
     }) 
 
+    const newName = containerEl.querySelector(".newUser-name")
+    const newUserButton = containerEl.querySelector(".newUser-button");
+    newUserButton.addEventListener("click", () => {
+        const newUserJson = {
+
+            "name": newName.value,
+            
+        }
+
+        fetch(`http://localhost:8080/users/addUser`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newUserJson),
+        })
+        .then(res => res.json())
+        .then(newUsers => {
+            makeUserListViewFromJSON(newUsers);
+        })
+    })
 }
 
 makeUserListView();
@@ -68,13 +90,20 @@ function makeHamburgerMenu(user) {
     const menuIcon = document.querySelector(".menu-icon");
     const homeLink = document.querySelector(".homeLink")
     const meditate = document.querySelector(".meditate")
+    const progressLink = document.querySelector(".progressLink")
     const categories = document.querySelector(".categories")
+    const aboutLink = document.querySelector(".aboutLink")
 
+    aboutLink.addEventListener("click", () => {
+        makeAboutView(user);
+    })
+    progressLink.addEventListener("click", () => {
+        makeProgressView(user);
+    })
     categories.addEventListener("click", () => {
         makeCategoriesView(user);
     })
     homeLink.addEventListener("click", () => {
-        console.log(user);
         makeUserView(user);
     })
     hamburger.addEventListener("click", toggleMenu);
@@ -87,7 +116,6 @@ function makeHamburgerMenu(user) {
 
 
 function makeUserView(user) {
-    console.log(user);
     containerEl.innerHTML = header();
     containerEl.innerHTML += home(user);
 
@@ -189,6 +217,13 @@ function makeMeditationView(user) {
     
 }
 
+function makeProgressView(user) {
+    containerEl.innerHTML = header();
+    containerEl.innerHTML += progressView();
+
+    makeHamburgerMenu(user);
+}
+
 function makeCategoriesView(user){
     
     containerEl.innerHTML = header();
@@ -198,6 +233,13 @@ function makeCategoriesView(user){
 
 
 
+}
+
+function makeAboutView(user) {
+    containerEl.innerHTML = header();
+    containerEl.innerHTML += aboutView();
+
+    makeHamburgerMenu(user);
 }
 
 

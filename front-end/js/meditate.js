@@ -12,9 +12,10 @@ export default function meditate() {
                 </div>
                 <div class="pause-button">
                     <img class="pause-image" src="./images/pauseButton.png">
-                </div>
-            </section>
+                </section>
             <div class="audio">
+            </div>
+            
             
             </div>
         </div>
