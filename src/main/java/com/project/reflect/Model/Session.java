@@ -9,7 +9,19 @@ public class Session {
     @GeneratedValue
     private Long id;
     private String date;
-    private String time;
+
+
+  /*  TODO
+   difference between start and end
+   Local DateTime
+
+  private String timeStart;
+  private Date timeEnd;
+
+
+*/
+
+
 
     @ManyToOne
     private User user;
