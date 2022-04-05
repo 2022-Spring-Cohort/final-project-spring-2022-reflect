@@ -38,6 +38,27 @@ function makeUserListViewFromJSON(users) {
         })
     }) 
 
+    const newName = containerEl.querySelector(".newUser-name")
+    const newUserButton = containerEl.querySelector(".newUser-button");
+    newUserButton.addEventListener("click", () => {
+        const newUserJson = {
+
+            "name": newName.value,
+            
+        }
+
+        fetch(`http://localhost:8080/users/addUser`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newUserJson),
+        })
+        .then(res => res.json())
+        .then(newUsers => {
+            makeUserListViewFromJSON(newUsers);
+        })
+    })
 }
 
 makeUserListView();
