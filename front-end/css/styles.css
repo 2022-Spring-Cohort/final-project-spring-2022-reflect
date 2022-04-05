@@ -46,13 +46,15 @@
     min-height: 100%;
 }
 video {
-    width: 1000px;
-    height: 85vh;
+    min-width: 2rem;
+    height: 100%;
+    width: 100%;
     object-fit: cover; 
 }
 @media screen and (min-width: 900px){
     video {
-        height: 100vh;
+        
+        height: 100%;
     }
 }
 .user-name{
