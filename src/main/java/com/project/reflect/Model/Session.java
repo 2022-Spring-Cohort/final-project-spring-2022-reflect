@@ -12,10 +12,12 @@ public class Session {
     @Id
     @GeneratedValue
     private Long id;
+
     private LocalDate date;
     private int startTime;
     private int endTime;
     private String note;
+
 
     @ManyToOne
     @JsonIgnore

@@ -5,10 +5,14 @@ import java.util.Collection;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue
     private Long id;
     private String name;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Collection <MindsetCards> mindsetCards;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Session> sessions;
