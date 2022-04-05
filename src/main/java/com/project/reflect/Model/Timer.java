@@ -1,5 +1,7 @@
 package com.project.reflect.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +15,7 @@ public class Timer {
     private int minutes;
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     public Timer() {
