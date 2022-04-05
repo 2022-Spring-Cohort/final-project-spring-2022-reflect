@@ -3,6 +3,7 @@ package com.project.reflect.Model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Timer {
@@ -10,15 +11,16 @@ public class Timer {
     @GeneratedValue
     private Long id;
     private int minutes;
-    private int seconds;
+
+    @ManyToOne
+    private User user;
 
     public Timer() {
     }
 
-    public Timer(Long id, int minutes, int seconds) {
-        this.id = id;
+    public Timer(int minutes, User user) {
         this.minutes = minutes;
-        this.seconds = seconds;
+        this.user = user;
     }
 
     public Long getId() {
@@ -29,7 +31,7 @@ public class Timer {
         return minutes;
     }
 
-    public int getSeconds() {
-        return seconds;
+    public User getUser() {
+        return user;
     }
 }
