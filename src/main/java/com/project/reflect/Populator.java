@@ -1,15 +1,7 @@
 package com.project.reflect;
 
-import com.project.reflect.Model.Article;
-import com.project.reflect.Model.Book;
-import com.project.reflect.Model.Topic;
-import com.project.reflect.Model.User;
-import com.project.reflect.Repository.ArticleRepository;
-import com.project.reflect.Repository.BookRepository;
-import com.project.reflect.Repository.TopicRepository;
-import com.project.reflect.Model.Session;
-import com.project.reflect.Repository.SessionRepository;
-import com.project.reflect.Repository.UserRepository;
+import com.project.reflect.Model.*;
+import com.project.reflect.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -28,6 +20,8 @@ public class Populator implements CommandLineRunner {
     private ArticleRepository articleRepo;
     @Autowired
     private TopicRepository topicRepo;
+    @Autowired
+    TimerRepository timerRepo;
 
 
     @Override
@@ -37,6 +31,9 @@ public class Populator implements CommandLineRunner {
         userRepo.save(user1);
         User user2 = new User("Ben");
         userRepo.save(user2);
+
+        Timer timer1 = new Timer(5, user1);
+        timerRepo.save(timer1);
 
         Session session1 = new Session(LocalDate.now(), 10, 11, "Feeling very zen today.", user1);
         sessionRepo.save(session1);

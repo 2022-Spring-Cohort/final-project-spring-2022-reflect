@@ -11,11 +11,14 @@ public class User {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Collection <MindsetCards> mindsetCards;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Collection <MindsetCards> mindsetCards;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Session> sessions;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Collection<Timer> timers;
 
     public User(String name) {
         this.name = name;
@@ -32,4 +35,11 @@ public class User {
         return name;
     }
 
+    public Collection<Session> getSessions() {
+        return sessions;
+    }
+
+    public Collection<Timer> getTimers() {
+        return timers;
+    }
 }
