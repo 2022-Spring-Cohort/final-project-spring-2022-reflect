@@ -11,9 +11,9 @@ export default function header() {
                 </div>
                 <ul class="menu" id="ham-menu">
                     <li class="homeLink"><a href="#" class="nav-links">Home</a></li>
-                    <li><a href="#" class="nav-links">Profile</a></li>
+                    <li class="aboutLink"><a href="#" class="nav-links">About</a></li>
                     <li class="meditate"><a href="#" class="nav-links">Meditate</a></li>
-                    <li><a href="#" class="nav-links">Contact</a></li>
+                    <li class="progressLink"><a href="#" class="nav-links">Progress</a></li>
                     <li class="categories"><a href="#" class="nav-links">Categories</a></li>
                     <li><img class="x-icon" src="./images/close-icon.png"></li>
                 </ul>
