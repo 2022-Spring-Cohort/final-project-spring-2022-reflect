@@ -2,19 +2,13 @@ package com.project.reflect;
 
 import com.project.reflect.Model.Article;
 import com.project.reflect.Model.Book;
-<<<<<<< HEAD
 import com.project.reflect.Model.Topic;
 import com.project.reflect.Model.User;
 import com.project.reflect.Repository.ArticleRepository;
 import com.project.reflect.Repository.BookRepository;
 import com.project.reflect.Repository.TopicRepository;
-=======
 import com.project.reflect.Model.Session;
-import com.project.reflect.Model.User;
-import com.project.reflect.Repository.ArticleRepository;
-import com.project.reflect.Repository.BookRepository;
 import com.project.reflect.Repository.SessionRepository;
->>>>>>> dev
 import com.project.reflect.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
