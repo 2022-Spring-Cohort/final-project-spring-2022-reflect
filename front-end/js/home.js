@@ -1,5 +1,4 @@
 export default function home(user) {
-  console.log(user);
   return `
     <div class ="main-content">
         <section class="welcome">
