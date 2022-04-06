@@ -20,7 +20,7 @@ public class MindsetCardsController {
     }
 
     @GetMapping("/mindset")
-    public Iterable getCards() {
+    public Iterable <MindsetCards> getCards() {
         return mindsetCardsRepo.findAll();
     }
 
@@ -29,15 +29,27 @@ public class MindsetCardsController {
         return mindsetCardsRepo.findById(id).get();
     }
 
-    @PostMapping("/mindset/{id}/addCard/")
-    public Iterable addMindsetCard(@PathVariable long id,@RequestBody Session session) {
+    @PostMapping("/mindset/addCard")
+    public Iterable addMindsetCard(@PathVariable long id,@RequestBody String front, @RequestBody String back) {
+
         MindsetCards mindsetCard = mindsetCardsRepo.findById(id).get();
 
-       /*TODO
-       *
-       * Add an optional for adding a post that might not actually be there*/
-
+        /*TODO
+         *
+         * Add an optional for adding a post that might not actually be there
+         *
+         * */
+        mindsetCard.addFrontCard(front);
+        mindsetCard.addBackCards(back);
         return mindsetCardsRepo.findAll();
+    }
+
+    @PatchMapping("/songs/{id}")
+    public MindsetCards UpdateMindsetCard (@PathVariable long id, @RequestBody String newFront, @RequestBody String newBack) {
+        MindsetCards mindsetCard  = mindsetCardsRepo.findById(id).get();
+        mindsetCard.updateFront(newFront);
+        mindsetCardsRepo.save(mindsetCard);
+        return  mindsetCard;
     }
 
 }

@@ -57,5 +57,12 @@ public class MindsetCards {
         this.front=newPhrase;
     }
 
+    public void updateFront(String newFront){
+        front = newFront;
+    }
+
+    /*TODO
+    *
+    * Add a method to update the back of the cards*/
 }
 
