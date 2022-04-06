@@ -7,4 +7,10 @@ card.addEventListener("click", function () {
 })
 
 });
- 
+
+const test = document.querySelector(".fortest");
+console.log(test);
+
+const mindsetCard = document.createElement("div");
+mindsetCard.innerText = "hello";
+test.appendChild(mindsetCard);

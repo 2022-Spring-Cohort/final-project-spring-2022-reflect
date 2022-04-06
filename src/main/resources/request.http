@@ -32,9 +32,11 @@ GET http://localhost:8080/topics
 GET http://localhost:8080/sessions
 
 ### Add a session
-POST http://localhost:8080/users/1/addSession
+POST http://localhost:8080/users/2/addSession
 Content-Type: application/json
 
 {
+    "date": "4/6/22",
+    "duration": 20,
     "note": "Third eye completely shut."
 }

@@ -1,8 +1,33 @@
+import playAmbient from "./audio.js";
 
-// 10 minutes from now
-var time_in_minutes = 10;
-var current_time = Date.parse(new Date());
-var deadline = new Date(current_time + time_in_minutes*60*1000);
+var timeinterval;
+var paused = false; // is the clock paused?
+var time_left; // time left on the clock when paused
+var time_in_minutes;
+var current_time;
+var deadline;
+
+export default function makeTimer(increment) {
+	time_in_minutes = increment;
+	current_time = Date.parse(new Date());
+	deadline = new Date(current_time + time_in_minutes*60*1000);
+	paused = false;
+	run_clock('clockdiv',deadline);
+
+	pause_clock();
+	const playButton = document.querySelector(".play-button");
+	playButton.addEventListener("click", ()=> {
+		resume_clock();
+		const audioEl = document.querySelector(".audio");
+        audioEl.innerHTML += playAmbient();
+	})
+
+	const pauseButton = document.querySelector(".pause-button");
+	pauseButton.addEventListener("click", ()=> {
+		pause_clock();
+	})
+
+}
 
 
 function time_remaining(endtime){
@@ -14,22 +39,25 @@ function time_remaining(endtime){
 	return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
 }
 
-var timeinterval;
+
 function run_clock(id,endtime){
 	var clock = document.getElementById(id);
 	function update_clock(){
 		var t = time_remaining(endtime);
-		clock.innerHTML = t.minutes + ':' + t.seconds;
+		if(t.seconds < 10) {
+			clock.innerHTML = t.minutes + ':0' + t.seconds;
+		}
+		else {
+			clock.innerHTML = t.minutes + ':' + t.seconds;
+		}
 		if(t.total<=0){ clearInterval(timeinterval); }
 	}
 	update_clock(); // run function once at first to avoid delay
 	timeinterval = setInterval(update_clock,1000);
 }
-run_clock('clockdiv',deadline);
 
 
-var paused = false; // is the clock paused?
-var time_left; // time left on the clock when paused
+
 
 function pause_clock(){
 	if(!paused){
@@ -51,62 +79,3 @@ function resume_clock(){
 	}
 }
 
-// handle pause and resume button clicks
-const playButton = document.querySelector(".play-button");
-playButton.addEventListener("click", ()=> {
-    resume_clock();
-})
-
-const pauseButton = document.querySelector(".pause-button");
-pauseButton.addEventListener("click", ()=> {
-    pause_clock();
-})
-
-// document.getElementById('pause').onclick = pause_clock;
-// document.getElementById('resume').onclick = resume_clock;
-
-
-
-
-
-// function startTimer(duration, display) {
-//     var timer = duration, minutes, seconds;
-//     countdown = setInterval(function () {
-//         minutes = parseInt(timer / 60, 10);
-//         seconds = parseInt(timer % 60, 10);
-
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
-
-//         display.textContent = minutes + ":" + seconds;
-
-//         if (--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// }
-
-// var timeSet = 60 * 5;
-
-// function pauseTimer() {
-//     clearInterval(countdown);
-// }
-
-// const playButton = document.querySelector(".play-button");
-
-// playButton.addEventListener("click", ()=> {
-//     display = document.querySelector('#time');
-//     startTimer(timeSet, display);
-// })
-
-// // window.onload = function () {
-// //     var fiveMinutes = 60 * 5,
-// //         display = document.querySelector('#time');
-// //     startTimer(fiveMinutes, display);
-// // };
-
-// const pauseButton = document.querySelector(".pause-button");
-
-// pauseButton.addEventListener("click", ()=> {
-//     pauseTimer();
-// })

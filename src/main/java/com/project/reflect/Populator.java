@@ -1,15 +1,7 @@
 package com.project.reflect;
 
-import com.project.reflect.Model.Article;
-import com.project.reflect.Model.Book;
-import com.project.reflect.Model.Topic;
-import com.project.reflect.Model.User;
-import com.project.reflect.Repository.ArticleRepository;
-import com.project.reflect.Repository.BookRepository;
-import com.project.reflect.Repository.TopicRepository;
-import com.project.reflect.Model.Session;
-import com.project.reflect.Repository.SessionRepository;
-import com.project.reflect.Repository.UserRepository;
+import com.project.reflect.Model.*;
+import com.project.reflect.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -28,6 +20,8 @@ public class Populator implements CommandLineRunner {
     private ArticleRepository articleRepo;
     @Autowired
     private TopicRepository topicRepo;
+    @Autowired
+    TimerRepository timerRepo;
 
 
     @Override
@@ -38,8 +32,17 @@ public class Populator implements CommandLineRunner {
         User user2 = new User("Ben");
         userRepo.save(user2);
 
-        Session session1 = new Session(LocalDate.now(), 10, 11, "Feeling very zen today.", user1);
+        Timer timer1 = new Timer(5, user1);
+        timerRepo.save(timer1);
+
+        Session session1 = new Session("4/5/22", 10, "Had a hard time clearing my mind this morning.", user1);
         sessionRepo.save(session1);
+        Session session2 = new Session("4/6/22", 20, "My mind was racing this afternoon, but I focused on noticing each thought and letting it go.", user1);
+        sessionRepo.save(session2);
+        Session session3 = new Session("4/7/22", 0, "Just couldn't today, very busy", user1);
+        sessionRepo.save(session3);
+        Session session4 = new Session("4/5/22", 5, "I'm giving this a shot.", user2);
+        sessionRepo.save(session4);
 
         Book book1 = new Book("How to Win Friends and Influence People", "Dale Carnegie");
         bookRepo.save(book1);

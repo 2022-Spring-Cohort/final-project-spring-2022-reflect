@@ -6,9 +6,8 @@ import playAmbient from "./audio.js";
 import categoryView from "./category.js";
 import progressView from "./progress.js";
 import aboutView from "./about.js";
-
-
-
+import makeTimer from "./timer.js";
+import timerSelectView from "./timerSelect.js";
 
 
 const containerEl = document.querySelector(".container");
@@ -108,7 +107,7 @@ function makeHamburgerMenu(user) {
     })
     hamburger.addEventListener("click", toggleMenu);
     meditate.addEventListener("click", () => {
-        makeMeditationView(user);
+        makeTimerSelectView(user);
     });
 
     closeIcon.addEventListener("click", toggleMenu);
@@ -138,7 +137,9 @@ function makeUserView(user) {
     
 }
 
-function makeMeditationView(user) {
+let meditationIncrements = [1, 5, 10, 15, 20, 30]
+
+function makeMeditationView(user, increment) {
 
     
     containerEl.innerHTML = header();
@@ -146,82 +147,51 @@ function makeMeditationView(user) {
 
     makeHamburgerMenu(user);
 
-    // 10 minutes from now
-    var time_in_minutes = 10;
-    var current_time = Date.parse(new Date());
-    var deadline = new Date(current_time + time_in_minutes*60*1000);
+    makeTimer(increment);
 
-
-    function time_remaining(endtime){
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor( (t/1000) % 60 );
-        var minutes = Math.floor( (t/1000/60) % 60 );
-        var hours = Math.floor( (t/(1000*60*60)) % 24 );
-        var days = Math.floor( t/(1000*60*60*24) );
-        return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
-    }
-
-    var timeinterval;
-    function run_clock(id,endtime){
-        var clock = document.getElementById(id);
-        function update_clock(){
-            var t = time_remaining(endtime);
-            clock.innerHTML = t.minutes + ':' + t.seconds;
-            if(t.total<=0){ clearInterval(timeinterval); }
-        }
-        update_clock(); // run function once at first to avoid delay
-        timeinterval = setInterval(update_clock,1000);
-    }
-    run_clock('clockdiv',deadline);
-
-
-    var paused = false; // is the clock paused?
-    var time_left; // time left on the clock when paused
-
-    function pause_clock(){
-        if(!paused){
-            paused = true;
-            clearInterval(timeinterval); // stop the clock
-            time_left = time_remaining(deadline).total; // preserve remaining time
-        }
-    }
-
-    pause_clock();
-
-    function resume_clock(){
-        if(paused){
-            paused = false;
-
-            // update the deadline to preserve the amount of time remaining
-            deadline = new Date(Date.parse(new Date()) + time_left);
-
-            // start the clock
-            run_clock('clockdiv',deadline);
-        }
-    }
-
-    // handle pause and resume button clicks
-    const playButton = document.querySelector(".play-button");
-    playButton.addEventListener("click", ()=> {
-        resume_clock();
-        const audioEl = document.querySelector(".audio");
-        audioEl.innerHTML += playAmbient();
+    const endButton = document.querySelector(".end-button");
+    endButton.addEventListener("click", () => {
+        makeProgressView(user);
     })
-
-    const pauseButton = document.querySelector(".pause-button");
-    pauseButton.addEventListener("click", ()=> {
-        pause_clock();
-    })
-
-
     
 }
 
 function makeProgressView(user) {
+
+
+
     containerEl.innerHTML = header();
-    containerEl.innerHTML += progressView();
+    containerEl.innerHTML += progressView(user);
 
     makeHamburgerMenu(user);
+    makeProgressChart(user);
+
+    const sessionDateInput = containerEl.querySelector(".sessionDateInput");
+    const sessionDurationInput = containerEl.querySelector(".sessionDurationInput");
+    const sessionNoteInput = containerEl.querySelector(".sessionNoteInput");
+    const addSessionBtn = containerEl.querySelector(".addSessionButton");
+    addSessionBtn.addEventListener("click", () => {
+        const newSessionJson = {
+            date: sessionDateInput.value,
+            duration: sessionDurationInput.value,
+            note: sessionNoteInput.value
+        }
+
+        fetch(`http://localhost:8080/users/${user.id}/addSession`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newSessionJson),
+        })
+        .then((res) => res.json())
+        .then((user) => {
+            makeProgressView(user);
+        })
+    })
+
+
+
 }
 
 function makeCategoriesView(user){
@@ -242,5 +212,35 @@ function makeAboutView(user) {
     makeHamburgerMenu(user);
 }
 
+function makeTimerSelectView(user) {
+    containerEl.innerHTML = header();
+    containerEl.innerHTML += timerSelectView(meditationIncrements);
 
+    makeHamburgerMenu(user);
+
+    const incrementChoices = document.querySelectorAll(".increment-container")
+    incrementChoices.forEach(increment => {
+        increment.addEventListener("click", ()=> {
+            const incrementID = increment.querySelector(".increment-id");
+            makeMeditationView(user, incrementID.value)
+        })
+    })
+    
+}
+
+function makeProgressChart(user) {
+    console.log(user);
+    let myChart = document.getElementById('myChart').getContext('2d');
+    let progressChart = new Chart(myChart, {
+      type:'line',
+      data:{
+        labels:['Day1', 'Day2', 'Day3', 'Day4', 'Day5'],
+        datasets:[{
+          label:'Meditation Minutes',
+          data:[10, 15, 25, 5, 30]
+        }]
+      },
+      options:{}
+    });
+}
 
