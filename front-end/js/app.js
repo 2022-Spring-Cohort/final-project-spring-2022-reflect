@@ -164,6 +164,31 @@ function makeProgressView(user) {
     containerEl.innerHTML += progressView(user);
 
     makeHamburgerMenu(user);
+
+    const sessionDateInput = containerEl.querySelector(".sessionDateInput");
+    const sessionDurationInput = containerEl.querySelector(".sessionDurationInput");
+    const sessionNoteInput = containerEl.querySelector(".sessionNoteInput");
+    const addSessionBtn = containerEl.querySelector(".addSessionButton");
+    addSessionBtn.addEventListener("click", () => {
+        const newSessionJson = {
+            date: sessionDateInput.value,
+            duration: sessionDurationInput.value,
+            note: sessionNoteInput.value
+        }
+
+        fetch(`http://localhost:8080/users/${user.id}/addSession`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newSessionJson),
+        })
+        .then((res) => res.json())
+        .then((user) => {
+            makeProgressView(user);
+        })
+    })
+
 }
 
 function makeCategoriesView(user){
