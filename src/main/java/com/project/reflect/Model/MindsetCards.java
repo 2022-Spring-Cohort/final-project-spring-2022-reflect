@@ -1,3 +1,4 @@
+
 package com.project.reflect.Model;
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -52,3 +53,4 @@ public class MindsetCards {
         return back;
     }
 }
+
