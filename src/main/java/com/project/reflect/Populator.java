@@ -7,6 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -22,6 +25,8 @@ public class Populator implements CommandLineRunner {
     private TopicRepository topicRepo;
     @Autowired
     TimerRepository timerRepo;
+    @Autowired
+    private MindsetCardsRepository mindsetCardsRepo;
 
 
     @Override
@@ -107,6 +112,15 @@ public class Populator implements CommandLineRunner {
                 "https://www.headspace.com/articles/how-to-be-more-empathetic", topicMindset);
         articleRepo.save(article9);
 
+
+        ArrayList<String> list= new ArrayList<>();
+        list.add("words");
+        list.add("more words");
+
+
+MindsetCards mindsetCard = new MindsetCards(user2,"front", String.valueOf(list));
+
+mindsetCardsRepo.save(mindsetCard);
 
 
 
