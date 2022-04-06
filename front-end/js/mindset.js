@@ -1,7 +1,11 @@
-const card = document.querySelector(".card__inner");
+const cards = document.querySelectorAll(".card__inner");
 
+cards.forEach(card => {
 card.addEventListener("click", function () {
   card.classList.toggle("is-flipped");
+  console.log("ok")
+})
+
 });
 
 const test = document.querySelector(".fortest");
