@@ -1,25 +1,52 @@
 package com.project.reflect.Model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Article {
     @Id
     @GeneratedValue
+    private Long id;
     private String author;
     private String content;
     private String title;
+    private String picture;
+    private String link;
+
+    @ManyToOne
+   private Topic topic;
+
 
     public Article(){
 
     }
 
-    public Article(String author, String content, String title){
+    public Article(String title, String author, String picture, String content, String link, Topic topic){
         this.author = author;
-        this.content = content;
         this.title = title;
+        this.content = content;
+        this.picture = picture;
+        this.link = link;
+        this.topic = topic;
+
+
+    }
+    public String getPicture() {
+        return picture;
     }
 
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
     public String getAuthor() {
         return author;
     }

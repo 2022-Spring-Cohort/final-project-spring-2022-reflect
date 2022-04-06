@@ -12,5 +12,8 @@ export default function userView(users) {
     }).join("")
     }
     </section>
+    <section class="new-user">
+    <input type="text" class="newUser-name" placeholder="Name">
+    <button class="newUser-button">Create New User</button>
     `
 }

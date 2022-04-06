@@ -1,55 +1,77 @@
 package com.project.reflect.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 public class Session {
     @Id
     @GeneratedValue
     private Long id;
-    private String date;
-    private String time;
+
+    private LocalDate date;
+    private int startTime;
+    private int endTime;
+    private String note;
+
 
     @ManyToOne
+    @JsonIgnore
     private User user;
-
-    @ElementCollection
-    private Collection<Comments> comments;
 
     public Session() {
     }
 
-    public Session(Long id, String date, String time) {
-        this.id = id;
+    public Session(LocalDate date, int startTime, int endTime, String note, User user) {
         this.date = date;
-        this.time = time;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.note = note;
+        this.user = user;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public String getTime() {
-        return time;
+    public int getStartTime() {
+        return startTime;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public int getEndTime() {
+        return endTime;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public String getNote() {
+        return note;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public User getUser() {
+        return user;
     }
-    public  Collection<Comments> getComments(){
-        return comments;
-    }
+
+    public void setUser(User user) {this.user = user;}
+
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public void setDate(String date) {
+//        this.date = date;
+//    }
+//
+//    public void setTime(String time) {
+//        this.time = time;
+//    }
+//    public  Collection<Comments> getComments(){
+//        return comments;
+//    }
 }
