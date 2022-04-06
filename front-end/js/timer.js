@@ -1,3 +1,4 @@
+import playAmbient from "./audio.js";
 
 var timeinterval;
 var paused = false; // is the clock paused?
@@ -17,6 +18,8 @@ export default function makeTimer(increment) {
 	const playButton = document.querySelector(".play-button");
 	playButton.addEventListener("click", ()=> {
 		resume_clock();
+		const audioEl = document.querySelector(".audio");
+        audioEl.innerHTML += playAmbient();
 	})
 
 	const pauseButton = document.querySelector(".pause-button");
