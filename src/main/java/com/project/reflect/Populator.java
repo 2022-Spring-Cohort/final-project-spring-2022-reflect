@@ -35,8 +35,14 @@ public class Populator implements CommandLineRunner {
         Timer timer1 = new Timer(5, user1);
         timerRepo.save(timer1);
 
-        Session session1 = new Session(LocalDate.now(), 10, 11, "Feeling very zen today.", user1);
+        Session session1 = new Session("4/5/22", 10, "Had a hard time clearing my mind this morning.", user1);
         sessionRepo.save(session1);
+        Session session2 = new Session("4/6/22", 20, "My mind was racing this afternoon, but I focused on noticing each thought and letting it go.", user1);
+        sessionRepo.save(session2);
+        Session session3 = new Session("4/7/22", 0, "Just couldn't today, very busy", user1);
+        sessionRepo.save(session3);
+        Session session4 = new Session("4/5/22", 5, "I'm giving this a shot.", user2);
+        sessionRepo.save(session4);
 
         Book book1 = new Book("How to Win Friends and Influence People", "Dale Carnegie");
         bookRepo.save(book1);
