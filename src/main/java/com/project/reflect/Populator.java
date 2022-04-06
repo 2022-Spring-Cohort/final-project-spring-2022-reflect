@@ -113,14 +113,42 @@ public class Populator implements CommandLineRunner {
         articleRepo.save(article9);
 
 
-        ArrayList<String> list= new ArrayList<>();
-        list.add("words");
-        list.add("more words");
+        ArrayList<String> list1= new ArrayList<>();
 
 
-MindsetCards mindsetCard = new MindsetCards(user2,"front", String.valueOf(list));
 
-mindsetCardsRepo.save(mindsetCard);
+
+        list1.add("words");
+        list1.add("more words");
+        MindsetCards mindsetCard1 = new MindsetCards(user1,"They won't have donuts in the afterlife", String.valueOf(list1));
+mindsetCardsRepo.save(mindsetCard1);
+
+
+
+
+        ArrayList<String> list2= new ArrayList<>();
+
+
+
+        list2.add("Go to store");
+        list2.add("Bleh");
+        MindsetCards mindsetCard2 = new MindsetCards(user2,"I want food", String.valueOf(list2));
+        mindsetCardsRepo.save(mindsetCard2);
+
+
+        ArrayList<String> list3= new ArrayList<>();
+
+
+        list3.add("Phrase of affirmation");
+        list3.add("Ego fulfilling statement goes here");
+
+        MindsetCards mindsetCard3 = new MindsetCards(user1,"Enter anything", String.valueOf(list3));
+
+
+        mindsetCardsRepo.save(mindsetCard3);
+
+
+
 
 
 
