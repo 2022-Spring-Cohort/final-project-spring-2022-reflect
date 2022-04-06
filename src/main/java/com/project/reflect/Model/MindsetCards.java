@@ -8,8 +8,15 @@ import java.util.Set;
 public class MindsetCards {
     @Id
     @GeneratedValue
+    private Long id;
+
+    @ManyToOne
+    private User user;
+
     private String front;
-    private Collection<String> back;
+
+    @ElementCollection
+    private Collection <String> back;
 
     /*TODO
     *
@@ -21,23 +28,27 @@ public class MindsetCards {
      *
      * Add a cards to the populator
      * */
-    @ManyToOne
-    private User user;
+
 
 
     public MindsetCards() {
     }
 
-    public MindsetCards(String front, Set<String> back) {
+    public MindsetCards(User user, String front, Collection<String> back) {
+        this.user = user;
         this.front = front;
         this.back = back;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public String getFront() {
         return front;
     }
 
-    public Iterable <String> getBack() {
+    public Collection<String> getBack() {
         return back;
     }
 }

@@ -17,6 +17,8 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Session> sessions;
 
+
+
     public User(String name) {
         this.name = name;
     }
