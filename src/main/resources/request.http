@@ -27,6 +27,7 @@ GET http://localhost:8080/books/1
 
 ### Get topics
 GET http://localhost:8080/topics
+
 ### Get sessions
 GET http://localhost:8080/sessions
 
