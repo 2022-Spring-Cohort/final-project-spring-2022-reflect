@@ -149,13 +149,19 @@ function makeMeditationView(user, increment) {
 
     makeTimer(increment);
 
-
+    const endButton = document.querySelector(".end-button");
+    endButton.addEventListener("click", () => {
+        makeProgressView(user);
+    })
     
 }
 
 function makeProgressView(user) {
+
+
+
     containerEl.innerHTML = header();
-    containerEl.innerHTML += progressView();
+    containerEl.innerHTML += progressView(user);
 
     makeHamburgerMenu(user);
 }
