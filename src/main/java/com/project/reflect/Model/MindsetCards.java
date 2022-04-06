@@ -38,7 +38,7 @@ public class MindsetCards {
     public MindsetCards(User user, String front, Collection<String> back) {
         this.user = user;
         this.front = front;
-        this.back = back;
+        this.back = new ArrayList<>();
     }
 
     public User getUser() {
