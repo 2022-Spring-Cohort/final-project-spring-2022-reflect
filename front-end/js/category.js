@@ -20,14 +20,8 @@ export default function categoryView(){
              <h2 class="topic">Focus</h2>
            </div>
            <div class="topic-header">
-             <h2 class="topic">Stress</h2>
-           </div>
-           <div class="topic-header">
-             <h2 class="topic">Inner peace</h2>
-           </div>
-           <div class="topic-header">
-             <h2 class="topic">Mindfulness</h2>
-           </div>
+             <h2 class="topic">Work</h2>
+           </div>  
      </div>
    
    `
