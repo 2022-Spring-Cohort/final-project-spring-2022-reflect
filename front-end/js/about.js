@@ -46,6 +46,32 @@ export default function aboutView(user) {
             </div>
           </div>
         </section>
+        <a text-align="center" id="toggle" class="contact-button">CONTACT US</a>
+        <div id="abc">
+        <div id="popupContact">
+            <!-- Contact Us Form -->
+            <form id="contact-form" method="put">
+                <img id="close" src="/resources/images/x.png">
+                <img id="form-logo" src="/resources/images/Logo White with slogan@3x.png">
+                <h4>Name:</h4>
+                <input type="text" style="height:35px;" id="name-input" placeholder="Enter name here…" class="form-control"
+                    style="width:100%;" /><br />
+                <h4>Phone:</h4>
+                <input type="phone" style="height:35px;" id="phone-input" placeholder="Enter phone number" class="form-control"
+                    style="width:100%;" /><br />
+                <h4>Email:</h4>
+                <input type="email" style="height:35px;" id="email-input" placeholder="Enter email here…" class="form-control"
+                    style="width:100%;" /><br />
+                <h4>Additional Notes:</h4>
+                <textarea id="notes-input" rows="3" placeholder="Enter your message…" class="form-control"
+                    style="width:100%;"></textarea><br />
+            
+                <button type="button" onClick="submitToAPI(event)" class="submit-API-button" style="margin-top:20px;">Submit</button>
+            </form>
+            <model-viewer id="reveal" shadow-intensity="1" src="/src/resources/Medlogo.glb" alt="A 3D model of an astronaut"
+                        auto-rotate camera-controls poster="/src/resources/images/White-Logo-Icon@3x.png"></model-viewer>
+        </div>
+    </div>
       </div>
     </div>
     `

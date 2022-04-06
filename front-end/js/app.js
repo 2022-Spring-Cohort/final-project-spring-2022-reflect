@@ -243,6 +243,37 @@ function makeAboutView(user) {
     containerEl.innerHTML += aboutView();
 
     makeHamburgerMenu(user);
+
+    const closeBtn = document.getElementById('close');
+    const targetDiv = document.getElementById('abc');
+    const btn = document.getElementById('toggle');
+    btn.onclick = function () {
+        btn.disabled = true;
+        if (targetDiv.style.display !== "none") {
+            targetDiv.style.display = "block";
+            document.getElementById('toggle')
+        } else {
+            targetDiv.style.display = "none";
+
+        }
+
+    };
+    const btn2 = document.getElementById('toggle2');
+
+    btn2.onclick = function () {
+        btn2.disable = true;
+        if (targetDiv.style.display !== "none") {
+            targetDiv.style.display = "block";
+        } else {
+            targetDiv.style.display = "none";
+        }
+    };
+
+
+
+    closeBtn.onclick = function () {
+        document.getElementById("abc").style.display = "none";
+    }
 }
 
 function makeTimerSelectView(user) {
