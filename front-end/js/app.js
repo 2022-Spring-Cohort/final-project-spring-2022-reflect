@@ -263,7 +263,7 @@ function makeProgressChart(user) {
       data:{
         labels: days,
         datasets:[{
-          label:'Meditation minutes',
+          label:'Meditation Minutes',
           data: minutes
         }]
       },
