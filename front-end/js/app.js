@@ -250,22 +250,6 @@ function makeTimerSelectView(user) {
     
 }
 
-// function makeProgressChart(user) {
-//     console.log(user);
-//     let myChart = document.getElementById('myChart').getContext('2d');
-//     let progressChart = new Chart(myChart, {
-//       type:'line',
-//       data:{
-//         labels:['Day1', 'Day2', 'Day3', 'Day4', 'Day5'],
-//         datasets:[{
-//           label:'Meditation Minutes',
-//           data:[10, 15, 25, 5, 30]
-//         }]
-//       },
-//       options:{}
-//     });
-// }
-
 function makeProgressChart(user) {
     console.log(user);
 
