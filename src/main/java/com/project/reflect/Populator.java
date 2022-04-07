@@ -7,6 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -22,6 +25,8 @@ public class Populator implements CommandLineRunner {
     private TopicRepository topicRepo;
     @Autowired
     TimerRepository timerRepo;
+    @Autowired
+    private MindsetCardsRepository mindsetCardsRepo;
 
 
     @Override
@@ -112,6 +117,70 @@ public class Populator implements CommandLineRunner {
                 "When we are able to stand in another person’s shoes and see life from their point of view — a situation, a belief, a struggle — we are then better equipped to connect, without reactivity, on a human level...",
                 "https://www.headspace.com/articles/how-to-be-more-empathetic", topicMindset);
         articleRepo.save(article9);
+
+
+        ArrayList<String> list1= new ArrayList<>();
+
+
+
+
+        list1.add("why details 1");
+        list1.add("why details 2");
+        MindsetCards mindsetCard1 = new MindsetCardsWhy(user1,"why1", String.valueOf(list1));
+mindsetCardsRepo.save(mindsetCard1);
+
+
+
+
+        ArrayList<String> list2= new ArrayList<>();
+
+
+
+        list2.add("why details 3");
+        list2.add("why details 4");
+        MindsetCards mindsetCard2 = new MindsetCardsWhy(user2,"why2", String.valueOf(list2));
+        mindsetCardsRepo.save(mindsetCard2);
+
+
+        ArrayList<String> list3= new ArrayList<>();
+
+
+        list3.add("why details 5");
+        list3.add("why details 6");
+
+        MindsetCards mindsetCard3 = new MindsetCardsWhy(user1,"why3", String.valueOf(list3));
+
+
+        mindsetCardsRepo.save(mindsetCard3);
+
+
+
+        ArrayList<String> list4= new ArrayList<>();
+
+
+        list4.add("win details 1");
+        list4.add("win details 2");
+
+        MindsetCards mindsetCard4 = new MindsetCardsWins(user1,"win1", String.valueOf(list4));
+
+
+        mindsetCardsRepo.save(mindsetCard4);
+
+
+
+
+        ArrayList<String> list5= new ArrayList<>();
+
+
+        list5.add("win details 3");
+        list5.add("win details 4");
+
+        MindsetCards mindsetCard5 = new MindsetCardsWins(user2,"win2", String.valueOf(list5));
+
+
+        mindsetCardsRepo.save(mindsetCard5);
+
+
 
 
 
