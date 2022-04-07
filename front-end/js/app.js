@@ -8,6 +8,7 @@ import progressView from "./progress.js";
 import aboutView from "./about.js";
 import makeTimer from "./timer.js";
 import timerSelectView from "./timerSelect.js";
+import mindsetView from "./mindsetView";
 
 const containerEl = document.querySelector(".container");
 
@@ -239,6 +240,18 @@ function makeTimerSelectView(user) {
   });
 }
 
-function makeMindsetView(user) {
-  containerEl.inn;
+const mindsetCardContainer = document.querySelector(".card-container");
+
+function makeMindsetView() {
+  fetch(`http://localhost:8080/mindset`)
+    .then((res) => res.json())
+    .then((mindsetCards) => {
+      mindsetCardContainer.innerHTML = mindsetView();
+
+      const cardsEl = mindsetCardContainer.querySelectorAll(".card-contianer");
+
+      cardsEl.forEach((mindsetCard) => {
+        let mindsetCardEl = mindsetCardContainer.querySelector("");
+      });
+    });
 }

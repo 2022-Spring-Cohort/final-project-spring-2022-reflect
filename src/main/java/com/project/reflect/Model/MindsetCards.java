@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Set;
 
 @Entity
-public class MindsetCards {
+public abstract class MindsetCards {
     @Id
     @GeneratedValue
     private Long id;
@@ -59,6 +59,11 @@ public class MindsetCards {
 
     public void updateFront(String newFront){
         front = newFront;
+    }
+
+
+    public void updateBack(String newBack){
+        back.add(newBack);
     }
 
     /*TODO

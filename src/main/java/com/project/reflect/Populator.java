@@ -120,7 +120,7 @@ public class Populator implements CommandLineRunner {
 
         list1.add("words");
         list1.add("more words");
-        MindsetCards mindsetCard1 = new MindsetCards(user1,"They won't have donuts in the afterlife", String.valueOf(list1));
+        MindsetCards mindsetCard1 = new MindsetCardsWhy(user1,"They won't have donuts in the afterlife", String.valueOf(list1));
 mindsetCardsRepo.save(mindsetCard1);
 
 
@@ -132,7 +132,7 @@ mindsetCardsRepo.save(mindsetCard1);
 
         list2.add("Go to store");
         list2.add("Bleh");
-        MindsetCards mindsetCard2 = new MindsetCards(user2,"I want food", String.valueOf(list2));
+        MindsetCards mindsetCard2 = new MindsetCardsWhy(user2,"I want food", String.valueOf(list2));
         mindsetCardsRepo.save(mindsetCard2);
 
 
@@ -142,7 +142,7 @@ mindsetCardsRepo.save(mindsetCard1);
         list3.add("Phrase of affirmation");
         list3.add("Ego fulfilling statement goes here");
 
-        MindsetCards mindsetCard3 = new MindsetCards(user1,"Enter anything", String.valueOf(list3));
+        MindsetCards mindsetCard3 = new MindsetCardsWhy(user1,"Enter anything", String.valueOf(list3));
 
 
         mindsetCardsRepo.save(mindsetCard3);

@@ -1,8 +1,5 @@
 package com.project.reflect.Controller;
-import com.project.reflect.Model.Comments;
-import com.project.reflect.Model.MindsetCards;
-import com.project.reflect.Model.Session;
-import com.project.reflect.Model.User;
+import com.project.reflect.Model.*;
 import com.project.reflect.Repository.MindsetCardsRepository;
 import com.project.reflect.Repository.SessionRepository;
 import com.project.reflect.Repository.UserRepository;
