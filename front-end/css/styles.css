@@ -170,6 +170,29 @@ video {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+.topic-header {
+    max-width: 100%;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align: center;
+  }
+  
+  .article {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+  }
+  
+  .article img {
+    max-width: 100%;
+  }
+
 .footer {
     /* border-style: dashed; */
     text-align: center;
@@ -333,6 +356,31 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+  }
+
+  .list-choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .list-choice-title {
+        padding: 2vh;
+        /* border-style: dashed; */
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        margin: 1vh;
+        max-width: 50%;
+  }
+
+  .increment-container {
+    text-align: center;
+    width: 88vw;
     padding: 2vh;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
