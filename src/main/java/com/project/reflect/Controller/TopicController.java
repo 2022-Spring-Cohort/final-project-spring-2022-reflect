@@ -16,9 +16,9 @@ public class TopicController {
    @GetMapping("/topics")
    public Iterable<Topic> getTopic() { return topicRepo.findAll(); }
 
-   @GetMapping("/topics/{id}")
-   public Topic getTopic(@PathVariable long id){
-        return topicRepo.findById(id).get();
+   @GetMapping("/topics/{name}")
+   public Topic getTopic(@PathVariable String name){
+        return topicRepo.findByName(name);
    }
 
 }
