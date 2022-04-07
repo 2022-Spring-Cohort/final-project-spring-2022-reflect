@@ -8,6 +8,7 @@ import progressView from "./progress.js";
 import aboutView from "./about.js";
 import makeTimer from "./timer.js";
 import timerSelectView from "./timerSelect.js";
+import topicView from "./topicView.js";
 
 
 const containerEl = document.querySelector(".container");
@@ -201,8 +202,29 @@ function makeCategoriesView(user){
 
     makeHamburgerMenu(user);
 
+    const topicEl = document.querySelectorAll(".topic-header");
+
+    topicEl.forEach(topic => {
+        let topicIdEl = topic.querySelector(".topic-value");
+        let topich2 = topic.querySelector(".topic");
+        topich2.addEventListener("click", () => {
+            fetch(`http://localhost:8080/topics/${topicIdEl.value}`)
+        .then(res => res.json())
+        .then(topic => {
+            makeTopicView(user,topic);
+        })
+        })
+    })
 
 
+
+}
+
+function makeTopicView(user,topic) {
+    containerEl.innerHTML = header();
+    containerEl.innerHTML += topicView(topic);
+
+    makeHamburgerMenu(user);
 }
 
 function makeAboutView(user) {

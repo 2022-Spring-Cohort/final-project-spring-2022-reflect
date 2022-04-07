@@ -4,5 +4,7 @@
 //
 //public interface MindsetCardsRepository extends CrudRepository<MindsetCards, Long> {
 //}
+
+
 //
 //
