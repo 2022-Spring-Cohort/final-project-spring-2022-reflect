@@ -1,8 +1,8 @@
-export default function mindset(mindsetCard) {
-  return ` 
-
+export default function mindsetWhy(mindsetCard) {
+  return `
   
-  <div class = "card-container">
+  
+  <div class = "wins-card-container">
   <div class="card">
   <div class="card__inner">
   <input id="id" type="hidden" name="id" value="${mindsetCard.id}">
@@ -16,10 +16,10 @@ export default function mindset(mindsetCard) {
           <img src="./images/fillerphoto.jpg" class="pp" />
           <h2>Discomfort is a milestone to growth</h2>
         </div>
-
+  
         <div class="card__body">
           <h3>Reasons that thought is not true</h3>
-
+  
           <ul>
           ${mindsetCard.back
             .map((backOfCard) => {
@@ -37,6 +37,7 @@ export default function mindset(mindsetCard) {
       </div>
     </div>
   </div>
-</div>
-</div>`;
+  </div>
+  </div>
+  `;
 }

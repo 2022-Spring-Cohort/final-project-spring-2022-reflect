@@ -118,9 +118,9 @@ public class Populator implements CommandLineRunner {
 
 
 
-        list1.add("words");
-        list1.add("more words");
-        MindsetCards mindsetCard1 = new MindsetCardsWhy(user1,"They won't have donuts in the afterlife", String.valueOf(list1));
+        list1.add("why details 1");
+        list1.add("why details 2");
+        MindsetCards mindsetCard1 = new MindsetCardsWhy(user1,"why1", String.valueOf(list1));
 mindsetCardsRepo.save(mindsetCard1);
 
 
@@ -130,22 +130,49 @@ mindsetCardsRepo.save(mindsetCard1);
 
 
 
-        list2.add("Go to store");
-        list2.add("Bleh");
-        MindsetCards mindsetCard2 = new MindsetCardsWhy(user2,"I want food", String.valueOf(list2));
+        list2.add("why details 3");
+        list2.add("why details 4");
+        MindsetCards mindsetCard2 = new MindsetCardsWhy(user2,"why2", String.valueOf(list2));
         mindsetCardsRepo.save(mindsetCard2);
 
 
         ArrayList<String> list3= new ArrayList<>();
 
 
-        list3.add("Phrase of affirmation");
-        list3.add("Ego fulfilling statement goes here");
+        list3.add("why details 5");
+        list3.add("why details 6");
 
-        MindsetCards mindsetCard3 = new MindsetCardsWhy(user1,"Enter anything", String.valueOf(list3));
+        MindsetCards mindsetCard3 = new MindsetCardsWhy(user1,"why3", String.valueOf(list3));
 
 
         mindsetCardsRepo.save(mindsetCard3);
+
+
+
+        ArrayList<String> list4= new ArrayList<>();
+
+
+        list4.add("win details 1");
+        list4.add("win details 2");
+
+        MindsetCards mindsetCard4 = new MindsetCardsWins(user1,"win1", String.valueOf(list4));
+
+
+        mindsetCardsRepo.save(mindsetCard4);
+
+
+
+
+        ArrayList<String> list5= new ArrayList<>();
+
+
+        list5.add("win details 3");
+        list5.add("win details 4");
+
+        MindsetCards mindsetCard5 = new MindsetCardsWins(user2,"win2", String.valueOf(list5));
+
+
+        mindsetCardsRepo.save(mindsetCard5);
 
 
 

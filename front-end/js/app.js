@@ -251,7 +251,7 @@ function makeMindsetView() {
       const cardsEl = mindsetCardContainer.querySelectorAll(".card-contianer");
 
       cardsEl.forEach((mindsetCard) => {
-        let mindsetCardEl = mindsetCardContainer.querySelector("");
+        let mindsetCardIdEl = mindsetCardContainer.querySelector("");
       });
     });
 }

@@ -66,8 +66,5 @@ public abstract class MindsetCards {
         back.add(newBack);
     }
 
-    /*TODO
-    *
-    * Add a method to update the back of the cards*/
 }
 
