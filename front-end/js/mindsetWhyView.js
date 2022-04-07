@@ -1,9 +1,9 @@
-export default function mindsetWhy(mindsetCards) {
+export default function mindsetWhy(mindsetCardsWhy) {
   return `
 
   <div class = "wins-card-container">
   <ul>
-  ${mindsetCards
+  ${mindsetCardsWhy
     .map((mindsetCardWhy) => {
       return `
   <div class="card">
@@ -47,5 +47,19 @@ export default function mindsetWhy(mindsetCards) {
     })
     .join("")}
   </div>
+
+
+
+  <div class="card-input">
+  <h2 class="new-card">Add A New Card</h2>
+  
+  <input type="text" class="card-front-input" placeholder="Front of Card" />
+  <input type="text" class="card-back-input" placeholder="Back of Card" />
+  <input type="text" class="card-image-input" placeholder="Enter image file" />
+  
+  
+  <button class="add-new-card-button">Add Card</button>
+  
+</div>    
   `;
 }

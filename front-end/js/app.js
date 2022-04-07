@@ -8,7 +8,7 @@ import progressView from "./progress.js";
 import aboutView from "./about.js";
 import makeTimer from "./timer.js";
 import timerSelectView from "./timerSelect.js";
-import mindsetView from "./mindsetView";
+import mindsetView from "./mindsetWhyView";
 
 const containerEl = document.querySelector(".container");
 
@@ -248,7 +248,7 @@ function makeMindsetView() {
     .then((mindsetCards) => {
       mindsetCardContainer.innerHTML = mindsetView();
 
-      const cardsEl = mindsetCardContainer.querySelectorAll(".card-contianer");
+      const cardsEl = mindsetCardContainer.querySelectorAll(".card-container");
 
       cardsEl.forEach((mindsetCard) => {
         let mindsetCardIdEl = mindsetCardContainer.querySelector("");
