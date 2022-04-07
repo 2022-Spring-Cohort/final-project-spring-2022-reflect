@@ -9,7 +9,7 @@ import aboutView from "./about.js";
 import makeTimer from "./timer.js";
 import timerSelectView from "./timerSelect.js";
 
-import mindsetView from "./mindsetWhyView";
+import mindsetView from "./mindsetWhyView.js";
 
 import topicView from "./topicView.js";
 
