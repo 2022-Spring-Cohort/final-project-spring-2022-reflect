@@ -22,11 +22,11 @@
 
 @font-face {
     font-family: Nunito;
-    src: url('/fonts/Nunito-VariableFont_wght.ttf');
+    src: url('/resources/fonts/Nunito-VariableFont_wght.ttf');
 }
 @font-face {
     font-family: Aspira-Regular;
-    src: url('/fonts/Aspira-Regular.otf');
+    src: url('/resources/fonts/Aspira-Regular.otf');
 }
 
 /* body {
@@ -527,3 +527,4 @@ border: 1px solid black;
     width: 160px;
     height: 120px;
     transition: all 0.5s ease-in-out;
+}
