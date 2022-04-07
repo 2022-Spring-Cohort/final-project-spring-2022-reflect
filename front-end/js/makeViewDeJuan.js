@@ -1,4 +1,4 @@
-import mindset from "./js/mindset-view";
+import mindset from "/js/mindset-view";
 
 const test = document.querySelector(".growth__card");
 

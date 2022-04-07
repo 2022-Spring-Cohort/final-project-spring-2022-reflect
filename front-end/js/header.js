@@ -15,9 +15,10 @@ export default function header() {
                     <li class="meditate"><a href="#" class="nav-links">Meditate</a></li>
                     <li class="progressLink"><a href="#" class="nav-links">Progress</a></li>
                     <li class="categories"><a href="#" class="nav-links">Categories</a></li>
-                    <li><img class="x-icon" src="./images/close-icon.png"></li>
+                    <li class="categories"><a href="#" class="nav-links">Resources</a></li>
+                    <li><img class="x-icon" src="/resources/images/close-icon.png"></li>
                 </ul>
-                <img src="./images/ham-menu-icon.png" class="hamburger">
+                <img src="/resources/images/ham-menu-icon.png" class="hamburger">
                 <i src="menu-icon material-icon" class="menu-icon">
                 <i src="close-icon material-icon" class="close-icon">
             </nav>
