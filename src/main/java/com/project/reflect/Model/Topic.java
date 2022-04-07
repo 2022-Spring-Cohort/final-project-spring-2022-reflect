@@ -30,7 +30,9 @@ public class Topic {
         return id;
     }
 
-    public String getName(){ return name; }
+    public String getName(){
+        return name;
+    }
 
     public Collection<Article> getArticles(){
         return articles;
