@@ -7,12 +7,13 @@ import java.util.Collection;
 
 @Entity
 public class MindsetCardsWhy extends MindsetCards {
-  
+
 
     public MindsetCardsWhy() {
     }
 
-    public MindsetCardsWhy(User user, String front, String... back) {
-        super(user, front, back);
+    public MindsetCardsWhy(User user, String photo, String front, String... back) {
+        super(user, photo, front, back);
     }
+
 }

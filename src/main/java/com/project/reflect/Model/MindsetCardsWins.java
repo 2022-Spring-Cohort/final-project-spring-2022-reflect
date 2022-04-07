@@ -13,7 +13,8 @@ public class MindsetCardsWins extends MindsetCards{
     public MindsetCardsWins() {
     }
 
-    public MindsetCardsWins(User user, String front, String... back) {
-        super(user, front, back);
+    public MindsetCardsWins(User user, String photo, String front, String... back) {
+        super(user, photo, front, back);
     }
+
 }

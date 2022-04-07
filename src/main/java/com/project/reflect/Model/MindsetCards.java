@@ -16,6 +16,7 @@ public abstract class MindsetCards {
     private String front;
     @ElementCollection
     private Collection <String> back;
+    private String photo = "./images/fillerphoto.jpg";
 
 
     @ManyToOne
@@ -26,10 +27,11 @@ public abstract class MindsetCards {
     public MindsetCards() {
     }
 
-    public MindsetCards(User user, String front, String ... back) {
+    public MindsetCards(User user, String photo, String front, String ... back) {
         this.user = user;
         this.front = front;
         this.back = Arrays.asList(back);
+        this.photo=photo;
     }
 
 
@@ -64,6 +66,10 @@ public abstract class MindsetCards {
 
     public void updateBack(String newBack){
         back.add(newBack);
+    }
+
+    public void updatePhoto(String newPhoto){
+        this.photo=newPhoto;
     }
 
 }
