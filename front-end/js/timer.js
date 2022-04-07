@@ -44,12 +44,7 @@ function run_clock(id,endtime){
 	var clock = document.getElementById(id);
 	function update_clock(){
 		var t = time_remaining(endtime);
-		if(t.seconds < 10) {
-			clock.innerHTML = t.minutes + ':0' + t.seconds;
-		}
-		else {
-			clock.innerHTML = t.minutes + ':' + t.seconds;
-		}
+		clock.innerHTML = t.minutes + ':' + t.seconds;
 		if(t.total<=0){ clearInterval(timeinterval); }
 	}
 	update_clock(); // run function once at first to avoid delay

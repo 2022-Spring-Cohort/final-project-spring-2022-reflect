@@ -13,8 +13,9 @@ public class Session {
     @GeneratedValue
     private Long id;
 
-    private String date;
-    private int duration;
+    private LocalDate date;
+    private int startTime;
+    private int endTime;
     private String note;
 
 
@@ -25,9 +26,10 @@ public class Session {
     public Session() {
     }
 
-    public Session(String date, int duration, String note, User user) {
+    public Session(LocalDate date, int startTime, int endTime, String note, User user) {
         this.date = date;
-        this.duration = duration;
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.note = note;
         this.user = user;
     }
@@ -36,14 +38,17 @@ public class Session {
         return id;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public int getDuration() {
-        return duration;
+    public int getStartTime() {
+        return startTime;
     }
 
+    public int getEndTime() {
+        return endTime;
+    }
 
     public String getNote() {
         return note;
@@ -55,4 +60,18 @@ public class Session {
 
     public void setUser(User user) {this.user = user;}
 
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public void setDate(String date) {
+//        this.date = date;
+//    }
+//
+//    public void setTime(String time) {
+//        this.time = time;
+//    }
+//    public  Collection<Comments> getComments(){
+//        return comments;
+//    }
 }
