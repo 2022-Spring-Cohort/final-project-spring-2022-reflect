@@ -9,6 +9,6 @@ function playerPause(){
     }else {
         count = 0;
         audio.pause();
-        stuff
+        
     }
 }
