@@ -4,4 +4,5 @@ export default function playAmbient () {
                 <source src="./sounds/ocean-ambient.mp3" type="audio/mpeg"></source>
     </audio>
     `
+
 }
