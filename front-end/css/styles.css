@@ -62,6 +62,23 @@ video {
     font-variant: small-caps;
     font-size: 50px;
 }
+
+.new-user {
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align: center;
+}
+
+.newUser-button {
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.288);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align: center;
+}
+
 .container {
     position:absolute;
     bottom: 0;
@@ -511,9 +528,9 @@ width:82%;
 padding:0px;
 margin-top:1.5vw;
 border:1px solid #ccc;
-padding-left:40px;
+/* padding-left:40px; */
 font-size:16px;
-font-family:raleway
+font-family: var(--font-family-secondary)
 }
 #name-input {
 background-repeat:no-repeat;
