@@ -22,7 +22,7 @@ export default function progressView(user) {
             <input type="text" placeholder="Date" class="sessionDateInput">
             <input type="text" placeholder="Duration" class="sessionDurationInput">
             <input type="text" placeholder="Notes" class="sessionNoteInput">  
-            <button class="addSessionButton">Add Session</button>
+            <button class="addSessionButton">Add session</button>
         </div>
     
     </div>
