@@ -1,11 +1,16 @@
 import playAmbient from "./audio.js";
 
+
 var timeinterval;
 var paused = false; // is the clock paused?
 var time_left; // time left on the clock when paused
 var time_in_minutes;
 var current_time;
 var deadline;
+var audio = document.getElementById('bgAudio');
+var pause = document.getElementById('myAudio');
+
+
 
 export default function makeTimer(increment) {
 	time_in_minutes = increment;
@@ -25,6 +30,8 @@ export default function makeTimer(increment) {
 	const pauseButton = document.querySelector(".pause-button");
 	pauseButton.addEventListener("click", ()=> {
 		pause_clock();
+		const noAudioEl = document.querySelector(".audio");
+        noAudioEl.innerHTML = "";
 	})
 
 }
@@ -78,4 +85,3 @@ function resume_clock(){
 		run_clock('clockdiv',deadline);
 	}
 }
-
