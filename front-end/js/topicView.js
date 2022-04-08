@@ -10,7 +10,7 @@ export default function topicView(topic) {
             <article class="article">
           <h2 class="article-title">${article.title}</h2>
           <a href="${article.link}" target="blank">
-            <img src="${article.image}" alt="Article"
+            <img src="${article.picture}" alt="Article"
           /></a>
           <p class="article-summary">${article.content} </p>
         </article>
