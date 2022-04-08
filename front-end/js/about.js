@@ -28,15 +28,11 @@ export default function aboutView(user) {
           <div class="about-us">
             <h1>About Reflect</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas rem ut
-              earum? Cum similique architecto eveniet nisi, quis id est ad ut
-              quibusdam accusantium quod dicta voluptates, veniam voluptatem
-              deleniti illo natus suscipit odio ullam? Quod, voluptas vel hic
-              voluptate corporis tempore optio expedita blanditiis eveniet ex rerum
-              deserunt itaque asperiores consequatur officiis. Corporis cum earum,
-              repudiandae officiis modi, odio sunt quam neque expedita soluta
-              consequatur hic in distinctio adipisci illo deserunt, doloremque saepe
-              eum necessitatibus harum eveniet quos porro!
+              The team was formed at We Can Code It virtually in Jan of 2022.
+              The goal was to provide a free and enjoyable experience for one
+              to "Reflect" on their own life, with available resources at their
+              fingertips to help them. We provided, sessions, articles, and a
+              calming background with custom oceanwaves by Omnisphere 2 provided.
             </p>
           </div>
         </section>
