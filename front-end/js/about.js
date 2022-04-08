@@ -31,8 +31,8 @@ export default function aboutView(user) {
               The team was formed at We Can Code It virtually in Jan of 2022.
               The goal was to provide a free and enjoyable experience for one
               to "Reflect" on their own life, with available resources at their
-              fingertips to help them. We provided, sessions, articles, and a
-              calming background with custom oceanwaves by Omnisphere 2 provided.
+              fingertips to help them. We provided a place for meditation and a
+              place for someone to learn more about themselves and to be at peace.
             </p>
           </div>
         </section>

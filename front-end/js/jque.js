@@ -47,9 +47,11 @@ function submitToAPI(e) {
         .then(response => response.json())
         .then(result => {
             console.log('Success:', result);
+            alert("Success!");
         })
         .catch(error => {
             console.error('Error:', error);
+            alert("UnSuccessful");
         });
 
         
