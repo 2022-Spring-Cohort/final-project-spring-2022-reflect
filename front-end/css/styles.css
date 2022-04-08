@@ -399,6 +399,7 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
     max-width: 100%;
+  }
   .list-choice {
       display: flex;
       flex-direction: column;
