@@ -361,6 +361,22 @@ cursor: pointer;
     margin: 1vh;
 }
 
+.newSessionDiv {
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align: center;
+}
+
+.addSessionButton {
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.288);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align: center;
+}
+
 .about-us {
     padding: 2vh;
       text-align: center;
