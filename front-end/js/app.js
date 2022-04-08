@@ -9,6 +9,7 @@ import aboutView from "./about.js";
 import makeTimer from "./timer.js";
 import timerSelectView from "./timerSelect.js";
 import topicView from "./topicView.js";
+import { submitToAPI } from "./jque.js";
 
 
 const containerEl = document.querySelector(".container");
@@ -230,6 +231,9 @@ function makeTopicView(user,topic) {
 function makeAboutView(user) {
     containerEl.innerHTML = header();
     containerEl.innerHTML += aboutView();
+
+    const submitEL = containerEl.querySelector('.submit-API-button')
+    submitEL.addEventListener('click', submitToAPI)
 
     makeHamburgerMenu(user);
 

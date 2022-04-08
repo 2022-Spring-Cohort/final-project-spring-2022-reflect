@@ -20,10 +20,8 @@ export default function aboutView(user) {
                 <textarea id="notes-input" rows="3" placeholder="Enter your message…" class="form-control"
                     style="width:100%;"></textarea><br />
             
-                <button type="button" onClick="submitToAPI(event)" class="submit-API-button" style="margin-top:20px;">Submit</button>
+                <button type="button" class="submit-API-button" style="margin-top:20px;">Submit</button>
             </form>
-            <model-viewer id="reveal" shadow-intensity="1" src="/src/resources/Medlogo.glb" alt="A 3D model of an astronaut"
-                        auto-rotate camera-controls poster="/src/resources/images/White-Logo-Icon@3x.png"></model-viewer>
         </div>
     </div>
         <section class="about-reflect">
