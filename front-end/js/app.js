@@ -13,8 +13,6 @@ import mindsetView from "./mindsetWhyView.js";
 
 import topicView from "./topicView.js";
 
-
-
 const containerEl = document.querySelector(".container");
 
 function makeUserListView() {
@@ -133,124 +131,106 @@ function makeUserView(user) {
     });
 }
 
-
-let meditationIncrements = [1, 5, 10, 15, 20, 30]
+let meditationIncrements = [1, 5, 10, 15, 20, 30];
 
 function makeMeditationView(user, increment) {
+  containerEl.innerHTML = header();
+  containerEl.innerHTML += meditate();
 
-    
-    containerEl.innerHTML = header();
-    containerEl.innerHTML += meditate();
+  makeHamburgerMenu(user);
 
-    makeHamburgerMenu(user);
+  makeTimer(increment);
 
-    makeTimer(increment);
-
-    const endButton = document.querySelector(".end-button");
-    endButton.addEventListener("click", () => {
-        makeProgressView(user);
-    })
-    
+  const endButton = document.querySelector(".end-button");
+  endButton.addEventListener("click", () => {
+    makeProgressView(user);
+  });
 }
 
 function makeProgressView(user) {
+  containerEl.innerHTML = header();
+  containerEl.innerHTML += progressView(user);
 
+  makeHamburgerMenu(user);
+  makeProgressChart(user);
 
+  const sessionDateInput = containerEl.querySelector(".sessionDateInput");
+  const sessionDurationInput = containerEl.querySelector(
+    ".sessionDurationInput"
+  );
+  const sessionNoteInput = containerEl.querySelector(".sessionNoteInput");
+  const addSessionBtn = containerEl.querySelector(".addSessionButton");
+  addSessionBtn.addEventListener("click", () => {
+    const newSessionJson = {
+      date: sessionDateInput.value,
+      duration: sessionDurationInput.value,
+      note: sessionNoteInput.value,
+    };
 
-    containerEl.innerHTML = header();
-    containerEl.innerHTML += progressView(user);
-
-    makeHamburgerMenu(user);
-    makeProgressChart(user);
-
-    const sessionDateInput = containerEl.querySelector(".sessionDateInput");
-    const sessionDurationInput = containerEl.querySelector(".sessionDurationInput");
-    const sessionNoteInput = containerEl.querySelector(".sessionNoteInput");
-    const addSessionBtn = containerEl.querySelector(".addSessionButton");
-    addSessionBtn.addEventListener("click", () => {
-        const newSessionJson = {
-            date: sessionDateInput.value,
-            duration: sessionDurationInput.value,
-            note: sessionNoteInput.value
-        }
-
-        fetch(`http://localhost:8080/users/${user.id}/addSession`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newSessionJson),
-        })
-        .then((res) => res.json())
-        .then((user) => {
-            makeProgressView(user);
-        })
+    fetch(`http://localhost:8080/users/${user.id}/addSession`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newSessionJson),
     })
-
-
-
+      .then((res) => res.json())
+      .then((user) => {
+        makeProgressView(user);
+      });
+  });
 }
 
-function makeCategoriesView(user){
-    
-    containerEl.innerHTML = header();
-    containerEl.innerHTML += categoryView();
+function makeCategoriesView(user) {
+  containerEl.innerHTML = header();
+  containerEl.innerHTML += categoryView();
 
-    makeHamburgerMenu(user);
+  makeHamburgerMenu(user);
 
-    const topicEl = document.querySelectorAll(".topic-header");
+  const topicEl = document.querySelectorAll(".topic-header");
 
-    topicEl.forEach(topic => {
-        let topicIdEl = topic.querySelector(".topic-value");
-        let topich2 = topic.querySelector(".topic");
-        topich2.addEventListener("click", () => {
-            fetch(`http://localhost:8080/topics/${topicIdEl.value}`)
-        .then(res => res.json())
-        .then(topic => {
-            makeTopicView(user,topic);
-        })
-        })
-    })
-
-
+  topicEl.forEach((topic) => {
+    let topicIdEl = topic.querySelector(".topic-value");
+    let topich2 = topic.querySelector(".topic");
+    topich2.addEventListener("click", () => {
+      fetch(`http://localhost:8080/topics/${topicIdEl.value}`)
+        .then((res) => res.json())
+        .then((topic) => {
+          makeTopicView(user, topic);
+        });
+    });
+  });
 
   makeHamburgerMenu(user);
 }
 
-function makeTopicView(user,topic) {
-    containerEl.innerHTML = header();
-    containerEl.innerHTML += topicView(topic);
+function makeTopicView(user, topic) {
+  containerEl.innerHTML = header();
+  containerEl.innerHTML += topicView(topic);
 
-    makeHamburgerMenu(user);
+  makeHamburgerMenu(user);
 }
 
 function makeAboutView(user) {
   containerEl.innerHTML = header();
   containerEl.innerHTML += aboutView();
 
+  makeHamburgerMenu(user);
 
-    makeHamburgerMenu(user);
-
-    const closeBtn = document.getElementById('close');
-    const targetDiv = document.getElementById('abc');
-    const btn = document.getElementById('toggle');
-    btn.onclick = function () {
-        if (targetDiv.style.display !== "none") {
-            targetDiv.style.display = "none";
-            document.getElementById('toggle')
-        } else {
-            targetDiv.style.display = "block";
-
-        }
-
-    };
-    closeBtn.onclick = function () {
-        document.getElementById("abc").style.display = "none";
+  const closeBtn = document.getElementById("close");
+  const targetDiv = document.getElementById("abc");
+  const btn = document.getElementById("toggle");
+  btn.onclick = function () {
+    if (targetDiv.style.display !== "none") {
+      targetDiv.style.display = "none";
+      document.getElementById("toggle");
+    } else {
+      targetDiv.style.display = "block";
     }
-
-
-
-
+  };
+  closeBtn.onclick = function () {
+    document.getElementById("abc").style.display = "none";
+  };
 }
 
 function makeTimerSelectView(user) {
@@ -268,14 +248,15 @@ function makeTimerSelectView(user) {
   });
 }
 
-
 const mindsetCardContainer = document.querySelector(".card-container");
 
 function makeMindsetView() {
+  console.log("making your mindset page");
   fetch(`http://localhost:8080/mindset`)
     .then((res) => res.json())
     .then((mindsetCards) => {
-      mindsetCardContainer.innerHTML = mindsetView();
+      containerEl.innerHTML = header();
+      containerEl.innerHTML += mindsetView();
 
       const cardsEl = mindsetCardContainer.querySelectorAll(".card-container");
 
@@ -286,29 +267,30 @@ function makeMindsetView() {
 }
 
 function makeProgressChart(user) {
-    console.log(user);
+  console.log(user);
 
-    let days = [];
-    user.sessions.forEach(session => {
-        days.push(session.date);
-    })
+  let days = [];
+  user.sessions.forEach((session) => {
+    days.push(session.date);
+  });
 
-    let minutes = [];
-    user.sessions.forEach(session => {
-        minutes.push(session.duration)
-    })
+  let minutes = [];
+  user.sessions.forEach((session) => {
+    minutes.push(session.duration);
+  });
 
-    let myChart = document.getElementById('myChart').getContext('2d');
-    let progressChart = new Chart(myChart, {
-      type:'line',
-      data:{
-        labels: days,
-        datasets:[{
-          label:'Meditation Minutes',
-          data: minutes
-        }]
-      },
-      options:{}
-    });
+  let myChart = document.getElementById("myChart").getContext("2d");
+  let progressChart = new Chart(myChart, {
+    type: "line",
+    data: {
+      labels: days,
+      datasets: [
+        {
+          label: "Meditation Minutes",
+          data: minutes,
+        },
+      ],
+    },
+    options: {},
+  });
 }
-

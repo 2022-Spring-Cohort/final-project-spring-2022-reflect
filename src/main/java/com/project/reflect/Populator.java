@@ -119,49 +119,30 @@ public class Populator implements CommandLineRunner {
         articleRepo.save(article9);
 
 
-        ArrayList<String> list1= new ArrayList<>();
-
-
-
-
-        list1.add("why details 1");
-        list1.add("why details 2");
-        MindsetCards mindsetCard1 = new MindsetCardsWhy(user1,"why1", String.valueOf(list1));
+        MindsetCards mindsetCard1 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why1","This is the back of mindset card 1");
 mindsetCardsRepo.save(mindsetCard1);
 
 
 
 
-        ArrayList<String> list2= new ArrayList<>();
 
-
-
-        list2.add("why details 3");
-        list2.add("why details 4");
-        MindsetCards mindsetCard2 = new MindsetCardsWhy(user2,"why2", String.valueOf(list2));
+        MindsetCards mindsetCard2 = new MindsetCardsWhy(user2,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
         mindsetCardsRepo.save(mindsetCard2);
 
 
-        ArrayList<String> list3= new ArrayList<>();
 
 
-        list3.add("why details 5");
-        list3.add("why details 6");
 
-        MindsetCards mindsetCard3 = new MindsetCardsWhy(user1,"why3", String.valueOf(list3));
+        MindsetCards mindsetCard3 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why3", "This is the back of mindset card 3");
 
 
         mindsetCardsRepo.save(mindsetCard3);
 
 
 
-        ArrayList<String> list4= new ArrayList<>();
 
 
-        list4.add("win details 1");
-        list4.add("win details 2");
-
-        MindsetCards mindsetCard4 = new MindsetCardsWins(user1,"win1", String.valueOf(list4));
+        MindsetCards mindsetCard4 = new MindsetCardsWins(user1,"./images/fillerphoto.jpg","win1", "This is the back of mindset card 4");
 
 
         mindsetCardsRepo.save(mindsetCard4);
@@ -169,13 +150,8 @@ mindsetCardsRepo.save(mindsetCard1);
 
 
 
-        ArrayList<String> list5= new ArrayList<>();
 
-
-        list5.add("win details 3");
-        list5.add("win details 4");
-
-        MindsetCards mindsetCard5 = new MindsetCardsWins(user2,"win2", String.valueOf(list5));
+        MindsetCards mindsetCard5 = new MindsetCardsWins(user2,"./images/fillerphoto.jpg","win2", "This is the back of mindset card 5");
 
 
         mindsetCardsRepo.save(mindsetCard5);

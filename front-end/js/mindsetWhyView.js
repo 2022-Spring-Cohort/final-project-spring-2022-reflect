@@ -1,9 +1,9 @@
-export default function mindsetWhy(mindsetCardsWhy) {
+export default function mindsetWhy(user) {
   return `
 
-  <div class = "wins-card-container">
+  <div class = "why-card-container">
   <ul>
-  ${mindsetCardsWhy
+  ${user.mindsetCardsWhy
     .map((mindsetCardWhy) => {
       return `
 

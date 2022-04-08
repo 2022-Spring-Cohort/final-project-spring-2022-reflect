@@ -12,8 +12,9 @@ public class MindsetCardsWhy extends MindsetCards {
     public MindsetCardsWhy() {
     }
 
-    public MindsetCardsWhy(User user, String photo, String front, String... back) {
+    public MindsetCardsWhy(User user, String photo, String front, String back) {
         super(user, photo, front, back);
     }
+
 
 }
