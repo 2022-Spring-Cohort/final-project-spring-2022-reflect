@@ -186,7 +186,27 @@ video {
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+/* .topic-header {
+    max-width: 100%;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align:right;
+  } */
 
+/* .topic-header {
+    max-width: 100%;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 40px;
+    margin: 3vh;
+    text-align: right;
+    font-family: var(--font-family-secondary);
+    
+  } */
+
+  /* resources topic header */
 .topic-header {
     max-width: 100%;
     padding: 2vh;
@@ -194,9 +214,10 @@ video {
     border-radius: 15px;
     margin: 1vh;
     text-align: center;
-  }
+}
   
-  .article {
+.container3 {
+      
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -204,11 +225,36 @@ video {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     margin: 1vh;
-  }
-  
-  .article img {
+
+}
+.container3 img{
+    position: relative;
+}
+  /* .article {
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
-  }
+  } */
+  
+.container3 img {
+    max-height: 100%;
+    border-radius: 40px;
+    max-width: 100%;
+}
+
+.h3{
+  font-size: large;
+  position: absolute;
+  top: 0;
+  /* position: absolute;
+  top: 8px; */
+  left: 16px;
+  /* right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;  */
+}
 
 .footer {
     /* border-style: dashed; */
@@ -312,16 +358,8 @@ cursor: pointer;
     margin: 1vh;
 }
 
-.topic-header {
-    max-width: 100%;
-    padding: 2vh;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 40px;
-    margin: 3vh;
-    text-align: center;
-    font-family: var(--font-family-secondary);
-    
-  }
+
+
   .meditateVid{
       display:flex;
       position: relative;
@@ -385,21 +423,6 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
   }
-  
-  .topic-header {
-    max-width: 100%;
-    padding: 2vh;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 15px;
-    margin: 1vh;
-    text-align: center;
-  }
-  
-  .article {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-  }
   .list-choice {
       display: flex;
       flex-direction: column;
@@ -425,9 +448,7 @@ cursor: pointer;
     margin: 1vh;
   }
   
-  .article img {
-    max-width: 100%;
-  }
+  
   .contact-button{
     width: 150px;
     height: 110px;

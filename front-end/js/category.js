@@ -4,9 +4,6 @@ export default function categoryView(){
    <ul class="menu2">
    <section>
      <div>
-     <div class="topic-header">
-            <h2 class="topic">Mindset Interactive</h2>
-        </div>
          <div class="topic-header">
              <h2 class="topic">Meditation</h2>
              <input class="topic-value" type="hidden" value="Meditation">
