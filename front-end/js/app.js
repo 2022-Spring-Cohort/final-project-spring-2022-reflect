@@ -147,7 +147,7 @@ let randomArticle = (Math.random) ;
         .then((res) => res.json())
         .then((jsonData) => {
             articleHeader.innerText = jsonData.title;
-            articleThumb.innerHTML = `<img src="${jsonData.picture}"></img>`
+            articleThumb.innerHTML = `<img class="article-thumb" src="${jsonData.picture}"></img>`
             articleSummary.innerText = jsonData.content;
         });
 }
