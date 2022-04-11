@@ -2,7 +2,6 @@
 GET https://zenquotes.io/api/random/32bcf235078efe18922329c8829e0c88e4a2098a
 
 ###
-
 GET http://localhost:8080/users
 
 ###
@@ -18,8 +17,12 @@ GET http://localhost:8080/mindset-cards
 GET http://localhost:8080//topics
 
 
-###
-GET http://localhost:8080/mindset-wins-cards
 
 ###
-GET http://localhost:8080/mindset-why-cards
+POST http://localhost:8080/mindset-cards/add-why-card
+Content-Type: application/json
+ {
+    "id":40,
+    "front": "why40",
+    "back": "This is the back of mindset card 40"
+  }

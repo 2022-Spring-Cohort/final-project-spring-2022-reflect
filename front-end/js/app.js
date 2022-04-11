@@ -17,6 +17,8 @@ import topicView from "./topicView.js";
 
 const containerEl = document.querySelector(".container");
 
+let userId = null;
+
 function makeUserListView() {
   fetch("http://localhost:8080/users")
     .then((res) => res.json())
@@ -38,6 +40,7 @@ function makeUserListViewFromJSON(users) {
         if (userJson.id == userIdEl.value) {
           makeUserView(userJson);
           let userJsonID = userJson.id;
+          userId = userJsonID;
         }
       });
     });
@@ -95,12 +98,11 @@ function makeHamburgerMenu(user) {
   const aboutLink = document.querySelector(".aboutLink");
   const usersLink = document.querySelector(".usersLink");
 
-
   const interactiveLink = document.querySelector(".interactive");
 
   usersLink.addEventListener("click", () => {
-      makeUserListView();
-  })
+    makeUserListView();
+  });
 
   aboutLink.addEventListener("click", () => {
     makeAboutView(user);
@@ -145,27 +147,23 @@ function makeUserView(user) {
       inspoAuthor.innerText = "-" + jsonData[0].a;
     });
 
-const articleHeader = document.querySelector(".article-header");
-const articleThumb = document.querySelector(".thumb-container");
-const articleSummary = document.querySelector(".article-summary");
+  const articleHeader = document.querySelector(".article-header");
+  const articleThumb = document.querySelector(".thumb-container");
+  const articleSummary = document.querySelector(".article-summary");
 
+  let randomArticle = Math.floor(Math.random() * 10 + 20);
+  console.log(randomArticle);
 
-let randomArticle = Math.floor(((Math.random() * 10) + 20));
-console.log(randomArticle);
-
-    fetch (`http://localhost:8080/articles/${randomArticle}`)
-        .then((res) => res.json())
-        .then((jsonData) => {
-            articleHeader.innerText = jsonData.title;
-            articleThumb.innerHTML = `<img class="article-thumb" src="${jsonData.picture}"></img>`
-            articleSummary.innerText = jsonData.content;
-        });
+  fetch(`http://localhost:8080/articles/${randomArticle}`)
+    .then((res) => res.json())
+    .then((jsonData) => {
+      articleHeader.innerText = jsonData.title;
+      articleThumb.innerHTML = `<img class="article-thumb" src="${jsonData.picture}"></img>`;
+      articleSummary.innerText = jsonData.content;
+    });
 }
 
-
-
-let meditationIncrements = [1, 5, 10, 15, 20, 30]
-
+let meditationIncrements = [1, 5, 10, 15, 20, 30];
 
 function makeMeditationView(user, increment) {
   containerEl.innerHTML = header();
@@ -284,7 +282,8 @@ function makeTimerSelectView(user) {
 
 function makeMindsetView(user) {
   console.log("making your mindset page");
-  fetch(`http://localhost:8080/users/1`)
+  console.log(`This is the user ID: ${userId}`);
+  fetch(`http://localhost:8080/users/${userId}`)
     .then((res) => res.json())
     .then((mindsetCards) => {
       console.log(mindsetCards);

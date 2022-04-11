@@ -51,7 +51,7 @@ public abstract class MindsetCards {
         return back;
     }
 
-    public void addBackCards(String newPhrase){
+    public void addBackCard(String newPhrase){
         this.front=newPhrase;
     }
 
