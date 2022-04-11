@@ -230,11 +230,6 @@ video {
 .container3 img{
     position: relative;
 }
-  /* .article {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-  } */
   
 .container3 img {
     max-height: 100%;
@@ -253,18 +248,13 @@ video {
     position: absolute;
     color:#000000;
     z-index: 2;
-    top: px;
+    /* top: px; */
     background-color: #4b4b4b10;
-    /* border: 1px solid black; */
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     padding: 20px 10px;
+    width: 94.5%;
     
-
-
-    
-
-
   
 }
 

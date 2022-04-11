@@ -93,7 +93,7 @@ public class Populator implements CommandLineRunner {
         "https://www.forbes.com/sites/womensmedia/2021/01/21/mindfulness-makeover-how-to-just-be-no-matter-what/", topicMeditation);
         articleRepo.save(article4);
 
-        Article article5 = new Article("6 Ways to Practice Mindful Eating", "Christopher Willard", "./front-end/images/tibetan-bowl.png",
+        Article article5 = new Article("6 Ways to Practice Mindful Eating", "Christopher Willard", "../front-end/images/tibetan-bowl.png",
                 "Eating as mindfully as we do on retreat or in a mindfulness course is not realistic for many of us, especially with families, jobs, and the myriad distractions around us. This is not to mention that our friends, family and...",
                 "https://www.mindful.org/6-ways-practice-mindful-eating/", topicMindfulness);
         articleRepo.save(article5);
