@@ -263,24 +263,24 @@ video {
     text-align: center;
 }
 .menu {
-  position: fixed;
-  transform: translateY(-100%);
-  transition: transform 0.2s;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  background: rgb(160, 217, 190, 0.98);
-  color: white;
-  list-style: none;
-  padding-top: 4rem;
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: rgb(160, 217, 190, 0.98);
+    color: white;
+    list-style: none;
+    padding: 3rem;
     border-radius: 3000px;
+    max-height: fit-content;
 }
 
 .showMenu {
   transform: translateY(0);
-  height: 30%;
 }
 
 .closeIcon{
@@ -332,7 +332,8 @@ cursor: pointer;
 }
 
 .x-icon {
-    width: 5vh;
+    width: 4vh;
+    margin: auto;
 }
 
 .timer {
@@ -401,6 +402,22 @@ cursor: pointer;
     margin: 1vh;
 }
 
+.newSessionDiv {
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align: center;
+}
+
+.addSessionButton {
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.288);
+    border-radius: 15px;
+    margin: 1vh;
+    text-align: center;
+}
+
 .about-us {
     padding: 2vh;
       text-align: center;
@@ -425,6 +442,7 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
   }
+
   .list-choice {
       display: flex;
       flex-direction: column;
