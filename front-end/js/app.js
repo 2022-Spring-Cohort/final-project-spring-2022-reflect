@@ -258,13 +258,16 @@ const mindsetCardContainer = document.querySelector(".card-container");
 
 function makeMindsetView() {
   console.log("making your mindset page");
-  fetch(`http://localhost:8080/mindset-cards`)
+  fetch(`http://localhost:8080/users/1`)
     .then((res) => res.json())
     .then((mindsetCards) => {
+      console.log(mindsetCards);
       containerEl.innerHTML = header();
-      containerEl.innerHTML += mindsetWhyView();
+      containerEl.innerHTML += mindsetWhyView(mindsetCards);
+      containerEl.innerHTML += mindsetWinsView(mindsetCards);
 
       const cardsEl = mindsetCardContainer.querySelectorAll(".card-container");
+      winCardEl = document.querySelectorAll(".growth__card");
 
       cardsEl.forEach((mindsetCard) => {
         let mindsetCardIdEl = mindsetCardContainer.querySelector("");
