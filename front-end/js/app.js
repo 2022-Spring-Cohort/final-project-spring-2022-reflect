@@ -135,7 +135,23 @@ function makeUserView(user) {
       inspoQuote.innerText = jsonData[0].q;
       inspoAuthor.innerText = "-" + jsonData[0].a;
     });
+
+const articleHeader = document.querySelector(".article-header");
+const articleThumb = document.querySelector(".thumb-container");
+const articleSummary = document.querySelector(".article-summary");
+
+
+let randomArticle = (Math.random) ;
+
+    fetch (`http://localhost:8080/articles/21`)
+        .then((res) => res.json())
+        .then((jsonData) => {
+            articleHeader.innerText = jsonData.title;
+            articleThumb.innerHTML = `<img src="${jsonData.picture}"></img>`
+            articleSummary.innerText = jsonData.content;
+        });
 }
+
 
 
 let meditationIncrements = [1, 5, 10, 15, 20, 30]
