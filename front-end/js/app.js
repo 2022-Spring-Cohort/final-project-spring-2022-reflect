@@ -141,9 +141,10 @@ const articleThumb = document.querySelector(".thumb-container");
 const articleSummary = document.querySelector(".article-summary");
 
 
-let randomArticle = (Math.random) ;
+let randomArticle = Math.floor(((Math.random() * 10) + 20));
+console.log(randomArticle);
 
-    fetch (`http://localhost:8080/articles/21`)
+    fetch (`http://localhost:8080/articles/${randomArticle}`)
         .then((res) => res.json())
         .then((jsonData) => {
             articleHeader.innerText = jsonData.title;
