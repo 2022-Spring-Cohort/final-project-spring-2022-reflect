@@ -1,6 +1,7 @@
 
 package com.project.reflect.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.project.reflect.Repository.MindsetCardsRepository;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,8 +15,7 @@ public abstract class MindsetCards {
     @GeneratedValue
     private Long id;
     private String front;
-    @ElementCollection
-    private Collection <String> back;
+    private String back;
     private String photo = "./images/fillerphoto.jpg";
 
 
@@ -27,10 +27,10 @@ public abstract class MindsetCards {
     public MindsetCards() {
     }
 
-    public MindsetCards(User user, String photo, String front, String ... back) {
+    public MindsetCards(User user, String photo, String front, String back) {
         this.user = user;
         this.front = front;
-        this.back = Arrays.asList(back);
+        this.back = back;
         this.photo=photo;
     }
 
@@ -47,12 +47,12 @@ public abstract class MindsetCards {
         return front;
     }
 
-    public Collection<String> getBack() {
+    public String getBack() {
         return back;
     }
 
     public void addBackCards(String newPhrase){
-        back.add(newPhrase);
+        this.front=newPhrase;
     }
 
     public void addFrontCard(String newPhrase){
@@ -60,12 +60,12 @@ public abstract class MindsetCards {
     }
 
     public void updateFront(String newFront){
-        front = newFront;
+        this.front = newFront;
     }
 
 
     public void updateBack(String newBack){
-        back.add(newBack);
+        this.back = newBack;
     }
 
     public void updatePhoto(String newPhoto){

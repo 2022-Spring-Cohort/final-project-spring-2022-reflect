@@ -32,6 +32,11 @@ public class Article {
 
 
     }
+
+    public Long getId() {
+        return id;
+    }
+
     public String getPicture() {
         return picture;
     }
