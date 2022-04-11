@@ -41,43 +41,7 @@ export default function mindsetWhys(mindsetCards) {
       <input type="submit" />
     </form>
 
-    <section class="growth__card">
-      <body>
-        <div class="card">
-          <div class="card__inner">
-            <div class="card__face card__face--front">
-              <div class="h2">A thought that's holding you back</div>
-            </div>
-            <div class="card__face card__face--back">
-              <div class="card__content">
-                <div class="card__header">
-                  Image here of what you care about
-                  <img src="./images/fillerphoto.jpg" class="pp" />
-                  <h2>Discomfort is a milestone to growth</h2>
-                </div>
-    
-                <div class="card__body">
-                  <h3>Reasons that thought is not true</h3>
-                  <ul>
-                    <li>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Nihil, veritatis!
-                    </li>
-                    <li>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Nihil, veritatis!
-                    </li>
-                    <li>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Nihil, veritatis!
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
+   
 
   <div class = "whys-card-container">
 
@@ -131,5 +95,6 @@ export default function mindsetWhys(mindsetCards) {
   <button class="add-new-card-button">Add Card</button>
   
 </div>    
+
   `;
 }

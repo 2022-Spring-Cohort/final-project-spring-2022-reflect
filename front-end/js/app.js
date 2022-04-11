@@ -37,6 +37,7 @@ function makeUserListViewFromJSON(users) {
       users.forEach((userJson) => {
         if (userJson.id == userIdEl.value) {
           makeUserView(userJson);
+          let userJsonID = userJson.id;
         }
       });
     });
@@ -92,6 +93,7 @@ function makeHamburgerMenu(user) {
   const progressLink = document.querySelector(".progressLink");
   const categories = document.querySelector(".categories");
   const aboutLink = document.querySelector(".aboutLink");
+
   const interactiveLink = document.querySelector(".interactive");
   aboutLink.addEventListener("click", () => {
     makeAboutView(user);
@@ -254,9 +256,7 @@ function makeTimerSelectView(user) {
   });
 }
 
-const mindsetCardContainer = document.querySelector(".card-container");
-
-function makeMindsetView() {
+function makeMindsetView(user) {
   console.log("making your mindset page");
   fetch(`http://localhost:8080/users/1`)
     .then((res) => res.json())
@@ -265,13 +265,6 @@ function makeMindsetView() {
       containerEl.innerHTML = header();
       containerEl.innerHTML += mindsetWhyView(mindsetCards);
       containerEl.innerHTML += mindsetWinsView(mindsetCards);
-
-      const cardsEl = mindsetCardContainer.querySelectorAll(".card-container");
-      winCardEl = document.querySelectorAll(".growth__card");
-
-      cardsEl.forEach((mindsetCard) => {
-        let mindsetCardIdEl = mindsetCardContainer.querySelector("");
-      });
     });
 }
 
