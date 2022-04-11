@@ -66,8 +66,8 @@ public class Populator implements CommandLineRunner {
         topicRepo.save(topicSleep);
         Topic topicAnxiety = new Topic("Anxiety");
         topicRepo.save(topicAnxiety);
-        Topic topicMindset = new Topic("Mindset");
-        topicRepo.save(topicMindset);
+        Topic topicMindfulness = new Topic("Mindfulness");
+        topicRepo.save(topicMindfulness);
         Topic topicFocus = new Topic("Focus");
         topicRepo.save(topicFocus);
         Topic topicWork = new Topic("Work");
@@ -85,7 +85,7 @@ public class Populator implements CommandLineRunner {
 
         Article article3 = new Article("Five Ways Mindfulness Meditation Is Good for Your Health", "Jill Suittie", "../front-end/images/tibetan-bowl.png",
                 "According to thousands of years of tradition, Buddhists meditate to understand themselves and their connections to all beings. By doing so, they hope to be released from suffering and ultimately gain enlightenment.",
-                "https://greatergood.berkeley.edu/article/item/five_ways_mindfulness_meditation_is_good_for_your_health", topicMeditation);
+                "https://greatergood.berkeley.edu/article/item/five_ways_mindfulness_meditation_is_good_for_your_health", topicMindfulness);
         articleRepo.save(article3);
 
         Article article4 = new Article("Mindfulness Makeover: How To 'Just Be' No Matter What", "Sarah Jeanne Browne", "./front-end/images/tibetan-bowl.png",
@@ -93,14 +93,14 @@ public class Populator implements CommandLineRunner {
         "https://www.forbes.com/sites/womensmedia/2021/01/21/mindfulness-makeover-how-to-just-be-no-matter-what/", topicMeditation);
         articleRepo.save(article4);
 
-        Article article5 = new Article("6 Ways to Practice Mindful Eating", "Christopher Willard", "./front-end/images/tibetan-bowl.png",
+        Article article5 = new Article("6 Ways to Practice Mindful Eating", "Christopher Willard", "../front-end/images/tibetan-bowl.png",
                 "Eating as mindfully as we do on retreat or in a mindfulness course is not realistic for many of us, especially with families, jobs, and the myriad distractions around us. This is not to mention that our friends, family and...",
-                "https://www.mindful.org/6-ways-practice-mindful-eating/", topicMindset);
+                "https://www.mindful.org/6-ways-practice-mindful-eating/", topicMindfulness);
         articleRepo.save(article5);
 
         Article article6 = new Article("Train Your Mind to Work Smarter", "Tara Healey", "./front-end/images/tibetan-bowl.png",
                 "Office politics. Dictatorial bosses. Coworkers’ emotions bouncing up and down and sideways. An uncertain economy and a volatile job market. Escalating levels of expectation. Loss of direction. Too much to do. Too little time. Not enough sleep...",
-                "https://www.mindful.org/putting-mindfulness-to-work/", topicMindset);
+                "https://www.mindful.org/putting-mindfulness-to-work/", topicMindfulness);
         articleRepo.save(article6);
 
         Article article7 = new Article("How to Make Meditation a Daily Habit", "Jack Kornfield", "./front-end/images/tibetan-bowl.png",
@@ -115,7 +115,7 @@ public class Populator implements CommandLineRunner {
 
         Article article9 = new Article("How to be more empathetic", "Headspace","./front-end/images/tibetan-bowl.png",
                 "When we are able to stand in another person’s shoes and see life from their point of view — a situation, a belief, a struggle — we are then better equipped to connect, without reactivity, on a human level...",
-                "https://www.headspace.com/articles/how-to-be-more-empathetic", topicMindset);
+                "https://www.headspace.com/articles/how-to-be-more-empathetic", topicMindfulness);
         articleRepo.save(article9);
 
 
