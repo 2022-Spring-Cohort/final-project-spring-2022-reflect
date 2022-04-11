@@ -24,10 +24,6 @@ export default function categoryView(){
              <h2 class="topic">Focus</h2>
              <input class="topic-value" type="hidden" value="Focus">
            </div>
-           <div class="topic-header">
-             <h2 class="topic">Work</h2>
-             <input class="topic-value" type="hidden" value="Work">
-           </div>  
      </div>
    
    `
