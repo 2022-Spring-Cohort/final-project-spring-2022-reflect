@@ -9,9 +9,11 @@ export default function home(user) {
             <p class="inspo-author"></p>
         </section>
         <section class="daily-article" href="#">
-            <h3>Daily Article</h3>
-            <img class="article-thumb" src="./images/tibetan-bowl.png">
-            <p>A short summary of article content goes here. A short summary of article content goes here. A short summary of article content goes here.</p>
+            <h3 class="article-header">Daily Article</h3>
+            <div class="thumb-container">
+                <img class="article-thumb" src="./images/tibetan-bowl.png">
+            </div>
+            <p class="article-summary">A short summary of article content goes here. A short summary of article content goes here. A short summary of article content goes here.</p>
         </section>
     </div>
     `;

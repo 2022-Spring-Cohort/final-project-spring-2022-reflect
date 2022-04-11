@@ -17,8 +17,8 @@ export default function categoryView(){
              <input class="topic-value" type="hidden" value="Anxiety">
            </div>
            <div class="topic-header">
-             <h2 class="topic">Mindset</h2>
-             <input class="topic-value" type="hidden" value="Mindset">
+             <h2 class="topic">Mindfulness</h2>
+             <input class="topic-value" type="hidden" value="Mindfulness">
            </div>
            <div class="topic-header">
              <h2 class="topic">Focus</h2>
