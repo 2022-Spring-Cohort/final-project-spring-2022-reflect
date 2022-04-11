@@ -28,7 +28,7 @@ public class MindsetCardsController {
     @PostMapping("/mindset-cards/add-why-card")
     public Iterable addMindsetWhyCard(@PathVariable long id,@RequestBody String front, @RequestBody String back) {
 
-        MindsetCardsWhy mindsetCard = (MindsetCardsWhy) mindsetCardsRepo.findById(id).get();
+        MindsetCards mindsetCard = (MindsetCardsWhy) mindsetCardsRepo.findById(id).get();
         mindsetCard.addFrontCard(front);
         mindsetCard.addBackCards(back);
         return mindsetCardsRepo.findAll();
@@ -37,7 +37,7 @@ public class MindsetCardsController {
     @PostMapping("/mindset-cards/add-wins-card")
     public Iterable addMindsetWinCard(@PathVariable long id,@RequestBody String front, @RequestBody String back) {
 
-        MindsetCardsWins mindsetCard = (MindsetCardsWins) mindsetCardsRepo.findById(id).get();
+        MindsetCards mindsetCard = (MindsetCardsWins) mindsetCardsRepo.findById(id).get();
 
         mindsetCard.addFrontCard(front);
         mindsetCard.addBackCards(back);
@@ -45,49 +45,47 @@ public class MindsetCardsController {
     }
 
 
-    @PatchMapping("/mindset-cards/{id}")
+    @PatchMapping("/mindset-cards/{id}/update-why-front")
     public MindsetCards UpdateMindsetWhyFrontCard (@PathVariable long id, @RequestBody String newFront) {
-        MindsetCardsWhy mindsetCard  = (MindsetCardsWhy) mindsetCardsRepo.findById(id).get();
+        MindsetCards mindsetCard  = (MindsetCardsWhy) mindsetCardsRepo.findById(id).get();
         mindsetCard.updateFront(newFront);
         mindsetCardsRepo.save(mindsetCard);
         return  mindsetCard;
     }
 
 
-    @PatchMapping("/mindset-cards/{id}")
+    @PatchMapping("/mindset-cards/{id}/update-why-back")
     public MindsetCards UpdateMindsetWhyBackCard (@PathVariable long id, @RequestBody String newBack) {
-        MindsetCardsWhy mindsetCard  = (MindsetCardsWhy) mindsetCardsRepo.findById(id).get();
+        MindsetCards mindsetCard  = (MindsetCardsWhy) mindsetCardsRepo.findById(id).get();
         mindsetCard.updateFront(newBack);
         mindsetCardsRepo.save(mindsetCard);
         return  mindsetCard;
     }
 
-    @PatchMapping("/mindset-cards/{id}")
+    @PatchMapping("/mindset-cards/{id}/update-wins-front")
     public MindsetCards UpdateMindsetWinsFrontCard (@PathVariable long id, @RequestBody String newFront) {
-        MindsetCardsWins mindsetCard  = (MindsetCardsWins) mindsetCardsRepo.findById(id).get();
+        MindsetCards mindsetCard  = (MindsetCardsWins) mindsetCardsRepo.findById(id).get();
         mindsetCard.updateFront(newFront);
         mindsetCardsRepo.save(mindsetCard);
         return  mindsetCard;
     }
 
-    @PatchMapping("/mindset-cards/{id}")
+    @PatchMapping("/mindset-cards/{id}/update-wins-back")
     public MindsetCards UpdateMindsetWinsBackCard (@PathVariable long id, @RequestBody String newBack) {
-        MindsetCardsWins mindsetCard  = (MindsetCardsWins) mindsetCardsRepo.findById(id).get();
+        MindsetCards mindsetCard  = (MindsetCardsWins) mindsetCardsRepo.findById(id).get();
         mindsetCard.updateFront(newBack);
         mindsetCardsRepo.save(mindsetCard);
         return  mindsetCard;
     }
 
-    @DeleteMapping("/mindset-cards/{id}")
-    public Iterable<MindsetCards> deleteMindsetWhyCard(@PathVariable long id)
-    {
+    @DeleteMapping("/mindset-cards/{id}/delete-win")
+    public Iterable<MindsetCards> deleteMindsetWhyCard(@PathVariable long id) {
         mindsetCardsRepo.delete(mindsetCardsRepo.findById(id).get());
         return  mindsetCardsRepo.findAll();
     }
 
-    @DeleteMapping("/mindset-cards/{id}")
-    public Iterable<MindsetCards> deleteMindsetWinCard(@PathVariable long id)
-    {
+    @DeleteMapping("/mindset-cards/{id}/delete-why")
+    public Iterable<MindsetCards> deleteMindsetWinCard(@PathVariable long id) {
         mindsetCardsRepo.delete(mindsetCardsRepo.findById(id).get());
         return  mindsetCardsRepo.findAll();
     }

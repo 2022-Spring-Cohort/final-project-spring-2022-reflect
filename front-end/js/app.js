@@ -9,7 +9,9 @@ import aboutView from "./about.js";
 import makeTimer from "./timer.js";
 import timerSelectView from "./timerSelect.js";
 
-import mindsetView from "./mindsetWhyView.js";
+import mindsetWhyView from "./mindsetWhyView.js";
+
+import mindsetWinsView from "./mindsetWinsView.js";
 
 import topicView from "./topicView.js";
 
@@ -90,7 +92,7 @@ function makeHamburgerMenu(user) {
   const progressLink = document.querySelector(".progressLink");
   const categories = document.querySelector(".categories");
   const aboutLink = document.querySelector(".aboutLink");
-
+  const interactiveLink = document.querySelector(".interactive");
   aboutLink.addEventListener("click", () => {
     makeAboutView(user);
   });
@@ -106,6 +108,10 @@ function makeHamburgerMenu(user) {
   hamburger.addEventListener("click", toggleMenu);
   meditate.addEventListener("click", () => {
     makeTimerSelectView(user);
+  });
+
+  interactiveLink.addEventListener("click", () => {
+    makeMindsetView();
   });
 
   closeIcon.addEventListener("click", toggleMenu);
@@ -252,11 +258,11 @@ const mindsetCardContainer = document.querySelector(".card-container");
 
 function makeMindsetView() {
   console.log("making your mindset page");
-  fetch(`http://localhost:8080/mindset`)
+  fetch(`http://localhost:8080/mindset-cards`)
     .then((res) => res.json())
     .then((mindsetCards) => {
       containerEl.innerHTML = header();
-      containerEl.innerHTML += mindsetView();
+      containerEl.innerHTML += mindsetWhyView();
 
       const cardsEl = mindsetCardContainer.querySelectorAll(".card-container");
 

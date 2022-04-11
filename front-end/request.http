@@ -5,5 +5,9 @@ GET https://zenquotes.io/api/random/32bcf235078efe18922329c8829e0c88e4a2098a
 
 GET http://localhost:8080/users
 
+###
+
+GET http://localhost:8080/mindset-cards
+
 GET http://localhost:8080//topics
 

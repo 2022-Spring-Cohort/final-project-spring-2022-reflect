@@ -12,7 +12,10 @@ public class User {
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Collection <MindsetCards> mindsetCards;
+    private Collection <MindsetCards> mindsetCardsWhy;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Collection <MindsetCards> mindsetCardsWins;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Session> sessions;
@@ -27,7 +30,8 @@ public class User {
     public User(String name) {
         this.id = id;
         this.name = name;
-        this.mindsetCards = mindsetCards;
+        this.mindsetCardsWhy = mindsetCardsWhy;
+        this.mindsetCardsWins = mindsetCardsWins;
         this.sessions = sessions;
         this.timers = timers;
     }
@@ -52,7 +56,26 @@ public class User {
     }
 
 
-    public Collection<MindsetCards> getMindsetCards() {
-        return mindsetCards;
+    public void addMindsetCardsWhy(MindsetCardsWhy newCard) {
+        mindsetCardsWhy.add(newCard);
     }
+
+
+    public void addMindsetCardsWins(MindsetCardsWins newCard) {
+        mindsetCardsWins.add(newCard);
+    }
+
+    public Collection <MindsetCardsWhy> getMindsetCardsWhy() {
+       return mindsetCardsWhy;
+    }
+
+
+    public void getMindsetCardsWins(MindsetCardsWins newCard) {
+        mindsetCardsWins.add(newCard);
+    }
+
+
+
+
+
 }
