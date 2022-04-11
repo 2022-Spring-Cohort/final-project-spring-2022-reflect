@@ -117,8 +117,13 @@ public class Populator implements CommandLineRunner {
 
         Article article10 = new Article("The effect of mindfulness meditation on sleep quality", "Ann Acad", "./images/meditationpics/mindful4.jpg",
                 "There is a growing interest in the effectiveness of mindfulness meditation for sleep disturbed populations. Our study sought to evaluate the effect of mindfulness meditation interventions on sleep quality. To assessTo assess for relative efficacy, comparator groups were restricted to specific active controls (such as evidenced-based sleep treatments) and nonspecific active controls (such as time/attention-matched interventions to control for placebo effects), which were analyzed separately.\n",
-                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6557693/\n", topicSleep);
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6557693/", topicSleep);
         articleRepo.save(article10);
+
+        Article article11 = new Article("To Be Happier, Should You Focus on Yourself or Others?", "Elizabeth Hopper", "./images/meditationpics/meditation.jpg",
+                "Prior research suggests that we may benefit more from helping and giving to others. But, at the same time, too much of a focus on others can sometimes lead to burnout and exhaustion.",
+                "https://greatergood.berkeley.edu/article/item/to_be_happier_should_you_focus_on_yourself_or_others", topicFocus);
+        articleRepo.save(article11);
 
 
         ArrayList<String> list1= new ArrayList<>();
