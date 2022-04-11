@@ -115,6 +115,11 @@ public class Populator implements CommandLineRunner {
                 "https://www.headspace.com/articles/how-to-be-more-empathetic", topicMindfulness);
         articleRepo.save(article9);
 
+        Article article10 = new Article("The effect of mindfulness meditation on sleep quality", "Ann Acad", "./images/meditationpics/mindful4.jpg",
+                "There is a growing interest in the effectiveness of mindfulness meditation for sleep disturbed populations. Our study sought to evaluate the effect of mindfulness meditation interventions on sleep quality. To assessTo assess for relative efficacy, comparator groups were restricted to specific active controls (such as evidenced-based sleep treatments) and nonspecific active controls (such as time/attention-matched interventions to control for placebo effects), which were analyzed separately.\n",
+                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6557693/\n", topicSleep);
+        articleRepo.save(article10);
+
 
         ArrayList<String> list1= new ArrayList<>();
 
