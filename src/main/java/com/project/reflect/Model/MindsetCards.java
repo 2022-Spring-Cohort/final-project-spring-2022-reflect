@@ -1,6 +1,7 @@
 
 package com.project.reflect.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.project.reflect.Repository.MindsetCardsRepository;
 
 import javax.persistence.*;
 import java.util.ArrayList;

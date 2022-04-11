@@ -29,6 +29,12 @@ public class Populator implements CommandLineRunner {
     private MindsetCardsRepository mindsetCardsRepo;
 
 
+
+
+
+
+
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -119,15 +125,24 @@ public class Populator implements CommandLineRunner {
         articleRepo.save(article9);
 
 
-        MindsetCards mindsetCard1 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why1","This is the back of mindset card 1");
+        MindsetCardsWhy mindsetCard1 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why1","This is the back of mindset card 1");
 mindsetCardsRepo.save(mindsetCard1);
 
 
 
 
 
-        MindsetCards mindsetCard2 = new MindsetCardsWhy(user2,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
+
+
+
+
+        MindsetCardsWhy mindsetCard2 = new MindsetCardsWhy(user2,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
+
         mindsetCardsRepo.save(mindsetCard2);
+
+
+
+
 
 
 
@@ -154,8 +169,8 @@ mindsetCardsRepo.save(mindsetCard1);
         MindsetCards mindsetCard5 = new MindsetCardsWins(user2,"./images/fillerphoto.jpg","win2", "This is the back of mindset card 5");
 
 
-        mindsetCardsRepo.save(mindsetCard5);
 
+        mindsetCardsRepo.save(mindsetCard5);
 
 
 

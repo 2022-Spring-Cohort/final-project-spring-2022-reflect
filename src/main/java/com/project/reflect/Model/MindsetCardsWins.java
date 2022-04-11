@@ -8,9 +8,8 @@ import java.util.Collection;
 @Entity
 public class MindsetCardsWins extends MindsetCards{
 
-    @ManyToOne
-    @JsonIgnore
-    private User user;
+
+
 
 
     public MindsetCardsWins() {

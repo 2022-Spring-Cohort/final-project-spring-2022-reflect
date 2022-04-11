@@ -1,7 +1,9 @@
 package com.project.reflect.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class User {
@@ -11,11 +13,13 @@ public class User {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Collection <MindsetCards> mindsetCardsWhy;
+
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Collection <MindsetCards> mindsetCardsWins;
+    private Collection<MindsetCards> mindsetCardsWins;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Collection<MindsetCards> mindsetCardsWhy;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Session> sessions;
@@ -30,10 +34,11 @@ public class User {
     public User(String name) {
         this.id = id;
         this.name = name;
-        this.mindsetCardsWhy = mindsetCardsWhy;
-        this.mindsetCardsWins = mindsetCardsWins;
         this.sessions = sessions;
         this.timers = timers;
+        this.mindsetCardsWhy = mindsetCardsWhy;
+        this.mindsetCardsWhy = mindsetCardsWins;
+
     }
 
     public User() {
@@ -56,24 +61,24 @@ public class User {
     }
 
 
-    public void addMindsetCardsWhy(MindsetCardsWhy newCard) {
-        mindsetCardsWhy.add(newCard);
+
+    public void addMindsetCardsWhy(MindsetCards newCard) {
+        this.mindsetCardsWhy.add(newCard);
     }
 
 
-    public void addMindsetCardsWins(MindsetCardsWins newCard) {
-        mindsetCardsWins.add(newCard);
+    public void addMindsetCardsWins(MindsetCards newCard) {
+        this.mindsetCardsWins.add(newCard);
     }
 
-    public Collection <MindsetCardsWhy> getMindsetCardsWhy() {
-       return mindsetCardsWhy;
+    public Collection <MindsetCards> getMindsetCardsWhy() {
+        return mindsetCardsWhy;
     }
 
 
-    public void getMindsetCardsWins(MindsetCardsWins newCard) {
-        mindsetCardsWins.add(newCard);
+    public Collection <MindsetCards> getMindsetCardsWins() {
+        return mindsetCardsWins;
     }
-
 
 
 

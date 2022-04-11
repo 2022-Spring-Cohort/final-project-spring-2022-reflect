@@ -9,5 +9,12 @@ GET http://localhost:8080/users
 
 GET http://localhost:8080/mindset-cards
 
+###
 GET http://localhost:8080//topics
 
+
+###
+GET http://localhost:8080/mindset-wins-cards
+
+###
+GET http://localhost:8080/mindset-why-cards
