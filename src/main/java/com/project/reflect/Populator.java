@@ -78,7 +78,7 @@ public class Populator implements CommandLineRunner {
         Article article1 = new Article("Test", "Test", "What is the best type of meditation?", "Test Test Test...", "Google.com", topicMeditation);
         articleRepo.save(article1);
 
-        Article article2 = new Article("Feeling Overwhelmed? Remember RAIN", "Tara Branch", "C:/Users/wecan/code/week11/Final Project/final-project-spring-2022-reflect/front-end/images/tibetan-bowl.png",
+        Article article2 = new Article("Feeling Overwhelmed? Remember RAIN", "Tara Branch", "./images/tibetan-bowl.png",
                 "Over the last several decades, through my work with tens of thousands of clients and meditation students, I’ve come to see the pain of perceived...",
                 "https://www.mindful.org/tara-brach-rain-mindfulness-practice/",topicAnxiety);
         articleRepo.save(article2);
