@@ -92,7 +92,11 @@ function makeHamburgerMenu(user) {
   const progressLink = document.querySelector(".progressLink");
   const categories = document.querySelector(".categories");
   const aboutLink = document.querySelector(".aboutLink");
+  const usersLink = document.querySelector(".usersLink");
 
+  usersLink.addEventListener("click", () => {
+      makeUserListView();
+  })
   aboutLink.addEventListener("click", () => {
     makeAboutView(user);
   });
