@@ -14,7 +14,7 @@ export default function header() {
                     <li class="aboutLink"><a href="#" class="nav-links">About</a></li>
                     <li class="meditate"><a href="#" class="nav-links">Meditate</a></li>
                     <li class="progressLink"><a href="#" class="nav-links">Progress</a></li>
-                    <li class="categories"><a href="#" class="nav-links">Categories</a></li>
+                    <li class="categories"><a href="#" class="nav-links">Articles</a></li>
                     <li class="usersLink"><a href="#" class="nav-links">Users</a></li>
                     <li><img class="x-icon" src="./images/close-icon.png"></li>
                 </ul>
