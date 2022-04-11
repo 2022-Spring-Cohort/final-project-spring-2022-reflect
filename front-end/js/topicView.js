@@ -7,13 +7,18 @@ export default function topicView(topic) {
         </div>
         ${topic.articles.map(article =>{
             return`
-            <article class="article">
-          <h2 class="article-title">${article.title}</h2>
-          <a href="${article.link}" target="blank">
-            <img src="${article.image}" alt="Article"
-          /></a>
-          <p class="article-summary">${article.content} </p>
-        </article>
+          
+         
+
+    <div class="container3">
+       
+        <a class="article-link" href="${article.link}" target="blank">
+        <h3 class="article-title"> ${article.title} </h3>
+          <img class"article-img" src="${article.picture}" alt="Article" >
+            </a>
+        <p class="article-summary">${article.content} </p>
+    </div> 
+         
             `
         }).join("")}
         

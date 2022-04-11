@@ -93,8 +93,15 @@ function makeHamburgerMenu(user) {
   const progressLink = document.querySelector(".progressLink");
   const categories = document.querySelector(".categories");
   const aboutLink = document.querySelector(".aboutLink");
+  const usersLink = document.querySelector(".usersLink");
+
 
   const interactiveLink = document.querySelector(".interactive");
+
+  usersLink.addEventListener("click", () => {
+      makeUserListView();
+  })
+
   aboutLink.addEventListener("click", () => {
     makeAboutView(user);
   });
@@ -137,9 +144,28 @@ function makeUserView(user) {
       inspoQuote.innerText = jsonData[0].q;
       inspoAuthor.innerText = "-" + jsonData[0].a;
     });
+
+const articleHeader = document.querySelector(".article-header");
+const articleThumb = document.querySelector(".thumb-container");
+const articleSummary = document.querySelector(".article-summary");
+
+
+let randomArticle = Math.floor(((Math.random() * 10) + 20));
+console.log(randomArticle);
+
+    fetch (`http://localhost:8080/articles/${randomArticle}`)
+        .then((res) => res.json())
+        .then((jsonData) => {
+            articleHeader.innerText = jsonData.title;
+            articleThumb.innerHTML = `<img class="article-thumb" src="${jsonData.picture}"></img>`
+            articleSummary.innerText = jsonData.content;
+        });
 }
 
-let meditationIncrements = [1, 5, 10, 15, 20, 30];
+
+
+let meditationIncrements = [1, 5, 10, 15, 20, 30]
+
 
 function makeMeditationView(user, increment) {
   containerEl.innerHTML = header();
