@@ -12,14 +12,12 @@ export default function topicView(topic) {
 
     <div class="container3">
        
-        <a href="${article.link}" target="blank">
-          <img src="${article.picture}" alt="Article" >
-            <h3> ${article.title}</h3>
-        </a>
-    </div>   
-    
-          <p class="article-summary">${article.content} </p>
-        // </article>
+        <a class="article-link" href="${article.link}" target="blank">
+        <h3 class="article-title"> ${article.title} </h3>
+          <img class"article-img" src="${article.picture}" alt="Article" >
+            </a>
+        <p class="article-summary">${article.content} </p>
+    </div> 
          
             `
         }).join("")}
