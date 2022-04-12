@@ -662,6 +662,7 @@ border: 1px solid black;
     width:10em;
     height:10em; 
     perspective: 1000px;
+    
   }
   
   .card__inner{
@@ -767,3 +768,6 @@ text-align:center;
     font-size:18px;
     line-height:1.5;
   }
+.cards-container{
+    display:flex;
+}

@@ -8,10 +8,10 @@ GET http://localhost:8080/users
 
 GET http://localhost:8080/users/1
 
-
 ###
 
-GET http://localhost:8080/mindset-cards
+GET http://localhost:8080/users/2
+
 
 ###
 GET http://localhost:8080//topics
@@ -19,24 +19,24 @@ GET http://localhost:8080//topics
 
 
 ###
-POST http://localhost:8080/mindset-cards/add-why-card
+POST http://localhost:8080//user/1/mindset-cards/add-why-card
 Content-Type: application/json
 
- {
-    "front": "why30",
-    "back": "This is the back of mindset card 30"
-  }
+
+    "front": "win9",
+    "back": "This is the back of mindset card 4",
+    "userId": 1
 
 
 ###
-DELETE http://localhost:8080/mindset-why-cards/30/delete
+DELETE http://localhost:8080/mindset-why-cards/31/delete
 
 
 ###
-GET http://localhost:8080/users/1/mindset-wins-cards
+GET http://localhost:8080/users/2/mindset-wins-cards
 
 ###
-GET http://localhost:8080/users/1/mindset-why-cards
+GET http://localhost:8080/users/2/mindset-why-cards
 
 
 

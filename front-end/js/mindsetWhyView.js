@@ -43,7 +43,7 @@ export default function mindsetWhys(mindsetCards) {
 
    
 
-  <div class = "whys-card-container">
+  <div class = "whys-card-container cards-container">
 
   
   ${mindsetCards

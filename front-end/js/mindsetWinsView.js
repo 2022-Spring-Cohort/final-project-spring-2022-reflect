@@ -1,7 +1,7 @@
 export default function mindsetWins(user) {
   return `
 
-  <div class = "wins-card-container">
+  <div class = "wins-card-container cards-container">
   <ul>
   ${user.mindsetCardsWins
     .map((mindsetCardWin) => {
