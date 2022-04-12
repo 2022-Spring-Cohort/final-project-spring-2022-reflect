@@ -64,8 +64,10 @@ export default function aboutView(user) {
             </p>
             </div>
           </div>
-          <a id="toggle" class="contact-button">CONTACT US</a>
-        </section>
+          <div class="contact-div">
+            <a id="toggle" class="contact-button">CONTACT US</a>
+          </div>
+          </section>
       </div>
     </div>
     `

@@ -48,6 +48,7 @@ function makeUserListViewFromJSON(users) {
   newUserButton.addEventListener("click", () => {
     const newUserJson = {
       name: newName.value,
+      sessions: []
     };
 
     fetch(`http://localhost:8080/users/addUser`, {
@@ -131,6 +132,7 @@ function makeHamburgerMenu(user) {
 }
 
 function makeUserView(user) {
+    console.log(user);
   containerEl.innerHTML = header();
   containerEl.innerHTML += home(user);
 
@@ -249,6 +251,7 @@ function makeTopicView(user, topic) {
 }
 
 function makeAboutView(user) {
+    
   containerEl.innerHTML = header();
   containerEl.innerHTML += aboutView();
 
@@ -257,13 +260,11 @@ function makeAboutView(user) {
   const closeBtn = document.getElementById("close");
   const targetDiv = document.getElementById("abc");
   const btn = document.getElementById("toggle");
+
+  targetDiv.style.display = "none";
+
   btn.onclick = function () {
-    if (targetDiv.style.display !== "none") {
-      targetDiv.style.display = "none";
-      document.getElementById("toggle");
-    } else {
       targetDiv.style.display = "block";
-    }
   };
   closeBtn.onclick = function () {
     document.getElementById("abc").style.display = "none";
