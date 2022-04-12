@@ -287,15 +287,13 @@ function makeTimerSelectView(user) {
 function makeMindsetView(user) {
   console.log("making your mindset page");
   console.log(`This is the user ID: ${userId}`);
-  fetch(`http://localhost:8080/users/${userId}`)
+  fetch("http://localhost:8080//mindset-why-cards")
     .then((res) => res.json())
     .then((mindsetCards) => {
       console.log(mindsetCards);
 
       containerEl.innerHTML = header();
       containerEl.innerHTML += mindsetWhyView(mindsetCards);
-      containerEl.innerHTML += mindsetWinsView(mindsetCards);
-
       makeCardFlip();
 
       const cardFrontInput = document.querySelector(".why-card-front-input");
@@ -332,6 +330,48 @@ function makeMindsetView(user) {
         }
       });
 
+      fetch(`http://localhost:8080/users/${userId}`)
+      .then((res) => res.json())
+      .then((mindsetCards) => {
+        console.log(mindsetCards);
+  
+        containerEl.innerHTML = header();
+        containerEl.innerHTML += mindsetWhyView(mindsetCards);
+        makeCardFlip();
+  
+        const cardFrontInput = document.querySelector(".why-card-front-input");
+        const cardBackInput = document.querySelectorAll(".why-card-back-input");
+        const cardImageInput = document.querySelectorAll(".card-image-input");
+  
+        const addWhyCardButton = document.querySelectorAll(
+          ".add-new-why-card-button"
+        );
+        const addWinCardButton = document.querySelectorAll(
+          ".add-new-win-card-button"
+        );
+  
+        addWhyCardButton.addEventListener("click", () => {
+          const newWhyCardJson = {
+            front: cardFrontInput.value,
+            back: cardBackInput.value,
+          };
+  
+          if (cardFrontInput.value !== "") {
+            fetch("http://localhost:8080//mindset-cards/add-why-card", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(newWhyCardJson),
+            })
+              .then((res) => res.json())
+              .then((card) => {
+                makeMindsetView(user);
+              });
+          } else {
+            alert("Enter a value for your card.");
+          }
+        });
       addWinCardButton.addEventListener("click", () => {
         const newWinCardJson = {
           front: cardFrontInput.value,
@@ -371,6 +411,9 @@ function makeMindsetView(user) {
         });
       });
     });
+
+
+
 }
 
 function makeProgressChart(user) {

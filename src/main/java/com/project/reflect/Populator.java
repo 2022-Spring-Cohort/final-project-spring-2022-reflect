@@ -25,8 +25,6 @@ public class Populator implements CommandLineRunner {
     private TopicRepository topicRepo;
     @Autowired
     TimerRepository timerRepo;
-    @Autowired
-    private MindsetCardsRepository mindsetCardsRepo;
 
     @Autowired
     private MindsetCardsWhyRepository mindsetCardsWhyRepo;
@@ -143,9 +141,11 @@ public class Populator implements CommandLineRunner {
 
 
         MindsetCardsWhy mindsetCard1 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why1","This is the back of mindset card 1");
-mindsetCardsRepo.save(mindsetCard1);
 
-mindsetCardsWhyRepo.save(mindsetCard1);
+
+        mindsetCardsWhyRepo.save(mindsetCard1);
+
+
 
 
 
@@ -158,6 +158,7 @@ mindsetCardsWhyRepo.save(mindsetCard1);
         MindsetCardsWhy mindsetCard2 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
 
         mindsetCardsWhyRepo.save(mindsetCard2);
+
 
 
 

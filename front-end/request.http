@@ -29,14 +29,16 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8080/mindset-cards/30/delete
+DELETE http://localhost:8080/mindset-why-cards/30/delete
 
 
 ###
-GET http://localhost:8080/mindset-why-cards
-
-
-
+GET http://localhost:8080/users/1/mindset-wins-cards
 
 ###
-GET http://localhost:8080/mindset-wins-cards
+GET http://localhost:8080/users/1/mindset-why-cards
+
+
+
+
+
