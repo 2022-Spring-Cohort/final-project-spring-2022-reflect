@@ -46,7 +46,7 @@ export default function mindsetWhys(mindsetCards) {
   <div class = "whys-card-container">
 
   
-  ${mindsetCards.mindsetCardsWhy
+  ${mindsetCards
     .map((mindsetCardWhy) => {
       return `
   <div class="card">
