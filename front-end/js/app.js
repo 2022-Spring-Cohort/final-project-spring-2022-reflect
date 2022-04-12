@@ -94,6 +94,7 @@ function makeHamburgerMenu(user) {
   const categories = document.querySelector(".categories");
   const aboutLink = document.querySelector(".aboutLink");
   const usersLink = document.querySelector(".usersLink");
+  const reflectLink = document.querySelector(".home-link")
 
 
   const interactiveLink = document.querySelector(".interactive");
@@ -112,6 +113,9 @@ function makeHamburgerMenu(user) {
     makeCategoriesView(user);
   });
   homeLink.addEventListener("click", () => {
+    makeUserView(user);
+  });
+  reflectLink.addEventListener("click", () => {
     makeUserView(user);
   });
   hamburger.addEventListener("click", toggleMenu);
@@ -151,7 +155,6 @@ const articleSummary = document.querySelector(".article-summary");
 
 
 let randomArticle = Math.floor(((Math.random() * 10) + 20));
-console.log(randomArticle);
 
     fetch (`http://localhost:8080/articles/${randomArticle}`)
         .then((res) => res.json())
