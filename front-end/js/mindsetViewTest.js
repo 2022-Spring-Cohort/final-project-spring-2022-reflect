@@ -3,7 +3,7 @@ export default function mindsetViewTest(mindsetCards) {
   return `
   <body>
     <section class="mindset__card mindset__intro">
-      <h1>Mindset sTrainer</h1>
+      <h1>Mindset Trainer</h1>
 
       <p>
         A growth mindset can be trained by all of us. Below are prompts to guide
