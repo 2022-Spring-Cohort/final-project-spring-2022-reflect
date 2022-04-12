@@ -61,7 +61,7 @@ public class MindsetCardsController {
 
     @DeleteMapping("/mindset-why-cards/{id}/delete")
     public Iterable<MindsetCardsWhy> deleteMindsetWhyCard(@PathVariable long id) {
-        mindsetCardsRepo.delete(mindsetCardsRepo.findById(id).get());
+        mindsetCardsWhyRepo.delete(mindsetCardsWhyRepo.findById(id).get());
         return getWhyCards();
     }
 
@@ -69,7 +69,7 @@ public class MindsetCardsController {
 
     @DeleteMapping("/mindset-win-cards/{id}/delete")
     public Iterable<MindsetCardsWins> deleteMindsetWinCard(@PathVariable long id) {
-        mindsetCardsRepo.delete(mindsetCardsRepo.findById(id).get());
+        mindsetCardsWinsRepo.delete(mindsetCardsWinsRepo.findById(id).get());
         return getWinCards();
     }
 
