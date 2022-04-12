@@ -40,15 +40,14 @@
 
 #homePageBG {
     position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
+
+    width:450px ;
     min-height: 100%;
 }
 video {
     min-width: 2rem;
     height: 100%;
-    width: 100%;
+    width: 450px;
     object-fit: cover; 
 }
 @media screen and (min-width: 900px){
@@ -88,6 +87,11 @@ video {
     display: flex;
     flex-direction: column;
 }
+@media screen and (min-width: 900px){
+    .container{
+        width: 450px;
+    }
+}
 
 .brand {
     display: flex;
@@ -103,6 +107,7 @@ video {
     width: 100%;
     /* border-style: dashed; */
 }
+
 
 .home-link {
     font-family: 'Marcellus SC', serif;
@@ -285,12 +290,14 @@ video {
 
 .showMenu {
   transform: translateY(0);
+  
 }
 
 .closeIcon{
   display: none;
 }
 .nav-links{
+    height:2rem;
     position: relative;
     left: 50%;
     text-align: center;
@@ -327,6 +334,7 @@ cursor: pointer;
 }
 #ham-menu.is-active .bar:nth-child(2){
     opacity: 0;
+    
 }
 #ham-menu.is-active .bar:nth-child(1){
     transform: translate(8px) rotate(45deg);
