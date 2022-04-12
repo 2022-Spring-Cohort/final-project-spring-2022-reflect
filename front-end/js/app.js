@@ -251,6 +251,7 @@ function makeTopicView(user, topic) {
 }
 
 function makeAboutView(user) {
+    
   containerEl.innerHTML = header();
   containerEl.innerHTML += aboutView();
 
