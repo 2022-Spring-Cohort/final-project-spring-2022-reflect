@@ -48,6 +48,7 @@ function makeUserListViewFromJSON(users) {
   newUserButton.addEventListener("click", () => {
     const newUserJson = {
       name: newName.value,
+      sessions: []
     };
 
     fetch(`http://localhost:8080/users/addUser`, {
@@ -131,6 +132,7 @@ function makeHamburgerMenu(user) {
 }
 
 function makeUserView(user) {
+    console.log(user);
   containerEl.innerHTML = header();
   containerEl.innerHTML += home(user);
 
