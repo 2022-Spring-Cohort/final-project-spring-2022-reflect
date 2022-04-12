@@ -26,3 +26,7 @@ content-Type: application/json
     "front": "why40",
     "back": "This is the back of mindset card 40"
   }
+
+
+###
+DELETE http://localhost:8080/mindset-cards/31/delete
