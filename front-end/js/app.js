@@ -13,7 +13,11 @@ import mindsetWhyView from "./mindsetWhyView.js";
 
 import mindsetWinsView from "./mindsetWinsView.js";
 
+import mindsetViewTest from "./mindsetViewTest.js";
+
 import topicView from "./topicView.js";
+
+import makeCardFlip from "./mindset.js";
 
 const containerEl = document.querySelector(".container");
 
@@ -280,6 +284,15 @@ function makeTimerSelectView(user) {
   });
 }
 
+const cards = document.querySelectorAll(".card__inner");
+
+cards.forEach((card) => {
+  card.addEventListener("click", function () {
+    console.log("flipping");
+    card.classList.toggle("is-flipped");
+  });
+});
+
 function makeMindsetView(user) {
   console.log("making your mindset page");
   console.log(`This is the user ID: ${userId}`);
@@ -287,9 +300,12 @@ function makeMindsetView(user) {
     .then((res) => res.json())
     .then((mindsetCards) => {
       console.log(mindsetCards);
+
       containerEl.innerHTML = header();
-      containerEl.innerHTML += mindsetWhyView(mindsetCards);
-      containerEl.innerHTML += mindsetWinsView(mindsetCards);
+      // containerEl.innerHTML += mindsetWhyView(mindsetCards);
+      // containerEl.innerHTML += mindsetWinsView(mindsetCards);
+      containerEl.innerHTML += mindsetViewTest(mindsetCards);
+      makeCardFlip();
     });
 }
 
