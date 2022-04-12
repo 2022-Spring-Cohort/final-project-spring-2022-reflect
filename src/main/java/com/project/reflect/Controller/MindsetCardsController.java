@@ -28,13 +28,13 @@ public class MindsetCardsController {
     }
 
     @PostMapping("/mindset-cards/add-why-card")
-    public Iterable addMindsetWhyCard(MindsetCardsWhy newMindsetCard) {
+    public Iterable addMindsetWhyCard(@RequestBody MindsetCardsWhy newMindsetCard) {
     mindsetCardsRepo.save(newMindsetCard);
         return getCards();
     }
 
     @PostMapping("/mindset-cards/add-wins-card")
-    public Iterable addMindsetWinCard(MindsetCardsWins newMindsetCard) {
+    public Iterable addMindsetWinCard(@RequestBody MindsetCardsWins newMindsetCard) {
         mindsetCardsRepo.save(newMindsetCard);
         return getCards();
     }

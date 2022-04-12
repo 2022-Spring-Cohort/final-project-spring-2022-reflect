@@ -20,9 +20,9 @@ GET http://localhost:8080//topics
 
 ###
 POST http://localhost:8080/mindset-cards/add-why-card
-Content-Type: application/json
+content-Type: application/json
  {
-    "id":40,
+    "id": 40,
     "front": "why40",
     "back": "This is the back of mindset card 40"
   }
