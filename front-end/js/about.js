@@ -47,24 +47,24 @@ export default function aboutView(user) {
             <h1>Meet the Reflect Team</h1>
             <div class="headshots">
             <p>
-              <a href="https://www.linkedin.com/in/aweys-pemba/">
+              <a href="https://www.linkedin.com/in/aweys-pemba/" target="blank">
             <img src="./images/headshots/aweys2.jpg" alt="Us" width="60" height="60"> 
               </a>
-              <a href="https://www.linkedin.com/in/ben-corrigan/">
+              <a href="https://www.linkedin.com/in/ben-corrigan/" target="blank">
                 <img src="./images/headshots/ben.jpg" alt="Us" width="60" height="60">
               </a>
-              <a href="https://www.linkedin.com/in/dallas-baldwin/">
+              <a href="https://www.linkedin.com/in/dallas-baldwin/" target="blank">
             <img src="./images/headshots/dallas.jpg" alt="Us" width="60" height="60">
               </a>
             </p>
             <p>
-              <a href="https://www.linkedin.com/in/dejuanspencer/">
+              <a href="https://www.linkedin.com/in/dejuanspencer/" target="blank">
             <img src="./images/headshots/dejuan2.png" alt="Us" width="60" height="60">
               </a>
-              <a href="https://www.linkedin.com/in/joe-swysgood/">
+              <a href="https://www.linkedin.com/in/joe-swysgood/" target="blank">
             <img src="./images/headshots/joe2.jpg" alt="Us" width="60" height="60">
               </a>
-              <a href="https://www.linkedin.com/in/mikethecoder/">
+              <a href="https://www.linkedin.com/in/mikethecoder/" target="blank">
             <img src="./images/headshots/mike.jpg" alt="Us" width="60" height="60">
               </a>
             </p>
