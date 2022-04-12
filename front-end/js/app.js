@@ -157,7 +157,7 @@ console.log(randomArticle);
         .then((res) => res.json())
         .then((jsonData) => {
             articleHeader.innerText = jsonData.title;
-            articleThumb.innerHTML = `<img class="article-thumb" src="${jsonData.picture}"></img>`
+            articleThumb.innerHTML = `<a class="article-link" href="${jsonData.link}" target="blank"><img class="article-thumb" src="${jsonData.picture}"></a>`
             articleSummary.innerText = jsonData.content;
         });
 }

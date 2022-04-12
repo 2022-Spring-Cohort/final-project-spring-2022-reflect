@@ -17,8 +17,9 @@ export default function meditate() {
         <div class="audio">
         
         </div>
-        <button class="end-button">End Session</button>
-           
+        <div class="end-session">
+            <button class="end-button">End Session</button>
+        </div>
     </div>
     `
 }
