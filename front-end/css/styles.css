@@ -583,9 +583,8 @@ min-height: 500px;
 padding:10px 50px;
 border:2px solid gray;
 border-radius:10px;
-font-family:raleway;
 background-color:rgb(122, 120, 195);;
-font-family: Futura;
+font-family: var(--font-family-secondary);
 font-size: 1.5vw;
 }
 .submit-API-button {

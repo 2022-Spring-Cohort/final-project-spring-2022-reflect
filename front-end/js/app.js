@@ -260,13 +260,11 @@ function makeAboutView(user) {
   const closeBtn = document.getElementById("close");
   const targetDiv = document.getElementById("abc");
   const btn = document.getElementById("toggle");
+
+  targetDiv.style.display = "none";
+
   btn.onclick = function () {
-    if (targetDiv.style.display !== "none") {
-      targetDiv.style.display = "none";
-      document.getElementById("toggle");
-    } else {
       targetDiv.style.display = "block";
-    }
   };
   closeBtn.onclick = function () {
     document.getElementById("abc").style.display = "none";
