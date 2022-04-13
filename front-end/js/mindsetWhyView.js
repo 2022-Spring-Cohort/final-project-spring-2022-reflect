@@ -22,24 +22,28 @@ export default function mindsetWhys(mindsetCards) {
 <section class="mindset__focuses">
   <section class="mindsets___growth">
     <h2>Here are some cards to input your whys. Repetition is key.</h2>
-    <form>
+   
       <textarea
-        id="why"
-        name="why"
+        id="why__what"
+        name="why__what"
+        class = "why-card-front-input"
         rows="5"
         columns="20"
-        placeholder="What do you want to do?"
-      ></textarea>
+        placeholder="List a thought that is bothering you."
+      >Teest</textarea>
 
       <textarea
         id="why__details"
         name="why__details"
+        class = "why-card-back-input"
         rows="5"
         columns="20"
-        placeholder="Why does this matter to you?"
+        placeholder="List a reason this thought is not true."
       ></textarea>
-      <input type="submit" />
-    </form>
+
+      <input type = "file" class= "why-card-image-input">
+      <input class = "why-submit" type="submit" />
+  
 
    
 
@@ -86,18 +90,7 @@ export default function mindsetWhys(mindsetCards) {
     .join("")}
   </div>
 
-  <div class="card-input">
-  <h2 class="new-card">Add A New Card</h2>
   
-  <input type="text" class="card-front-input" placeholder="Front of Card" />
-  <input type="text" class="card-back-input" placeholder="Back of Card" />
-  <input type="text" class="card-image-input" placeholder="Enter image file" />
-  
-  
-  <button class="add-new-why-card-button">Add Card</button>
- 
-  
-</div>    
 
   `;
 }
