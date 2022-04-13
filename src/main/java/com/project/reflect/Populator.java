@@ -147,25 +147,9 @@ public class Populator implements CommandLineRunner {
 
 
 
-
-
-
-
-
-
-
-
-        MindsetCardsWhy mindsetCard2 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
+        MindsetCardsWhy mindsetCard2 = new MindsetCardsWhy(user2,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
 
         mindsetCardsWhyRepo.save(mindsetCard2);
-
-
-
-
-
-
-
-
 
 
         MindsetCardsWhy mindsetCard3 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why3", "This is the back of mindset card 3");
@@ -175,14 +159,10 @@ public class Populator implements CommandLineRunner {
 
 
 
-
-
-        MindsetCardsWins mindsetCard4 = new MindsetCardsWins(user1,"./images/fillerphoto.jpg","win1", "This is the back of mindset card 4");
+        MindsetCardsWins mindsetCard4 = new MindsetCardsWins(user2,"./images/fillerphoto.jpg","win1", "This is the back of mindset card 4");
 
 
         mindsetCardsWinsRepo.save(mindsetCard4);
-
-
 
 
 
@@ -191,9 +171,6 @@ public class Populator implements CommandLineRunner {
 
 
         mindsetCardsWinsRepo.save(mindsetCard5);
-
-
-
 
 
     }}

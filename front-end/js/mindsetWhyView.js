@@ -25,6 +25,7 @@ export default function mindsetWhys(mindsetCards) {
     <form>
       <textarea
         id="why"
+        class="why-card-front-input"
         name="why"
         rows="5"
         columns="20"
@@ -33,13 +34,17 @@ export default function mindsetWhys(mindsetCards) {
 
       <textarea
         id="why__details"
+        class="why-card-back-input"
         name="why__details"
         rows="5"
         columns="20"
         placeholder="Why does this matter to you?"
       ></textarea>
-      <input type="submit" />
-    </form>
+
+      <input type = "file" id="why-photo" name="why-photo">
+
+      <button class = "why-submit" type = "submit"> Add Card</button>
+        </form>
 
    
 

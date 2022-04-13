@@ -712,10 +712,17 @@ cursor:pointer;
 border: 1px solid black;
 }
 
+
+.cards-container{
+    display:flex;
+    width:70%;
+    height: 40em;
+}
+
 .card{
-    margin: 100px auto 0;
-    width:10em;
-    height:10em; 
+    margin: 5em auto 0;
+    width:5em;
+    height:5em; 
     perspective: 1000px;
     
   }
@@ -823,6 +830,3 @@ text-align:center;
     font-size:18px;
     line-height:1.5;
   }
-.cards-container{
-    display:flex;
-}
