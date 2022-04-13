@@ -117,7 +117,7 @@ video {
     font-family: 'Marcellus SC', serif;
     font-size: 3rem;
     text-decoration: none;
-    color: var(--color-5)
+    color: var(--color-5);
 }
 
 .nav-links {
@@ -494,10 +494,16 @@ cursor: pointer;
 
 .about-us {
     padding: 2vh;
-      text-align: center;
+    text-align: center;
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 15px;
       margin: 1vh;
+  }
+
+
+  .reflect-info {
+      padding: .5vh;
+      text-align: left;
   }
   
   .aabou {
