@@ -22,16 +22,19 @@ public class MindsetCardsController {
 
 
     @GetMapping("/users/{id}/mindset-why-cards")
-    public Iterable<MindsetCardsWhy> getWhyCards() {
-        return mindsetCardsWhyRepo.findAll();
-            }
+    public Iterable<MindsetCardsWhy> getWhyCards(@PathVariable long id) {
+        User user = userRepo.findById(id).get();
+
+        return user.getMindsetCardsWhy();
+    }
 
 
     @GetMapping("/users/{id}/mindset-wins-cards")
-    public Iterable<MindsetCardsWins> getWinsCards() {
-        return mindsetCardsWinsRepo.findAll();
-    }
+    public Iterable<MindsetCardsWins> getWinsCards(@PathVariable long id) {
+        User user = userRepo.findById(id).get();
 
+        return user.getMindsetCardsWins();
+    }
 
 
     @GetMapping("/mindset-why-cards/{id}")
@@ -50,7 +53,7 @@ public class MindsetCardsController {
         User user = userRepo.findById(id).get();
         newMindsetCard.setUser(user);
         mindsetCardsWhyRepo.save(newMindsetCard);
-        return getWhyCards();
+        return user.getMindsetCardsWhy();
     }
 
     @PostMapping("/user/{id}/mindset-cards/add-wins-card")
@@ -58,22 +61,23 @@ public class MindsetCardsController {
         User user = userRepo.findById(id).get();
         newMindsetCard.setUser(user);
         mindsetCardsWinsRepo.save(newMindsetCard);
-        return getWinsCards();
+        return user.getMindsetCardsWins();
     }
 
 
-    @DeleteMapping("/mindset-why-cards/{id}/delete")
-    public Iterable<MindsetCardsWhy> deleteMindsetWhyCard(@PathVariable long id) {
-        mindsetCardsWhyRepo.delete(mindsetCardsWhyRepo.findById(id).get());
-        return getWhyCards();
+    @DeleteMapping("/user/{id}/mindset-why-cards/{id1}/delete")
+    public Iterable<MindsetCardsWhy> deleteMindsetWhyCard(@PathVariable long id, @PathVariable long id1) {
+        User user = userRepo.findById(id).get();
+        mindsetCardsWhyRepo.delete(mindsetCardsWhyRepo.findById(id1).get());
+        return user.getMindsetCardsWhy();
     }
 
 
-    @DeleteMapping("/mindset-win-cards/{id}/delete")
-    public Iterable<MindsetCardsWins> deleteMindsetWinCard(@PathVariable long id) {
-        mindsetCardsWinsRepo.delete(mindsetCardsWinsRepo.findById(id).get());
-        return getWinsCards();
-
+    @DeleteMapping("/user/{id}/mindset-wins-cards/{id1}/delete")
+    public Iterable<MindsetCardsWins> deleteMindsetWinsCard(@PathVariable long id, @PathVariable long id1) {
+        User user = userRepo.findById(id).get();
+        mindsetCardsWinsRepo.delete(mindsetCardsWinsRepo.findById(id1).get());
+        return user.getMindsetCardsWins();
 
     }
 

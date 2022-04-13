@@ -22,14 +22,36 @@ GET http://localhost:8080//topics
 POST http://localhost:8080//user/1/mindset-cards/add-why-card
 Content-Type: application/json
 
-
+{
     "front": "win9",
     "back": "This is the back of mindset card 4",
-    "userId": 1
+}
 
 
 ###
-DELETE http://localhost:8080/mindset-why-cards/31/delete
+POST http://localhost:8080/user/2/mindset-cards/add-why-card
+Content-Type: application/json
+
+  {
+  
+    "front": "win1",
+    "back": "This is the back of mindset card sdsvdsds4",
+    "userId": 1
+  }
+
+
+###
+DELETE http://localhost:8080/user/2/mindset-why-cards/36/delete
+
+
+
+
+###
+GET http://localhost:8080/users/1/mindset-wins-cards
+
+###
+GET http://localhost:8080/users/1/mindset-why-cards
+
 
 
 ###

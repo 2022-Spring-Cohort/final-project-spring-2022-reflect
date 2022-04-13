@@ -414,6 +414,7 @@ function makeMindsetView(user) {
         const newWinsCardJson = {
           front: cardFrontInput.value,
           back: cardBackInput.value,
+          userId: userId,
         };
 
         if (cardFrontInput.value !== "") {
