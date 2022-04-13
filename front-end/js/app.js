@@ -165,8 +165,6 @@ function makeUserView(user) {
   console.log(randomArticle);
 
 
-let randomArticle = Math.floor(((Math.random() * 10) + 20));
-
     fetch (`http://localhost:8080/articles/${randomArticle}`)
         .then((res) => res.json())
         .then((jsonData) => {
