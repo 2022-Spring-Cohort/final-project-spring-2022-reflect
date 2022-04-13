@@ -556,6 +556,7 @@ cursor: pointer;
     height: 120px;
     transition: all 0.5s ease-in-out;
 } */
+
 #abc {
 width:100%;
 height:100%;
@@ -584,6 +585,7 @@ h4{
     margin-bottom: .5em;
     color: #e8e8eb;
 }
+
 #contact-form {
 max-width:50vw;
 min-width: 350px;
@@ -595,6 +597,7 @@ background-color:rgb(122, 120, 195);;
 font-family: var(--font-family-secondary);
 font-size: 1.5vw;
 }
+
 .submit-API-button {
   background-color: #10aca3;
   border: 1px solid black;
