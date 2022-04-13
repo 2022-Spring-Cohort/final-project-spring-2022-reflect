@@ -715,8 +715,8 @@ border: 1px solid black;
 
 .cards-container{
     display:flex;
-    width:70%;
-    height: 40em;
+    width:60%;
+    height: 50em;
 }
 
 .card{

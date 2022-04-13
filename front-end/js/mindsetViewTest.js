@@ -1,164 +1,146 @@
-export default function mindsetViewTest(mindsetCards) {
+export default function mindsetWhys(mindsetCards) {
   console.log(mindsetCards);
   return `
-  <body>
-    <section class="mindset__card mindset__intro">
-      <h1>Mindset Trainer</h1>
+  <section class="mindset__card mindset__intro">
+  <h1>Mindset Trainer</h1>
 
-      <p>
-        A growth mindset can be trained by all of us. Below are prompts to guide
-        you into further developing a growth mindset.
-      </p>
-    </section>
+  <p>
+    A growth mindset can be trained by all of us. Below are prompts to guide
+    you into further developing a growth mindset.
+  </p>
+</section>
 
-    <section class="mindset__card mindset__why">
-      <h2>Why are you doing this?</h2>
-      <p>
-        Think about the moments where you struggled and succeeded at the end.
-        Remind yourself how you overcame those issues. This can be used to
-        encourage yourself because you've won over difficulty before and can do
-        it again.
-      </p>
-    </section>
-    <section class="mindset__focuses">
-      <section class="mindsets___growth">
-        <h2>Here are some cards to input your whys. Repetition is key.</h2>
-        <form>
-          <textarea
-            id="why"
-            name="why"
-            rows="5"
-            columns="20"
-            placeholder="What do you want to do?"
-          ></textarea>
+<section class="mindset__card mindset__why">
+  <h2>Why are you doing this?</h2>
+  <p>
+    Think about the moments where you struggled and succeeded at the end.
+    Remind yourself how you overcame those issues. This can be used to
+    encourage yourself because you've won over difficulty before and can do
+    it again.
+  </p>
+</section>
+<section class="mindset__focuses">
+  <section class="mindsets___growth">
+    <h2>Here are some cards to input your whys. Repetition is key.</h2>
+    <form>
+      <textarea
+        id="why"
+        class="why-card-front-input"
+        name="why"
+        rows="5"
+        columns="20"
+        placeholder="What do you want to do?"
+      ></textarea>
 
-          <textarea
-            id="why__details"
-            name="why__details"
-            rows="5"
-            columns="20"
-            placeholder="Why does this matter to you?"
-          ></textarea>
-          <input type="submit" />
+      <textarea
+        id="why__details"
+        class="why-card-back-input"
+        name="why__details"
+        rows="5"
+        columns="20"
+        placeholder="Why does this matter to you?"
+      ></textarea>
+
+      <input type = "file" id="why-photo" name="why-photo">
+
+      <button class = "why-submit" type = "submit"> Add Card</button>
         </form>
 
-        <section class="growth__card">
-          <body>
-            <div class="card">
-              <div class="card__inner">
-                <div class="card__face card__face--front">
-                  <div class="h2">A thought that's holding you back</div>
-                </div>
-                <div class="card__face card__face--back">
-                  <div class="card__content">
-                    <div class="card__header">
-                      Image here of what you care about
-                      <img src="./images/fillerphoto.jpg" class="pp" />
-                      <h2>Discomfort is a milestone to growth</h2>
-                    </div>
-        
-                    <div class="card__body">
-                      <h3>Reasons that thought is not true</h3>
-                      <ul>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                          Nihil, veritatis!
-                        </li>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                          Nihil, veritatis!
-                        </li>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                          Nihil, veritatis!
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </section>
-        <section class="growth__card">
-          This will be a card showing your whys and details
-        </section>
-        <section class="growth__card">
-          This will be a card showing your whys and details
-        </section>
-      </section>
+   
 
-      <section class="mindsets__victories">
-        <h2>
-          This section will allow users to interact with a card. The front of
-          the card will be a challenging moment. The back of the card will be
-          details in winning over struggles.
-        </h2>
+  <div class = "whys-card-container cards-container">
 
-        <form>
-          <textarea
-            id="wins"
-            name="wins"
-            rows="5"
-            columns="20"
-            placeholder="What is something challenging you have done before?"
-          ></textarea>
+  
+  ${mindsetCards
+    .map((mindsetCardWhy) => {
+      return `
+  <div class="card">
+  <div class="card__inner">
 
-          <textarea
-            id="wins__details"
-            name="wins__details"
-            rows="5"
-            columns="20"
-            placeholder="List details"
-          ></textarea>
-          <input type="submit" />
-        </form>
+  <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">
+    <div class="card__face card__face--front">
+      <div class="h2">${mindsetCardWhy.front}</div>
+    </div>
+    <div class="card__face card__face--back">
+      <div class="card__content">
+        <div class="card__header">
+       Image here of what you care about
+          <img src= ${mindsetCardWhy.photo} class="pp" />
+          <h2>Discomfort is a milestone to growth</h2>
+        </div>
+  
+        <div class="card__body">
+          <h3>Reasons that thought is not true</h3>
+  
+       
+          
+         <p> ${mindsetCardWhy.back}</p>
+          
+                
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="deleteCardButton"> <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">Delete Card</button>
+  </div>
+  
+  
+  `;
+    })
+    .join("")}
+    
 
-        <section class="wins">
-          <body>
-            <div class="card">
-              <div class="card__inner">
-                <div class="card__face card__face--front">
-                  <div class="h2">A thought that's holding you back</div>
-                </div>
-                <div class="card__face card__face--back">
-                  <div class="card__content">
-                    <div class="card__header">
-                      Image here of what you care about
-                      <img src="./images/fillerphoto.jpg" class="pp" />
-                      <h2>Discomfort is a milestone to growth</h2>
-                    </div>
-        
-                    <div class="card__body">
-                      <h3>Reasons that thought is not true</h3>
-                      <ul>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                          Nihil, veritatis!
-                        </li>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                          Nihil, veritatis!
-                        </li>
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                          Nihil, veritatis!
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </section>
-        <section class="wins">
-          This will be a card showing the wins and details
-        </section>
-        <section class="wins">
-          This will be a card showing the wins and details
-        </section>
-      </section>
-    </section>
-  </body>
-
-`;
+    <div class = "wins-card-container cards-container">
+    <ul>
+    ${mindsetCardsWins
+      .map((mindsetCardWin) => {
+        return `
+    <div class="card">
+    <div class="card__inner">
+    <input id="id" type="hidden" name="id" value="${mindsetCardWin.id}">
+      <div class="card__face card__face--front">
+        <div class="h2">${mindsetCardWin.front}</div>
+      </div>
+      <div class="card__face card__face--back">
+        <div class="card__content">
+          <div class="card__header">
+         Image here of what you care about
+            <img src= ${mindsetCardWin.photo} class="pp" />
+            <h2>Discomfort is a milestone to growth</h2>
+          </div>
+    
+          <div class="card__body">
+            <h3>Reasons that thought is not true</h3>
+    
+         
+            
+           <p> ${mindsetCardWin.back}</p>
+            
+                  
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    
+    <button class="deleteCardButton"> <input id="id" type="hidden" name="id" value="${mindsetCardWin.id}">Delete Card</button>
+    `;
+      })
+      .join("")}
+    </div>
+  
+    <div class="card-input">
+    <h2 class="new-card">Add A New Card</h2>
+    
+    <input type="text" class="card-front-input" placeholder="Front of Card" />
+    <input type="text" class="card-back-input" placeholder="Back of Card" />
+    <input type="text" class="card-image-input" placeholder="Enter image file" />
+    
+    
+    <button class="add-new-win-card-button">Add Card</button>
+    
+  </div>    `;
 }
