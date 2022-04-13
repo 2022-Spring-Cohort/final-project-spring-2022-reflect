@@ -119,17 +119,17 @@ public class Populator implements CommandLineRunner {
         "https://www.mindful.org/developing-a-daily-practice/", topicMeditation);
         articleRepo.save(article7);
 
-        Article article8 = new Article("What is the best type of meditation?", "Daniel Bubins", "./images/meditationpics/meditator.jpg",
+        Article article8 = new Article("What is the Best Type of Meditation?", "Daniel Bubins", "./images/meditationpics/meditator.jpg",
                 "Meditation offers time for relaxation and heightened awareness in a stressful world where our senses are often dulled. Research suggests that meditation has the potential for more than just temporary stress relief...",
                 "https://www.medicalnewstoday.com/articles/320392", topicMeditation);
         articleRepo.save(article8);
 
-        Article article9 = new Article("How to be more empathetic", "Headspace","./images/meditationpics/mindful4.jpg",
+        Article article9 = new Article("How to Be More Empathetic", "Headspace","./images/meditationpics/mindful4.jpg",
                 "When we are able to stand in another person’s shoes and see life from their point of view — a situation, a belief, a struggle — we are then better equipped to connect, without reactivity, on a human level...",
                 "https://www.headspace.com/articles/how-to-be-more-empathetic", topicMindfulness);
         articleRepo.save(article9);
 
-        Article article10 = new Article("The effect of mindfulness meditation on sleep quality", "Ann Acad", "./images/meditationpics/mindful4.jpg",
+        Article article10 = new Article("The Effect of Mindfulness Meditation on Sleep Quality", "Ann Acad", "./images/meditationpics/mindful4.jpg",
                 "There is a growing interest in the effectiveness of mindfulness meditation for sleep disturbed populations. Our study sought to evaluate the effect of mindfulness meditation interventions on sleep quality...",
                 "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6557693/", topicSleep);
         articleRepo.save(article10);
