@@ -1,5 +1,10 @@
 export default function userView(users) {
     return `
+    <div class="nav-bar">
+        <nav class="brand">
+            <p class="home-link">Reflect<p>
+        </nav>
+    </div>
     <h2 class="choose-user">Please select a user:</h2>
     <section class="userList">
     ${users.map(user => {

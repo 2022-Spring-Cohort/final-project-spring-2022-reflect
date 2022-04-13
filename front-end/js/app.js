@@ -55,6 +55,7 @@ function makeUserListViewFromJSON(users) {
   newUserButton.addEventListener("click", () => {
     const newUserJson = {
       name: newName.value,
+      sessions: []
     };
 
     fetch(`http://localhost:8080/users/addUser`, {
@@ -101,6 +102,7 @@ function makeHamburgerMenu(user) {
   const categories = document.querySelector(".categories");
   const aboutLink = document.querySelector(".aboutLink");
   const usersLink = document.querySelector(".usersLink");
+  const reflectLink = document.querySelector(".home-link")
 
   const interactiveLink = document.querySelector(".interactive");
 
@@ -120,6 +122,9 @@ function makeHamburgerMenu(user) {
   homeLink.addEventListener("click", () => {
     makeUserView(user);
   });
+  reflectLink.addEventListener("click", () => {
+    makeUserView(user);
+  });
   hamburger.addEventListener("click", toggleMenu);
   meditate.addEventListener("click", () => {
     makeTimerSelectView(user);
@@ -133,6 +138,7 @@ function makeHamburgerMenu(user) {
 }
 
 function makeUserView(user) {
+    console.log(user);
   containerEl.innerHTML = header();
   containerEl.innerHTML += home(user);
 
@@ -158,13 +164,17 @@ function makeUserView(user) {
   let randomArticle = Math.floor(Math.random() * 10 + 20);
   console.log(randomArticle);
 
-  fetch(`http://localhost:8080/articles/${randomArticle}`)
-    .then((res) => res.json())
-    .then((jsonData) => {
-      articleHeader.innerText = jsonData.title;
-      articleThumb.innerHTML = `<img class="article-thumb" src="${jsonData.picture}"></img>`;
-      articleSummary.innerText = jsonData.content;
-    });
+
+let randomArticle = Math.floor(((Math.random() * 10) + 20));
+
+    fetch (`http://localhost:8080/articles/${randomArticle}`)
+        .then((res) => res.json())
+        .then((jsonData) => {
+            articleHeader.innerText = jsonData.title;
+            articleThumb.innerHTML = `<a class="article-link" href="${jsonData.link}" target="blank"><img class="article-thumb" src="${jsonData.picture}"></a>`
+            articleSummary.innerText = jsonData.content;
+        });
+
 }
 
 let meditationIncrements = [1, 5, 10, 15, 20, 30];
@@ -248,6 +258,7 @@ function makeTopicView(user, topic) {
 }
 
 function makeAboutView(user) {
+    
   containerEl.innerHTML = header();
   containerEl.innerHTML += aboutView();
 
@@ -256,13 +267,11 @@ function makeAboutView(user) {
   const closeBtn = document.getElementById("close");
   const targetDiv = document.getElementById("abc");
   const btn = document.getElementById("toggle");
+
+  targetDiv.style.display = "none";
+
   btn.onclick = function () {
-    if (targetDiv.style.display !== "none") {
-      targetDiv.style.display = "none";
-      document.getElementById("toggle");
-    } else {
       targetDiv.style.display = "block";
-    }
   };
   closeBtn.onclick = function () {
     document.getElementById("abc").style.display = "none";

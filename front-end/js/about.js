@@ -30,15 +30,9 @@ export default function aboutView(user) {
           <div class="about-us">
             <h1>About Reflect</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas rem ut
-              earum? Cum similique architecto eveniet nisi, quis id est ad ut
-              quibusdam accusantium quod dicta voluptates, veniam voluptatem
-              deleniti illo natus suscipit odio ullam? Quod, voluptas vel hic
-              voluptate corporis tempore optio expedita blanditiis eveniet ex rerum
-              deserunt itaque asperiores consequatur officiis. Corporis cum earum,
-              repudiandae officiis modi, odio sunt quam neque expedita soluta
-              consequatur hic in distinctio adipisci illo deserunt, doloremque saepe
-              eum necessitatibus harum eveniet quos porro!
+            <p>The Reflect Project was built on a passion of mindfulness. Many of us have been introduced to meditation and mindfulness within the last five years and have benefited from our time to reflect. </p>
+            <p>This web application is built and maintained by 6 graduates of We Can Code IT (WCCI).  </p>
+            <p>To contact us, please leave an email from the contact field. </p>
             </p>
           </div>
         </section>
@@ -47,31 +41,33 @@ export default function aboutView(user) {
             <h1>Meet the Reflect Team</h1>
             <div class="headshots">
             <p>
-              <a href="https://www.linkedin.com/in/aweys-pemba/">
+              <a href="https://www.linkedin.com/in/aweys-pemba/" target="blank">
             <img src="./images/headshots/aweys2.jpg" alt="Us" width="60" height="60"> 
               </a>
-              <a href="https://www.linkedin.com/in/ben-corrigan/">
+              <a href="https://www.linkedin.com/in/ben-corrigan/" target="blank">
                 <img src="./images/headshots/ben.jpg" alt="Us" width="60" height="60">
               </a>
-              <a href="https://www.linkedin.com/in/dallas-baldwin/">
+              <a href="https://www.linkedin.com/in/dallas-baldwin/" target="blank">
             <img src="./images/headshots/dallas.jpg" alt="Us" width="60" height="60">
               </a>
             </p>
             <p>
-              <a href="https://www.linkedin.com/in/dejuanspencer/">
+              <a href="https://www.linkedin.com/in/dejuanspencer/" target="blank">
             <img src="./images/headshots/dejuan2.png" alt="Us" width="60" height="60">
               </a>
-              <a href="https://www.linkedin.com/in/joe-swysgood/">
+              <a href="https://www.linkedin.com/in/joe-swysgood/" target="blank">
             <img src="./images/headshots/joe2.jpg" alt="Us" width="60" height="60">
               </a>
-              <a href="https://www.linkedin.com/in/mikethecoder/">
+              <a href="https://www.linkedin.com/in/mikethecoder/" target="blank">
             <img src="./images/headshots/mike.jpg" alt="Us" width="60" height="60">
               </a>
             </p>
             </div>
           </div>
-          <a id="toggle" class="contact-button">CONTACT US</a>
-        </section>
+          <div class="contact-div">
+            <a id="toggle" class="contact-button">CONTACT US</a>
+          </div>
+          </section>
       </div>
     </div>
     `
