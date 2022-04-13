@@ -47,10 +47,7 @@ video {
     object-fit: cover; 
 }
 @media screen and (min-width: 900px){
-    video {
-        
-        height: 100%;
-    }
+  
 }
 .user-name{
     font-family: Aspira-Regular;
@@ -92,10 +89,11 @@ video {
     height: 100%;
     display: flex;
     flex-direction: column;
+    max-height: 100%;
 }
-@media screen and (min-width: 900px){
+@media screen and (min-width:350px){
     .container{
-        width: 450px;
+        max-width: 450px;
     }
 }
 
@@ -329,6 +327,30 @@ video {
   -webkit-user-select: none;
   touch-action: manipulation;
      text-shadow: .5px .5px #000000;
+}
+@media screen and (min-width:900px){
+    #ham-menu{
+        height:25.5rem;
+        width:15.5rem;
+        position:absolute;
+        margin-left:75;
+        padding-right: 5.5vw;
+        
+        
+    }
+    .nav-links {
+        color: #33A6A6;
+        position: relative;
+        margin-left:.05px;
+        font-size: 1.5vw;
+        font-family: Nunito;
+        font-variant: small-caps;
+        font-weight: bolder;
+        text-decoration: none;
+        
+    }
+   
+    
 }
 .ham-toggle .bar{
 display: block;
