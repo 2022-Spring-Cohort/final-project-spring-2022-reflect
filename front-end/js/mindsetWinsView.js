@@ -1,9 +1,33 @@
-export default function mindsetWins(user) {
+export default function mindsetWins(mindsetCards) {
   return `
 
-  <div class = "wins-card-container cards-container">
+  <div class = "wins-card-container">
+
+  <form>
+  <textarea
+    id="win"
+    class="wins-card-front-input"
+    name="win"
+    rows="5"
+    columns="20"
+    placeholder="What is something hard you've done before?"
+  ></textarea>
+
+  <textarea
+    id="win__details"
+    class="wins-card-back-input"
+    name="win__details"
+    rows="5"
+    columns="20"
+    placeholder="How did it make you feel, overcoming this obstacle?"
+  ></textarea>
+
+  <input type = "file" class = "wins-card-image-input" id="win-photo" name="win-photo">
+
+  <button class = "win-submit" type = "submit"> Add Card</button>
+    </form>
   <ul>
-  ${user.mindsetCardsWins
+  ${mindsetCards
     .map((mindsetCardWin) => {
       return `
   <div class="card">
@@ -41,17 +65,8 @@ export default function mindsetWins(user) {
     })
     .join("")}
   </div>
+  </div>
 
-  <div class="card-input">
-  <h2 class="new-card">Add A New Card</h2>
-  
-  <input type="text" class="card-front-input" placeholder="Front of Card" />
-  <input type="text" class="card-back-input" placeholder="Back of Card" />
-  <input type="text" class="card-image-input" placeholder="Enter image file" />
-  
-  
-  <button class="add-new-win-card-button">Add Card</button>
-  
-</div>    
+ 
   `;
 }

@@ -78,7 +78,6 @@ public class MindsetCardsController {
         User user = userRepo.findById(id).get();
         mindsetCardsWinsRepo.delete(mindsetCardsWinsRepo.findById(id1).get());
         return user.getMindsetCardsWins();
-
     }
 
 }
