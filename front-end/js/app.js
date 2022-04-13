@@ -410,44 +410,22 @@ function makeMindsetView(user) {
         }
       });
 
-      addWinsCardButton.addEventListener("click", () => {
-        const newWinsCardJson = {
-          front: cardFrontInput.value,
-          back: cardBackInput.value,
-          userId: userId,
-        };
-
-        if (cardFrontInput.value !== "") {
-          fetch("http://localhost:8080//mindset-cards/add-wins-card", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newWinsCardJson),
-          })
-            .then((res) => res.json())
-            .then((card) => {
-              makeMindsetView(user);
-            });
-        } else {
-          alert("Enter a value for your card.");
-        }
-
-        const deleteCardButton = document.querySelector(".deleteCardButton");
-        deleteCardButton.addEventListener("click", () => {
-          fetch(
-            "http://localhost:8080/mindset-cards/" +
-              mindsetCards.id +
-              "/delete",
-            {
-              method: "DELETE",
-            }
-          )
-            .then((res) => res.json())
-            .then((mindsetCards) => {
-              makeMindsetView(user);
-            });
-        });
+      const deleteCardButton = document.querySelector(".deleteCardButton");
+      deleteCardButton.addEventListener("click", () => {
+        fetch(
+          "http://localhost:8080/user/" +
+            userid +
+            "/mindset-wins-cards/" +
+            mindsetCards.id +
+            "/delete",
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then((mindsetCards) => {
+            makeMindsetView(user);
+          });
       });
     });
 }
