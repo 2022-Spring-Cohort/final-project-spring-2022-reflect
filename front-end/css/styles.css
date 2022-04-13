@@ -328,7 +328,7 @@ video {
   touch-action: manipulation;
      text-shadow: .5px .5px #000000;
 }
-@media screen and (min-width:900px){
+@media screen and (min-width:450px){
     #ham-menu{
         height:39.5vh;
         width:9.05vw;
