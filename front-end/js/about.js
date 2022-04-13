@@ -1,5 +1,5 @@
 export default function aboutView(user) {
-    return`
+  return `
     <div class="main-content">
     <div id="abc">
         <div id="popupContact">
@@ -29,10 +29,14 @@ export default function aboutView(user) {
         <section class="about-reflect">
           <div class="about-us">
             <h1>About Reflect</h1>
-            <p>
-            <p>The Reflect Project was built on a passion of mindfulness. Many of us have been introduced to meditation and mindfulness within the last five years and have benefited from our time to reflect. </p>
-            <p>This web application is built and maintained by 6 graduates of We Can Code IT (WCCI).  </p>
-            <p>To contact us, please leave an email from the contact field. </p>
+            <p class="reflect-info">
+            Reflect is a mindfulness and meditation application built to aid focus, help users form positive mindsets, track progress, and provide educational resources.
+            </p>
+            <p class="reflect-info">
+            Many of us have found mindfulness techniques to be extremely beneficial in recent years, improving clarity and focus as well as decreasing anxieties and other negative thought patterns. Our aim is to provide a calming environment while allowing others to explore these techniques.
+            </p>
+            <p class="reflect-info">
+            This project was created and maintained by six graduates of We Can Code IT (WCCI) with a passion for self-improvement. Please find our contact information below.
             </p>
           </div>
         </section>
@@ -42,24 +46,24 @@ export default function aboutView(user) {
             <div class="headshots">
             <p>
               <a href="https://www.linkedin.com/in/aweys-pemba/" target="blank">
-            <img src="./images/headshots/aweys2.jpg" alt="Us" width="60" height="60"> 
+            <img src="./images/headshots/aweys2.jpg" alt="Us" width="70" height="70"> 
               </a>
               <a href="https://www.linkedin.com/in/ben-corrigan/" target="blank">
-                <img src="./images/headshots/ben.jpg" alt="Us" width="60" height="60">
+                <img src="./images/headshots/ben.jpg" alt="Us" width="70" height="70">
               </a>
               <a href="https://www.linkedin.com/in/dallas-baldwin/" target="blank">
-            <img src="./images/headshots/dallas.jpg" alt="Us" width="60" height="60">
+            <img src="./images/headshots/dallas.jpg" alt="Us" width="70" height="70">
               </a>
             </p>
             <p>
               <a href="https://www.linkedin.com/in/dejuanspencer/" target="blank">
-            <img src="./images/headshots/dejuan2.png" alt="Us" width="60" height="60">
+            <img src="./images/headshots/dejuan2.png" alt="Us" width="70" height="70">
               </a>
               <a href="https://www.linkedin.com/in/joe-swysgood/" target="blank">
-            <img src="./images/headshots/joe2.jpg" alt="Us" width="60" height="60">
+            <img src="./images/headshots/joe2.jpg" alt="Us" width="70" height="70">
               </a>
               <a href="https://www.linkedin.com/in/mikethecoder/" target="blank">
-            <img src="./images/headshots/mike.jpg" alt="Us" width="60" height="60">
+            <img src="./images/headshots/mike.jpg" alt="Us" width="70" height="70">
               </a>
             </p>
             </div>
@@ -70,5 +74,5 @@ export default function aboutView(user) {
           </section>
       </div>
     </div>
-    `
+    `;
 }
