@@ -1,4 +1,5 @@
 import playAmbient from "./audio.js";
+import playBowl from "./bowl.js";
 
 
 var timeinterval;
@@ -57,7 +58,11 @@ function run_clock(id,endtime){
 		else {
 			clock.innerHTML = t.minutes + ':' + t.seconds;
 		}
-		if(t.total<=0){ clearInterval(timeinterval); }
+		if(t.total<=0){ 
+			clearInterval(timeinterval);
+			const bowlEl = document.querySelector(".audio");
+			bowlEl.innerHTML = playBowl(); 
+		}
 	}
 	update_clock(); // run function once at first to avoid delay
 	timeinterval = setInterval(update_clock,1000);

@@ -164,13 +164,17 @@ function makeUserView(user) {
   let randomArticle = Math.floor(Math.random() * 10 + 20);
   console.log(randomArticle);
 
-  fetch(`http://localhost:8080/articles/${randomArticle}`)
-    .then((res) => res.json())
-    .then((jsonData) => {
-      articleHeader.innerText = jsonData.title;
-      articleThumb.innerHTML = `<a class="article-link" href="${jsonData.link}" target="blank"><img class="article-thumb" src="${jsonData.picture}"></a>`;
-      articleSummary.innerText = jsonData.content;
-    });
+
+
+    fetch (`http://localhost:8080/articles/${randomArticle}`)
+        .then((res) => res.json())
+        .then((jsonData) => {
+            articleHeader.innerText = jsonData.title;
+            articleThumb.innerHTML = `<a class="article-link" href="${jsonData.link}" target="blank"><img class="article-thumb" src="${jsonData.picture}"></a>`
+            articleSummary.innerText = jsonData.content;
+        });
+
+
 }
 
 let meditationIncrements = [1, 5, 10, 15, 20, 30];
