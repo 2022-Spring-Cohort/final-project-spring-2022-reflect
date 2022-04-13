@@ -2,24 +2,65 @@
 GET https://zenquotes.io/api/random/32bcf235078efe18922329c8829e0c88e4a2098a
 
 ###
-
 GET http://localhost:8080/users
 
 ###
 
 GET http://localhost:8080/users/1
 
-
 ###
 
-GET http://localhost:8080/mindset-cards
+GET http://localhost:8080/users/2
+
 
 ###
 GET http://localhost:8080//topics
 
 
-###
-GET http://localhost:8080/mindset-wins-cards
 
 ###
-GET http://localhost:8080/mindset-why-cards
+POST http://localhost:8080//user/1/mindset-cards/add-why-card
+Content-Type: application/json
+
+{
+    "front": "win9",
+    "back": "This is the back of mindset card 4",
+}
+
+
+###
+POST http://localhost:8080/user/2/mindset-cards/add-why-card
+Content-Type: application/json
+
+  {
+  
+    "front": "win1",
+    "back": "This is the back of mindset card sdsvdsds4",
+    "userId": 1
+  }
+
+
+###
+DELETE http://localhost:8080/user/2/mindset-why-cards/36/delete
+
+
+
+
+###
+GET http://localhost:8080/users/1/mindset-wins-cards
+
+###
+GET http://localhost:8080/users/1/mindset-why-cards
+
+
+
+###
+GET http://localhost:8080/users/2/mindset-wins-cards
+
+###
+GET http://localhost:8080/users/2/mindset-why-cards
+
+
+
+
+

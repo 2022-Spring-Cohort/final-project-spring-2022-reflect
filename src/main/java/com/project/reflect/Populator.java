@@ -25,8 +25,12 @@ public class Populator implements CommandLineRunner {
     private TopicRepository topicRepo;
     @Autowired
     TimerRepository timerRepo;
+
     @Autowired
-    private MindsetCardsRepository mindsetCardsRepo;
+    private MindsetCardsWhyRepository mindsetCardsWhyRepo;
+
+    @Autowired
+    private MindsetCardsWinsRepository mindsetCardsWinsRepo;
 
 
 
@@ -137,7 +141,9 @@ public class Populator implements CommandLineRunner {
 
 
         MindsetCardsWhy mindsetCard1 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why1","This is the back of mindset card 1");
-mindsetCardsRepo.save(mindsetCard1);
+
+
+        mindsetCardsWhyRepo.save(mindsetCard1);
 
 
 
@@ -147,41 +153,44 @@ mindsetCardsRepo.save(mindsetCard1);
 
 
 
-        MindsetCardsWhy mindsetCard2 = new MindsetCardsWhy(user2,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
-
-        mindsetCardsRepo.save(mindsetCard2);
 
 
+        MindsetCardsWhy mindsetCard2 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why2","This is the back of mindset card 2");
 
-
+        mindsetCardsWhyRepo.save(mindsetCard2);
 
 
 
 
 
-        MindsetCards mindsetCard3 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why3", "This is the back of mindset card 3");
-
-
-        mindsetCardsRepo.save(mindsetCard3);
 
 
 
 
 
-        MindsetCards mindsetCard4 = new MindsetCardsWins(user1,"./images/fillerphoto.jpg","win1", "This is the back of mindset card 4");
+        MindsetCardsWhy mindsetCard3 = new MindsetCardsWhy(user1,"./images/fillerphoto.jpg","why3", "This is the back of mindset card 3");
 
 
-        mindsetCardsRepo.save(mindsetCard4);
-
-
-
-
-
-        MindsetCards mindsetCard5 = new MindsetCardsWins(user2,"./images/fillerphoto.jpg","win2", "This is the back of mindset card 5");
+        mindsetCardsWhyRepo.save(mindsetCard3);
 
 
 
-        mindsetCardsRepo.save(mindsetCard5);
+
+
+        MindsetCardsWins mindsetCard4 = new MindsetCardsWins(user1,"./images/fillerphoto.jpg","win1", "This is the back of mindset card 4");
+
+
+        mindsetCardsWinsRepo.save(mindsetCard4);
+
+
+
+
+
+        MindsetCardsWins mindsetCard5 = new MindsetCardsWins(user1,"./images/fillerphoto.jpg","win2", "This is the back of mindset card 5");
+
+
+
+        mindsetCardsWinsRepo.save(mindsetCard5);
 
 
 

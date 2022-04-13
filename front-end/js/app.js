@@ -13,9 +13,15 @@ import mindsetWhyView from "./mindsetWhyView.js";
 
 import mindsetWinsView from "./mindsetWinsView.js";
 
+import mindsetViewTest from "./mindsetViewTest.js";
+
 import topicView from "./topicView.js";
 
+import makeCardFlip from "./mindset.js";
+
 const containerEl = document.querySelector(".container");
+
+let userId = null;
 
 function makeUserListView() {
   fetch("http://localhost:8080/users")
@@ -38,6 +44,7 @@ function makeUserListViewFromJSON(users) {
         if (userJson.id == userIdEl.value) {
           makeUserView(userJson);
           let userJsonID = userJson.id;
+          userId = userJsonID;
         }
       });
     });
@@ -97,12 +104,11 @@ function makeHamburgerMenu(user) {
   const usersLink = document.querySelector(".usersLink");
   const reflectLink = document.querySelector(".home-link")
 
-
   const interactiveLink = document.querySelector(".interactive");
 
   usersLink.addEventListener("click", () => {
-      makeUserListView();
-  })
+    makeUserListView();
+  });
 
   aboutLink.addEventListener("click", () => {
     makeAboutView(user);
@@ -151,9 +157,12 @@ function makeUserView(user) {
       inspoAuthor.innerText = "-" + jsonData[0].a;
     });
 
-const articleHeader = document.querySelector(".article-header");
-const articleThumb = document.querySelector(".thumb-container");
-const articleSummary = document.querySelector(".article-summary");
+  const articleHeader = document.querySelector(".article-header");
+  const articleThumb = document.querySelector(".thumb-container");
+  const articleSummary = document.querySelector(".article-summary");
+
+  let randomArticle = Math.floor(Math.random() * 10 + 20);
+  console.log(randomArticle);
 
 
 let randomArticle = Math.floor(((Math.random() * 10) + 20));
@@ -165,12 +174,10 @@ let randomArticle = Math.floor(((Math.random() * 10) + 20));
             articleThumb.innerHTML = `<a class="article-link" href="${jsonData.link}" target="blank"><img class="article-thumb" src="${jsonData.picture}"></a>`
             articleSummary.innerText = jsonData.content;
         });
+
 }
 
-
-
-let meditationIncrements = [1, 5, 10, 15, 20, 30]
-
+let meditationIncrements = [1, 5, 10, 15, 20, 30];
 
 function makeMeditationView(user, increment) {
   containerEl.innerHTML = header();
@@ -288,13 +295,147 @@ function makeTimerSelectView(user) {
 
 function makeMindsetView(user) {
   console.log("making your mindset page");
-  fetch(`http://localhost:8080/users/1`)
+  console.log(`This is the user ID: ${userId}`);
+
+  fetch(`http://localhost:8080/users/${userId}/mindset-why-cards`)
     .then((res) => res.json())
     .then((mindsetCards) => {
       console.log(mindsetCards);
+
       containerEl.innerHTML = header();
       containerEl.innerHTML += mindsetWhyView(mindsetCards);
-      containerEl.innerHTML += mindsetWinsView(mindsetCards);
+      makeCardFlip();
+
+      const cardFrontInput = document.querySelector(".why-card-front-input");
+      const cardBackInput = document.querySelectorAll(".why-card-back-input");
+      const cardImageInput = document.querySelectorAll(".card-image-input");
+
+      const addWhyCardButton = document.querySelectorAll(
+        ".add-new-why-card-button"
+      );
+      const addWinCardButton = document.querySelectorAll(
+        ".add-new-win-card-button"
+      );
+
+      addWhyCardButton.addEventListener("click", () => {
+        const newWhyCardJson = {
+          front: cardFrontInput.value,
+          back: cardBackInput.value,
+        };
+
+        if (cardFrontInput.value !== "") {
+          fetch("http://localhost:8080//mindset-cards/add-why-card", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newWhyCardJson),
+          })
+            .then((res) => res.json())
+            .then((card) => {
+              makeMindsetView(user);
+            });
+        } else {
+          alert("Enter a value for your card.");
+        }
+      });
+
+      addWinCardButton.addEventListener("click", () => {
+        const newWinCardJson = {
+          front: cardFrontInput.value,
+          back: cardBackInput.value,
+        };
+
+        if (cardFrontInput.value !== "") {
+          fetch("http://localhost:8080//mindset-cards/add-win-card", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newWinCardJson),
+          })
+            .then((res) => res.json())
+            .then((card) => {
+              makeMindsetView(user);
+            });
+        } else {
+          alert("Enter a value for your card.");
+        }
+
+        const deleteCardButton = document.querySelector(".deleteCardButton");
+        deleteCardButton.addEventListener("click", () => {
+          fetch(
+            "http://localhost:8080/mindset-cards/" +
+              mindsetCards.id +
+              "/delete",
+            {
+              method: "DELETE",
+            }
+          )
+            .then((res) => res.json())
+            .then((mindsetCards) => {
+              makeMindsetView(user);
+            });
+        });
+      });
+    });
+
+  fetch(`http://localhost:8080/users/${userId}/mindset-wins-cards`)
+    .then((res) => res.json())
+    .then((mindsetCards) => {
+      console.log(mindsetCards);
+
+      containerEl.innerHTML += mindsetWhyView(mindsetCards);
+      makeCardFlip();
+
+      const cardFrontInput = document.querySelector(".wins-card-front-input");
+      const cardBackInput = document.querySelectorAll(".wins-card-back-input");
+      const cardImageInput = document.querySelectorAll(".card-image-input");
+
+      const addWinsCardButton = document.querySelectorAll(
+        ".add-new-win-card-button"
+      );
+
+      addWinsCardButton.addEventListener("click", () => {
+        const newWinsCardJson = {
+          front: cardFrontInput.value,
+          back: cardBackInput.value,
+        };
+
+        if (cardFrontInput.value !== "") {
+          fetch("http://localhost:8080//mindset-cards/add-wins-card", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newWinsCardJson),
+          })
+            .then((res) => res.json())
+            .then((card) => {
+              makeMindsetView(user);
+            });
+        } else {
+          alert("Enter a value for your card.");
+        }
+      });
+
+      const deleteCardButton = document.querySelector(".deleteCardButton");
+      deleteCardButton.addEventListener("click", () => {
+        fetch(
+          "http://localhost:8080/user/" +
+            userid +
+            "/mindset-wins-cards/" +
+            mindsetCards.id +
+            "/delete",
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then((mindsetCards) => {
+            makeMindsetView(user);
+          });
+      });
     });
 }
 

@@ -1,7 +1,7 @@
 export default function mindsetWins(user) {
   return `
 
-  <div class = "wins-card-container">
+  <div class = "wins-card-container cards-container">
   <ul>
   ${user.mindsetCardsWins
     .map((mindsetCardWin) => {
@@ -33,9 +33,10 @@ export default function mindsetWins(user) {
       </div>
     </div>
   </div>
+  
   </div>
   
-  
+  <button class="deleteCardButton"> <input id="id" type="hidden" name="id" value="${mindsetCardWin.id}">Delete Card</button>
   `;
     })
     .join("")}
@@ -49,7 +50,7 @@ export default function mindsetWins(user) {
   <input type="text" class="card-image-input" placeholder="Enter image file" />
   
   
-  <button class="add-new-card-button">Add Card</button>
+  <button class="add-new-win-card-button">Add Card</button>
   
 </div>    
   `;

@@ -43,14 +43,15 @@ export default function mindsetWhys(mindsetCards) {
 
    
 
-  <div class = "whys-card-container">
+  <div class = "whys-card-container cards-container">
 
-  <ul>
-  ${mindsetCards.mindsetCardsWhy
+  
+  ${mindsetCards
     .map((mindsetCardWhy) => {
       return `
   <div class="card">
   <div class="card__inner">
+
   <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">
     <div class="card__face card__face--front">
       <div class="h2">${mindsetCardWhy.front}</div>
@@ -76,6 +77,7 @@ export default function mindsetWhys(mindsetCards) {
       </div>
     </div>
   </div>
+  <button class="deleteCardButton"> <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">Delete Card</button>
   </div>
   
   
@@ -92,7 +94,8 @@ export default function mindsetWhys(mindsetCards) {
   <input type="text" class="card-image-input" placeholder="Enter image file" />
   
   
-  <button class="add-new-card-button">Add Card</button>
+  <button class="add-new-why-card-button">Add Card</button>
+ 
   
 </div>    
 
