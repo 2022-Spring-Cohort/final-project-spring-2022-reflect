@@ -11,7 +11,7 @@ export default function home(user) {
         <section class="daily-article" href="#">
             <h3 class="article-header">Daily Article</h3>
             <div class="thumb-container">
-                <img class="article-thumb" src="./images/tibetan-bowl.png">
+                
             </div>
             <p class="article-summary">A short summary of article content goes here. A short summary of article content goes here. A short summary of article content goes here.</p>
         </section>
