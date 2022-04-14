@@ -16,7 +16,6 @@ export default function header() {
                     <li class="progressLink"><a href="#" class="nav-links">Progress</a></li>
 
                     <li class="categories"><a href="#" class="nav-links">Articles</a></li>
-                    <li class="interactive"><a href="#" class="nav-links">Interactive</a></li>
 
                     <li class="usersLink"><a href="#" class="nav-links">Users</a></li>
 
@@ -30,3 +29,5 @@ export default function header() {
     </header>
     `;
 }
+
+{/* <li class="interactive"><a href="#" class="nav-links">Interactive</a></li> */}
