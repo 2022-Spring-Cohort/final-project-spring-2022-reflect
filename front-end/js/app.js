@@ -188,6 +188,8 @@ function makeMeditationView(user, increment) {
 
   makeTimer(increment);
 
+  
+
   const endButton = document.querySelector(".end-button");
   endButton.addEventListener("click", () => {
     makeProgressView(user);

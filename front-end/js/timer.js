@@ -26,6 +26,8 @@ export default function makeTimer(increment) {
 		resume_clock();
 		const audioEl = document.querySelector(".audio");
         audioEl.innerHTML += playAmbient();
+		var audioVolume = document.querySelector(".myAudio");
+  		audioVolume.volume = 0.1;
 	})
 
 	const pauseButton = document.querySelector(".pause-button");
@@ -61,7 +63,11 @@ function run_clock(id,endtime){
 		if(t.total<=0){ 
 			clearInterval(timeinterval);
 			const bowlEl = document.querySelector(".audio");
-			bowlEl.innerHTML = playBowl(); 
+			bowlEl.innerHTML = playBowl();
+			var bowlVolume = document.querySelector(".myBowl");
+  			bowlVolume.volume = 0.5; 
+			
+
 		}
 	}
 	update_clock(); // run function once at first to avoid delay
