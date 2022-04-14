@@ -42,7 +42,7 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        User user1 = new User("Ram Dass");
+        User user1 = new User("Ben");
         userRepo.save(user1);
         User user2 = new User("Guest");
         userRepo.save(user2);
@@ -50,11 +50,11 @@ public class Populator implements CommandLineRunner {
         Timer timer1 = new Timer(5, user1);
         timerRepo.save(timer1);
 
-        Session session1 = new Session("4/17/22", 10, "Had a hard time clearing my mind this morning.", user1);
+        Session session1 = new Session("4/17/22", 10, "I felt very calm this morning.", user1);
         sessionRepo.save(session1);
         Session session2 = new Session("4/18/22", 20, "My mind was racing this afternoon, but I focused on noticing each thought and letting it go.", user1);
         sessionRepo.save(session2);
-        Session session3 = new Session("4/19/22", 0, "Just couldn't today, very busy", user1);
+        Session session3 = new Session("4/19/22", 5, "I was very busy this morning, but I'm proud I put in five minutes", user1);
         sessionRepo.save(session3);
         Session session4 = new Session("4/19/22", 5, "I'm giving this a shot.", user2);
         sessionRepo.save(session4);
