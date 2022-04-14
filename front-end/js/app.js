@@ -130,9 +130,9 @@ function makeHamburgerMenu(user) {
     makeTimerSelectView(user);
   });
 
-  interactiveLink.addEventListener("click", () => {
-    makeMindsetView();
-  });
+//   interactiveLink.addEventListener("click", () => {
+//     makeMindsetView();
+//   });
 
   closeIcon.addEventListener("click", toggleMenu);
 }
