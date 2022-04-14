@@ -11,7 +11,7 @@ public class MindsetCardsWhy {
     private Long id;
     private String front;
     private String back;
-    private String photo = "./images/fillerphoto.jpg";
+    private String photo;
 
 
 
@@ -78,5 +78,8 @@ public class MindsetCardsWhy {
         this.photo=newPhoto;
     }
 
+//    public String getPhoto() {
+//        return photo;
+//    }
 }
 

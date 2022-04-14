@@ -19,16 +19,18 @@ GET http://localhost:8080//topics
 
 
 ###
-POST http://localhost:8080//user/1/mindset-cards/add-why-card
+POST http://localhost:8080/user/1/mindset-cards/add-why-card
 Content-Type: application/json
 
 {
     "front": "win9",
     "back": "This is the back of mindset card 4",
+    "userId": 2
 }
 
 
 ###
+
 POST http://localhost:8080/user/2/mindset-cards/add-why-card
 content-Type: application/json
 
@@ -42,6 +44,7 @@ content-Type: application/json
 
 ###
 DELETE http://localhost:8080/user/2/mindset-why-cards/31/delete
+
 
 
 

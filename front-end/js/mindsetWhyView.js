@@ -22,29 +22,33 @@ export default function mindsetWhys(mindsetCards) {
 <section class="mindset__focuses">
   <section class="mindsets___growth">
     <h2>Here are some cards to input your whys. Repetition is key.</h2>
-    <form>
+   
       <textarea
-        id="why"
-        class="why-card-front-input"
-        name="why"
+
+        id="why__what"
+        name="why__what"
+        class = "why-card-front-input"
+
         rows="5"
         columns="20"
-        placeholder="What do you want to do?"
-      ></textarea>
+        placeholder="List a thought that is bothering you."
+      >Here is a thought that is bothering me</textarea>
 
       <textarea
         id="why__details"
         class="why-card-back-input"
         name="why__details"
+        class = "why-card-back-input"
         rows="5"
         columns="20"
-        placeholder="Why does this matter to you?"
-      ></textarea>
 
-      <input type = "file" class = "why-card-image-input" id="why-photo" name="why-photo">
+        placeholder="List a reason this thought is not true."
+      >Here are some reasons that isn't true</textarea>
 
-      <button class = "why-submit" type = "submit"> Add Card</button>
-        </form>
+ 
+      <input class = "why-submit" type="submit" />
+  
+
 
    
 
@@ -58,24 +62,24 @@ export default function mindsetWhys(mindsetCards) {
   <div class="card">
     <div class="card__inner">
 
-      <input id="id" type="hidden" class = "id" name="id" value="${mindsetCardWhy.id}">
-      <div class="card__face card__face--front">
-        <div class="h2">${mindsetCardWhy.front}</div>
-      </div>
-      <div class="card__face card__face--back">
-        <div class="card__content">
+  <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">
+    <div class="card__face card__face--front">
+      <div class="front-header"><p class = "front-words">${mindsetCardWhy.front}</p></div>
+    </div>
+    <div class="card__face card__face--back">
+      <div class="card__content">
         <div class="card__header">
-          Image here of what you care about
-          <img src= ${mindsetCardWhy.photo} class="pp" />
-          <h2>Discomfort is a milestone to growth</h2>
+    
+          <h2 class = "why-card-back-header">Discomfort is a milestone to growth</h2>
+
         </div>
   
         <div class="card__body">
-          <h3>Reasons that thought is not true</h3>
+          <h3 class = "why-card-back-header-reasons">Reasons that thought is not true</h3>
   
        
           
-         <p> ${mindsetCardWhy.back}</p>
+         <p class = "why-card-back-words"> ${mindsetCardWhy.back}</p>
           
                 
          
@@ -83,14 +87,20 @@ export default function mindsetWhys(mindsetCards) {
       </div>
     </div>
   </div>
-  <button class="deleteCardButton"> <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">Delete Card</button>
- 
+
+  <button class="deleteWhyCardButton" value="${mindsetCardWhy.id}">Delete Card</button>
+  </div>
+
   
   
   `;
     })
     .join("")}
-    </div>
+
+  </div>
+
+  
+
 
   `;
 }
