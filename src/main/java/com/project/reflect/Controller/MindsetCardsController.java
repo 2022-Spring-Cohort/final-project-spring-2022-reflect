@@ -64,7 +64,7 @@ public class MindsetCardsController {
         return user.getMindsetCardsWins();
     }
 
-
+    
     @DeleteMapping("/users/{id}/mindset-why-cards/{id1}/delete")
     public Iterable<MindsetCardsWhy> deleteMindsetWhyCard(@PathVariable long id, @PathVariable long id1) {
         User user = userRepo.findById(id).get();

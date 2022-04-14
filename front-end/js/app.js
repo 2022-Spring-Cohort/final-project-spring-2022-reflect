@@ -342,28 +342,30 @@ function makeMindsetView() {
           });
       });
 
+      const deleteCardButton = document.querySelectorAll(".deleteCardButton");
 
-      //Second half
+      deleteCardButton.forEach((button) => {
+        button.addEventListener("click", () => {
+          const cardId = button.value;
 
-      // const deleteCardButton = document.querySelector(".deleteCardButton");
-      // deleteCardButton.addEventListener("click", () => {
-      //   const cardIdEl = deleteCardButton.value;
-      //   console.log(deleteCardButton.value);
+          console.log("This is your mindset card id: " + cardId);
+          console.log("This is the current user id card id: " + userId);
 
-      //   console.log("This is your mindset card id: " + cardId);
-
-      //   fetch(
-      //     `http://localhost:8080/user/${userId}/mindset-why-cards/${deleteCardButton}/delete`,
-      //     {
-      //       method: "DELETE",
-      //     }
-      //   )
-      //     .then((res) => res.json())
-      //     .then((mindsetCards) => {
-      //       makeMindsetView(user);
-      //     });
-      // });
+          fetch(
+            `http://localhost:8080/users/${userId}/mindset-why-cards/${cardId}/delete`,
+            {
+              method: "DELETE",
+            }
+          )
+            .then((res) => res.json())
+            .then(() => {
+              makeMindsetView();
+            });
+        });
+      });
     });
+
+  //Second half
 
   // fetch(`http://localhost:8080/users/${userId}/mindset-wins-cards`)
   //   .then((res) => res.json())
@@ -394,7 +396,7 @@ function makeMindsetView() {
   //             userId: userId,
   //           };
 
-  //           fetch("http://localhost:8080//mindset-cards/add-wins-card", {
+  //           fetch("http://localhost:8080/mindset-cards/add-wins-card", {
   //             method: "POST",
   //             headers: {
   //               "Content-Type": "application/json",
@@ -418,7 +420,7 @@ function makeMindsetView() {
 
   //   console.log("This is the card Id: " + cardId);
   //   fetch(
-  //     "http://localhost:8080/user/" +
+  //     "http://localhost:8080/users/" +
   //       userId +
   //       "/mindset-wins-cards/" +
   //       cardId +
