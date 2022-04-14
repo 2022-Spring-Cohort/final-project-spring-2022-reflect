@@ -3,6 +3,7 @@ export default function mindsetWins(mindsetCards) {
 
 
 
+
   <div class = "wins-card-container cards-container">
   <br/>
   <br/>
@@ -31,6 +32,7 @@ export default function mindsetWins(mindsetCards) {
 
   <input type = "file" class = "wins-card-image-input">
   <input class = "wins-submit" type="submit" />
+
 
   <ul>
   ${mindsetCards
@@ -71,7 +73,7 @@ export default function mindsetWins(mindsetCards) {
     })
     .join("")}
   </div>
- 
+
 
  
   `;

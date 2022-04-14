@@ -164,13 +164,18 @@ function makeUserView(user) {
   let randomArticle = Math.floor(Math.random() * 10 + 20);
   console.log(randomArticle);
 
-  fetch(`http://localhost:8080/articles/${randomArticle}`)
-    .then((res) => res.json())
-    .then((jsonData) => {
-      articleHeader.innerText = jsonData.title;
-      articleThumb.innerHTML = `<a class="article-link" href="${jsonData.link}" target="blank"><img class="article-thumb" src="${jsonData.picture}"></a>`;
-      articleSummary.innerText = jsonData.content;
-    });
+
+
+    fetch (`http://localhost:8080/articles/${randomArticle}`)
+        .then((res) => res.json())
+        .then((jsonData) => {
+            articleHeader.innerText = jsonData.title;
+            articleThumb.innerHTML = `<a class="article-link" href="${jsonData.link}" target="blank"><img class="article-thumb" src="${jsonData.picture}"></a>`
+            articleSummary.innerText = jsonData.content;
+        });
+
+
+
 }
 
 let meditationIncrements = [1, 5, 10, 15, 20, 30];
@@ -301,6 +306,7 @@ function makeMindsetView() {
       containerEl.innerHTML += mindsetWhyView(mindsetCards);
       makeCardFlip();
 
+
       const whysCardContainerEl = document.querySelectorAll(
         "whys-card-container"
       );
@@ -311,6 +317,7 @@ function makeMindsetView() {
       console.log(whyCardFrontInput.value);
       console.log(addWhyCardButton);
 
+
       addWhyCardButton.addEventListener("click", () => {
         console.log("Adding a new card");
         const newWhyCardJson = {
@@ -320,8 +327,10 @@ function makeMindsetView() {
           userId: userId,
         };
 
+
         fetch(
           `http://localhost:8080/users/${userId}/mindset-cards/add-why-card`,
+
           {
             method: "POST",
             headers: {
@@ -335,6 +344,7 @@ function makeMindsetView() {
             makeMindsetView();
           });
       });
+
 
       const deleteWhyCardButton = document.querySelectorAll(
         ".deleteWhyCardButton"
@@ -429,6 +439,7 @@ function makeMindsetView() {
   //       });
   //     });
   //   });
+
 }
 
 function makeProgressChart(user) {

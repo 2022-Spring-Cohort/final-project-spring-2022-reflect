@@ -49,7 +49,9 @@ public class MindsetCardsWins {
     public String getBack() {
         return back;
     }
-
+    public String getPhoto(){
+        return photo;
+    }
     public void setUser(User user) {
         this.user = user;
     }

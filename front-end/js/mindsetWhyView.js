@@ -24,9 +24,11 @@ export default function mindsetWhys(mindsetCards) {
     <h2>Here are some cards to input your whys. Repetition is key.</h2>
    
       <textarea
+
         id="why__what"
         name="why__what"
         class = "why-card-front-input"
+
         rows="5"
         columns="20"
         placeholder="List a thought that is bothering you."
@@ -34,16 +36,19 @@ export default function mindsetWhys(mindsetCards) {
 
       <textarea
         id="why__details"
+        class="why-card-back-input"
         name="why__details"
         class = "why-card-back-input"
         rows="5"
         columns="20"
+
         placeholder="List a reason this thought is not true."
       >Here are some reasons that isn't true</textarea>
 
  
       <input class = "why-submit" type="submit" />
   
+
 
    
 
@@ -53,8 +58,9 @@ export default function mindsetWhys(mindsetCards) {
   ${mindsetCards
     .map((mindsetCardWhy) => {
       return `
+     
   <div class="card">
-  <div class="card__inner">
+    <div class="card__inner">
 
   <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">
     <div class="card__face card__face--front">
@@ -65,6 +71,7 @@ export default function mindsetWhys(mindsetCards) {
         <div class="card__header">
     
           <h2 class = "why-card-back-header">Discomfort is a milestone to growth</h2>
+
         </div>
   
         <div class="card__body">
@@ -80,16 +87,20 @@ export default function mindsetWhys(mindsetCards) {
       </div>
     </div>
   </div>
+
   <button class="deleteWhyCardButton" value="${mindsetCardWhy.id}">Delete Card</button>
   </div>
+
   
   
   `;
     })
     .join("")}
+
   </div>
 
   
+
 
   `;
 }
