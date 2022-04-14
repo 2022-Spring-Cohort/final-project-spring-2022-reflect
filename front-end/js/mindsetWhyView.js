@@ -81,7 +81,7 @@ export default function mindsetWhys(mindsetCards) {
       </div>
     </div>
   </div>
-  <button class="deleteCardButton" value="${mindsetCardWhy.id}">Delete Card</button>
+  <button class="deleteWhyCardButton" value="${mindsetCardWhy.id}">Delete Card</button>
   </div>
   
   

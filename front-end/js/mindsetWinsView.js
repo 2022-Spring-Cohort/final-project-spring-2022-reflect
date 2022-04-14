@@ -66,7 +66,7 @@ export default function mindsetWins(mindsetCards) {
   
   </div>
   
-  <button class="deleteWinsCardButton"> <input id="id" type="hidden" name="id" value="${mindsetCardWin.id}">Delete Card</button>
+  <button class="deleteWinsCardButton" value="${mindsetCardWin.id}">Delete Card</button>
   `;
     })
     .join("")}
