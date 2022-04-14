@@ -10,7 +10,7 @@ export default function mindsetWins(mindsetCards) {
   <br/>
 
   <p> For this section, you will remind yourself of the challenges you've overcome. Reflect on how you were feeling during one of these moments and what it was like to succeed.</p>
-  <form>
+  
   <textarea
     id="wins__what"
     name="wins__what"
@@ -23,7 +23,7 @@ export default function mindsetWins(mindsetCards) {
   <textarea
     id="wins__details"
     name="wins__details"
-    class = "wins-back-front-input"
+    class = "wins-card-back-input"
     rows="5"
     columns="20"
     placeholder="Elaborate on the type of person you were during this time."
@@ -31,7 +31,7 @@ export default function mindsetWins(mindsetCards) {
 
   <input type = "file" class = "wins-card-image-input">
   <input class = "wins-submit" type="submit" />
-</form>
+
   <ul>
   ${mindsetCards
     .map((mindsetCardWin) => {

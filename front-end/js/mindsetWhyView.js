@@ -30,7 +30,7 @@ export default function mindsetWhys(mindsetCards) {
         rows="5"
         columns="20"
         placeholder="List a thought that is bothering you."
-      >Teest</textarea>
+      >Here is a thought that is bothering me</textarea>
 
       <textarea
         id="why__details"
@@ -39,9 +39,9 @@ export default function mindsetWhys(mindsetCards) {
         rows="5"
         columns="20"
         placeholder="List a reason this thought is not true."
-      ></textarea>
+      >Here are some reasons that isn't true</textarea>
 
-      <input type = "file" class= "why-card-image-input">
+ 
       <input class = "why-submit" type="submit" />
   
 
@@ -58,22 +58,21 @@ export default function mindsetWhys(mindsetCards) {
 
   <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">
     <div class="card__face card__face--front">
-      <div class="h2">${mindsetCardWhy.front}</div>
+      <div class="front-header"><p class = "front-words">${mindsetCardWhy.front}</p></div>
     </div>
     <div class="card__face card__face--back">
       <div class="card__content">
         <div class="card__header">
-       Image here of what you care about
-          <img src= ${mindsetCardWhy.photo} class="pp" />
-          <h2>Discomfort is a milestone to growth</h2>
+    
+          <h2 class = "why-card-back-header">Discomfort is a milestone to growth</h2>
         </div>
   
         <div class="card__body">
-          <h3>Reasons that thought is not true</h3>
+          <h3 class = "why-card-back-header-reasons">Reasons that thought is not true</h3>
   
        
           
-         <p> ${mindsetCardWhy.back}</p>
+         <p class = "why-card-back-words"> ${mindsetCardWhy.back}</p>
           
                 
          
