@@ -30,7 +30,7 @@ export default function mindsetWhys(mindsetCards) {
         rows="5"
         columns="20"
         placeholder="List a thought that is bothering you."
-      >Here is a thought that is bothering me</textarea>
+      ></textarea>
 
       <textarea
         id="why__details"
@@ -39,7 +39,7 @@ export default function mindsetWhys(mindsetCards) {
         rows="5"
         columns="20"
         placeholder="List a reason this thought is not true."
-      >Here are some reasons that isn't true</textarea>
+      ></textarea>
 
  
       <input class = "why-submit" type="submit" />
