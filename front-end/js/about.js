@@ -68,11 +68,19 @@ export default function aboutView(user) {
             </p>
             </div>
           </div>
-          <div class="contact-div">
-            <a id="toggle" class="contact-button">CONTACT US</a>
-          </div>
+          
           </section>
       </div>
     </div>
     `;
 }
+
+{/* <img src="./images/headshots/mike.jpg" alt="Us" width="70" height="70">
+</a>
+</p>
+</div>
+</div>
+<div class="contact-div">
+<a id="toggle" class="contact-button">CONTACT US</a>
+</div>
+</section> */}
