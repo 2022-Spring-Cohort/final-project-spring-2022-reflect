@@ -24,7 +24,7 @@ const containerEl = document.querySelector(".container");
 let userId = null;
 
 function makeUserListView() {
-  fetch("http://localhost:8080/users")
+  fetch("/users")
     .then((res) => res.json())
     .then((users) => {
       makeUserListViewFromJSON(users);
@@ -58,7 +58,7 @@ function makeUserListViewFromJSON(users) {
       sessions: [],
     };
 
-    fetch(`http://localhost:8080/users/addUser`, {
+    fetch(`/users/addUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -166,7 +166,7 @@ function makeUserView(user) {
 
 
 
-    fetch (`http://localhost:8080/articles/${randomArticle}`)
+    fetch (`/articles/${randomArticle}`)
         .then((res) => res.json())
         .then((jsonData) => {
             articleHeader.innerText = jsonData.title;
@@ -216,7 +216,7 @@ function makeProgressView(user) {
       note: sessionNoteInput.value,
     };
 
-    fetch(`http://localhost:8080/users/${user.id}/addSession`, {
+    fetch(`/users/${user.id}/addSession`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -242,7 +242,7 @@ function makeCategoriesView(user) {
     let topicIdEl = topic.querySelector(".topic-value");
     let topich2 = topic.querySelector(".topic");
     topich2.addEventListener("click", () => {
-      fetch(`http://localhost:8080/topics/${topicIdEl.value}`)
+      fetch(`/topics/${topicIdEl.value}`)
         .then((res) => res.json())
         .then((topic) => {
           makeTopicView(user, topic);
@@ -300,7 +300,7 @@ function makeMindsetView(user) {
   console.log(`This is the user ID: ${userId}`);
 
 
-  fetch(`http://localhost:8080/users/${userId}/mindset-why-cards`)
+  fetch(`/users/${userId}/mindset-why-cards`)
     .then((res) => res.json())
     .then((mindsetCards) => {
       console.log(mindsetCards);
@@ -332,7 +332,7 @@ function makeMindsetView(user) {
 
 
         fetch(
-          `http://localhost:8080/users/${userId}/mindset-cards/add-why-card`,
+          `/users/${userId}/mindset-cards/add-why-card`,
 
           {
             method: "POST",
@@ -361,7 +361,7 @@ function makeMindsetView(user) {
           console.log("This is the current user id card id: " + userId);
 
           fetch(
-            `http://localhost:8080/users/${userId}/mindset-why-cards/${cardId}/delete`,
+            `/users/${userId}/mindset-why-cards/${cardId}/delete`,
             {
               method: "DELETE",
             }
@@ -376,7 +376,7 @@ function makeMindsetView(user) {
 
   // // Second half
 
-  // fetch(`http://localhost:8080/users/${userId}/mindset-wins-cards`)
+  // fetch(`/users/${userId}/mindset-wins-cards`)
   //   .then((res) => res.json())
   //   .then((mindsetCards) => {
   //     console.log(mindsetCards);
@@ -402,7 +402,7 @@ function makeMindsetView(user) {
   //       };
 
   //       fetch(
-  //         `http://localhost:8080/users/${userId}/mindset-cards/add-wins-card`,
+  //         `/users/${userId}/mindset-cards/add-wins-card`,
   //         {
   //           method: "POST",
   //           headers: {
@@ -430,7 +430,7 @@ function makeMindsetView(user) {
   //         console.log("This is the current user id card id: " + userId);
 
   //         fetch(
-  //           `http://localhost:8080/users/${userId}/mindset-wins-cards/${cardId}/delete`,
+  //           `/users/${userId}/mindset-wins-cards/${cardId}/delete`,
   //           {
   //             method: "DELETE",
   //           }
