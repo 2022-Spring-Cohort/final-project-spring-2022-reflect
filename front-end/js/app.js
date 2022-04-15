@@ -307,6 +307,7 @@ function makeMindsetView() {
       containerEl.innerHTML = header();
       containerEl.innerHTML += mindsetWhyView(mindsetCards);
       makeCardFlip();
+      makeHamburgerMenu();
 
 
       const whysCardContainerEl = document.querySelectorAll(
@@ -325,7 +326,6 @@ function makeMindsetView() {
         const newWhyCardJson = {
           front: whyCardFrontInput.value,
           back: whyCardBackInput.value,
-          photo: whyCardImageInput.value,
           userId: userId,
         };
 

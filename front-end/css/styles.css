@@ -854,9 +854,9 @@ text-align:center;
 
   .card__body h3{
     color:var(--color-4);
-    font-size: 24px;
-    font-weight:600;
-    margin-bottom:15px;
+    font-size: 1em;
+    font-weight:800;
+    margin-bottom:1em;
   }
 
   .card__body p{
