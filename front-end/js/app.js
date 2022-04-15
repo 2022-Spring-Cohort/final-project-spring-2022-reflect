@@ -344,7 +344,7 @@ function makeMindsetView(user) {
         )
           .then((res) => res.json())
           .then(() => {
-            makeMindsetView();
+            makeMindsetView(user);
           });
       });
 
