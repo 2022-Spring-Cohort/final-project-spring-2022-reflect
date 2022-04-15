@@ -19,7 +19,7 @@ export default function mindsetWhys(mindsetCards) {
     it again.
   </p>
 </section>
-<section class="mindset__focuses">
+
   <section class="mindsets___growth">
     <h2>Here are some cards to input your whys. Repetition is key.</h2>
    
@@ -51,10 +51,10 @@ export default function mindsetWhys(mindsetCards) {
 
 
    
-
+  </section>
   <div class = "whys-card-container cards-container">
 
-  
+<section class="mindset__focuses">
   ${mindsetCards
     .map((mindsetCardWhy) => {
       return `
@@ -62,7 +62,7 @@ export default function mindsetWhys(mindsetCards) {
   <div class="card">
     <div class="card__inner">
 
-  <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">
+   <input id="id" type="hidden" name="id" value="${mindsetCardWhy.id}">
     <div class="card__face card__face--front">
       <div class="front-header"><p class = "front-words">${mindsetCardWhy.front}</p></div>
     </div>
@@ -90,7 +90,7 @@ export default function mindsetWhys(mindsetCards) {
 
   <button class="deleteWhyCardButton" value="${mindsetCardWhy.id}">Delete Card</button>
   </div>
-
+</section>
   
   
   `;

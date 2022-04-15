@@ -130,9 +130,9 @@ function makeHamburgerMenu(user) {
     makeTimerSelectView(user);
   });
 
-//   interactiveLink.addEventListener("click", () => {
-//     makeMindsetView();
-//   });
+  interactiveLink.addEventListener("click", () => {
+    makeMindsetView(user);
+  });
 
   closeIcon.addEventListener("click", toggleMenu);
 }
@@ -295,9 +295,10 @@ function makeTimerSelectView(user) {
   });
 }
 
-function makeMindsetView() {
+function makeMindsetView(user) {
   console.log("making your mindset page");
   console.log(`This is the user ID: ${userId}`);
+
 
   fetch(`http://localhost:8080/users/${userId}/mindset-why-cards`)
     .then((res) => res.json())
@@ -307,7 +308,7 @@ function makeMindsetView() {
       containerEl.innerHTML = header();
       containerEl.innerHTML += mindsetWhyView(mindsetCards);
       makeCardFlip();
-      makeHamburgerMenu();
+      makeHamburgerMenu(user);
 
 
       const whysCardContainerEl = document.querySelectorAll(
@@ -343,7 +344,7 @@ function makeMindsetView() {
         )
           .then((res) => res.json())
           .then(() => {
-            makeMindsetView();
+            makeMindsetView(user);
           });
       });
 
@@ -367,7 +368,7 @@ function makeMindsetView() {
           )
             .then((res) => res.json())
             .then(() => {
-              makeMindsetView();
+              makeMindsetView(user);
             });
         });
       });
